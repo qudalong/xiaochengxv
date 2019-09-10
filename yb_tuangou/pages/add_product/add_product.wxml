@@ -23,7 +23,7 @@
       <view wx:for="{{formData.pics}}" wx:key="goodMgrAdd__pic--content-{{index}}" class="goodMgrAdd__pic--content">
         <view class="pic-added">
           <image src="{{item}}"></image>
-          <view data-index="{{index}}" class="btn" bindtap="handleDelPic">x</view>
+          <view data-index="{{index}}" class="x" bindtap="handleDelPic">x</view>
         </view>
       </view>
       <view wx:if="{{(formData.pics.length < 9)}}" class="goodMgrAdd__pic--content">

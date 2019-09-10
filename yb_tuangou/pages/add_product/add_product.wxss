@@ -111,15 +111,15 @@
   border-radius: 6px;
 }
 
-.goodMgrAdd__pic--content>.pic-added>.btn {
+.goodMgrAdd__pic--content>.pic-added>.x
+ {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: -16rpx;
+  top: -16rpx;
   width: 40rpx;
   height: 40rpx;
   text-align: center;
   line-height: 40rpx;
-  transform: translateX(50%) translateY(-50%);
   background-color: #666;
 }
 
