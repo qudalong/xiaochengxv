@@ -1,0 +1,27 @@
+  <view class="form_box">
+    <view class="form_li">
+      <view class="lable">商品名称:</view>
+      <input class="inp"  type="text"  placeholder="请输入"></input>
+    </view>
+    <view class="form_li">
+      <view class="lable">商品货号:</view>
+      <input class="inp"  type="text"  placeholder="请输入"></input>
+    </view>
+    <view class="form_li">
+      <view class="lable">商品价格:</view>
+      <input class="inp"  type="text"  placeholder="请输入"></input>
+    </view>
+    <view class="form_li desc">
+      <view class="lable">商品详情:</view>
+      <textarea class="inp" placeholder="请输入" auto-height="true"></textarea>
+    </view>
+    <view class="form_li">
+      <view class="lable">商品图片:</view>
+      <view class="addImg">+</view>
+    </view>
+    <view class="form_btn_box">
+      <button class="form_btn">
+        <text>添加</text>
+      </button>
+    </view>
+  </view>

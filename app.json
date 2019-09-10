@@ -1,6 +1,8 @@
 {
   "pages": [
     "yb_tuangou/pages/product/product",
+    "yb_tuangou/pages/add_classify/add_classify",
+    "yb_tuangou/pages/add_product/add_product",
     "yb_tuangou/pages/product_desc/product_desc",
     "yb_tuangou/pages/index/index",
     "yb_tuangou/pages/login/index",

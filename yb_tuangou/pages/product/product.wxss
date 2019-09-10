@@ -259,3 +259,25 @@ page {
 .icon-weibiaoti6-copy:before {
   content: "\e670";
 }
+/* btn */
+.btn-group{
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right:40rpx;
+  bottom: 10%;
+}
+.btn-group .btns{
+  font-size: 12px;
+  width: 140rpx;
+  height: 140rpx;
+  text-align: center;
+  line-height: 140rpx;
+  border-radius: 50%;
+  background: #ff6000;
+  color: #fff;
+  margin-bottom: 30rpx;
+}
+.btn-group .btns:nth-child(2){
+  background: #6d9eeb;
+}

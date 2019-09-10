@@ -1,0 +1,11 @@
+  <view class="form_box">
+    <view class="form_li">
+      <view class="lable">分类名称:</view>
+      <input class="inp"  type="text"  placeholder="请输入"></input>
+    </view>
+    <view class="form_btn_box">
+      <button class="form_btn">
+        <text>添加</text>
+      </button>
+    </view>
+  </view>

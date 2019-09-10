@@ -1,0 +1,23 @@
+@import '../login/index.wxss';
+.form_li{
+  display: flex;
+  align-items: center;
+  padding-left: 0 !important;
+  height: auto !important;
+}
+.inp{
+  flex: 1;
+  padding-left:20rpx;
+}
+.desc{
+  align-items: stretch;
+}
+.addImg{
+  width: 160rpx;
+  height: 160rpx;
+  text-align: center;
+  line-height: 160rpx;
+  background: #ccc;
+  font-size: 20px;
+  margin-left: 20rpx;
+}

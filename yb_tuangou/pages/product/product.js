@@ -71,9 +71,6 @@ Page({
     })
   },
 
-
-  
-
   //右边滚动联动
   onScroll(e) {
     let scrollTop = e.detail.scrollTop;
