@@ -20,6 +20,9 @@
                 <text>确定登录</text>
             </button>
         </view>
+         <view class="row">
+          <navigator url="../register/index">注册新用户</navigator>
+        </view>
     </view>
 </form>
 <view class="bottom_li"></view>

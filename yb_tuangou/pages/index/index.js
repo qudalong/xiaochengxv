@@ -13,14 +13,14 @@ Page({
         interval: 20
     },
     onLoad: function(e) {
-        getApp().getCache("userinfo") || wx.redirectTo({
-            url: "/yb_tuangou/pages/login/index"
-        }), this.getAdInfo();
+        // getApp().getCache("userinfo") || wx.redirectTo({
+        //     url: "/yb_tuangou/pages/login/index"
+        // }), this.getAdInfo();
     },
     onShow: function() {
-        getApp().getCache("userinfo") ? this.getinfo() : wx.redirectTo({
-            url: "/yb_tuangou/pages/login/index"
-        });
+        // getApp().getCache("userinfo") ? this.getinfo() : wx.redirectTo({
+        //     url: "/yb_tuangou/pages/login/index"
+        // });
     },
     getAdInfo: function() {
         var n = this;

@@ -1,11 +1,12 @@
 {
   "pages": [
+    "yb_tuangou/pages/product/product",
+    "yb_tuangou/pages/login/index",
     "yb_tuangou/pages/register/index",
     "yb_tuangou/pages/index/index",
     "yb_tuangou/pages/order/detail/index",
     "yb_tuangou/pages/member/index",
     "yb_tuangou/pages/order/index",
-    "yb_tuangou/pages/login/index",
     "yb_tuangou/pages/jingying/index",
     "yb_tuangou/pages/yongjin/index",
     "yb_tuangou/pages/tixianguanli/index",
@@ -18,7 +19,6 @@
     "yb_tuangou/pages/policy/index",
     "yb_tuangou/pages/withdraw_request/index",
     "yb_tuangou/pages/order/msdetail/index"
-    
   ],
   "window": {
     "backgroundColor": "#f2f2f2",
@@ -35,6 +35,12 @@
       {
         "pagePath": "yb_tuangou/pages/index/index",
         "text": "首页",
+        "iconPath": "yb_tuangou/static/images/shouye@2x.png",
+        "selectedIconPath": "yb_tuangou/static/images/shouye2@2x.png"
+      },
+      {
+        "pagePath": "yb_tuangou/pages/product/product",
+        "text": "产品",
         "iconPath": "yb_tuangou/static/images/shouye@2x.png",
         "selectedIconPath": "yb_tuangou/static/images/shouye2@2x.png"
       },

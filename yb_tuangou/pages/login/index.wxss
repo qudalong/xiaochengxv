@@ -126,3 +126,6 @@
     width: 100%;
     height: 4rem;
 }
+.row navigator{
+  text-align: right;
+}
