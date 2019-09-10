@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    classifyName:''
   },
 
   /**
@@ -14,7 +14,21 @@ Page({
   onLoad: function (options) {
 
   },
-
+  bindClassifyName(e){
+    const classifyName = e.detail.value;
+    this.setData({
+      classifyName
+    })
+  },
+  addClassify(){
+    if(!this.data.classifyName.trim()){
+        wx.showToast({
+          title: '请输入分类名称',
+          icon:'none'
+        });
+        return
+    }
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
