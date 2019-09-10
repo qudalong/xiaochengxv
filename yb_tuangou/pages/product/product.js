@@ -100,21 +100,12 @@ Page({
 
   },
   onHide: function () {
-    console.log('onhide')
-    wx.showModal({
-      title: '',
-      content: '确认前进吗',
-    })
+   
   },
   onShow: function () {
-    console.log('onShow')
   },
   onUnload: function () {
-    console.log('onunload')
-    wx.showModal({
-      title: '',
-      content: '确认返回吗',
-    })
+   
   },
   onPullDownRefresh: function () {
 
