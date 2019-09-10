@@ -1,0 +1,25 @@
+<view class="bg">
+    <view>
+        <view class="section" wx:for="{{orderlist}}">
+            <view class="bianhao">
+                <text class="bianhao_text">订单编号：{{item.order_no}}</text>
+                <text class="bianhao_daishouhuo">{{item.status_name}}</text>
+            </view>
+            <view class="shuiguo_chengzi">
+                <text class="jieshao">{{item.bargain_name}}</text>
+                <image bindtap="bindViewTap" class="userinfo-hong" mode="cover" src="{{item.pic}}"></image>
+                <text class="guige" wx:if="{{item.sku_name}}">规格：{{iteml.sku_name}}</text>
+                <text class="jiage">
+                    <text style="font-size:24rpx">￥</text>{{item.price}}</text>
+            </view>
+            <view class="heji">合计:
+          <text class="fuhao" style="color:#ff1f1f">￥</text>
+                <text class="text_yanse">{{item.pay_money}}</text> 核销后可得佣金：
+          <text class="fuhao" style="color:#ff1f1f">￥</text>
+                <text class="text_yanse">{{item.yj_price}}</text>
+                <button bindtap="verifyOrder" class="btn_shouhuo1" data-order_no="{{item.order_no}}" wx:if="{{item.order_status==2}}">确认收货</button>
+                <button bindtap="signOrder" class="btn_shouhuo2" data-order_no="{{item.order_no}}" wx:if="{{item.order_status==8}}">确认核销</button>
+            </view>
+        </view>
+    </view>
+</view>

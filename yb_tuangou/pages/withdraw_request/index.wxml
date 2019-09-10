@@ -1,0 +1,24 @@
+<form bindsubmit="formsubmit">
+    <view class="box">
+        <view class="tixian">
+            <view class="tixianjine">
+                <view class="tixian_jine">提现金额</view>
+                <input class="input_tixian" name="money" placeholder="可提现金额{{info.commission_before}}元" type="number"></input>
+            </view>
+            <view class="tixianjine">
+                <view class="tixian_jine">提现账户</view>
+                <view bindtap="{{info.type_name==''?'tixian':''}}" class="input_tixian" data-type_name="{{info.type_name}}">
+        {{info.type_name==''?'账户为空!点击添加账户':info.type_name}}
+      </view>
+            </view>
+            <view class="tixianjine">
+                <view class="tixian_jine">账户类型</view>
+                <view class="input_tixian">{{info.type==0?'微信':info.type==1?'支付宝':'银行卡'}}
+      </view>
+            </view>
+        </view>
+        <view class="num">
+            <button class="num_tixian" formType="submit" style="box-shadow: 0rpx 8rpx 12rpx 0rpx rgba(0, 0, 0, 0.16);font-size:32rpx">提交申请</button>
+        </view>
+    </view>
+</form>

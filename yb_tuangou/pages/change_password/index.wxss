@@ -1,0 +1,79 @@
+page {
+    background-color: #f3f3f3;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    background: #eeeeee;
+}
+
+.bg {
+    width: 702rpx;
+    height: 202rpx;
+    margin-left: 24rpx;
+    background: #fff;
+    margin-top: 50rpx;
+    position: absolute;
+    border: 1rpx solid #dddddd;
+}
+
+.yanzhengma {
+    width: 702rpx;
+    height: 100rpx;
+    border-bottom: 1rpx solid #eeeeee;
+}
+
+.input_text {
+    width: 540rpx;
+    height: 100rpx;
+    font-size: 32rpx;
+    color: #222;
+    padding-left: 30rpx;
+    float: left;
+}
+
+.input_yanzhengma {
+    width: 200rpx;
+    height: 100rpx;
+    font-size: 30rpx;
+    color: #999999;
+    float: right;
+}
+
+.img {
+    width: 130rpx;
+    height: 100rpx;
+    position: absolute;
+    left: 82%;
+    text-align: center;
+}
+
+.img image {
+    width: 34rpx;
+    height: 34rpx;
+    padding-top: 38rpx;
+    padding-left: 20rpx;
+}
+
+.input_mima {
+    width: 672rpx;
+    height: 100rpx;
+    font-size: 32rpx;
+    color: #222;
+    padding-left: 30rpx;
+    float: left;
+}
+
+.num {
+    width: 690rpx;
+    height: 88rpx;
+    margin-top: 60rpx;
+}
+
+.num_tixian {
+    border-radius: 44rpx;
+    background: #ef4423;
+    color: #fff;
+    font-size: 32rpx;
+}

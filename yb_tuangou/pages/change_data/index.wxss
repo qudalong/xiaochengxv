@@ -1,0 +1,92 @@
+page {
+    background-color: #f3f3f3;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    background: #eeeeee;
+}
+
+.bg {
+    width: 100%;
+    height: 330rpx;
+    background: #fff;
+}
+
+.text {
+    width: 690rpx;
+    height: 100rpx;
+    border-bottom: 1rpx solid #eee;
+    margin-left: 30rpx;
+}
+
+.name {
+    font-size: 32rpx;
+    color: #444444;
+    line-height: 100rpx;
+}
+
+.input_name {
+    width: 500rpx;
+    height: 100rpx;
+    position: absolute;
+    margin-top: -100rpx;
+    margin-left: 180rpx;
+    line-height: 100rpx;
+    text-align: right;
+    font-size: 32rpx;
+    color: #999;
+}
+
+.dizhi {
+    width: 508rpx;
+    height: 100rpx;
+    position: absolute;
+    left: 29%;
+    line-height: 1rem;
+    font-size: 32rpx;
+    color: #999;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    margin-right: 1rpx;
+    padding-top: 26rpx;
+}
+
+.shouji {
+    width: 100%;
+    height: 405rpx;
+    background: #fff;
+    margin-top: 20rpx;
+}
+
+.userinfo-icon {
+    width: 14rpx;
+    height: 20rpx;
+    margin-top: -55rpx;
+    position: absolute;
+    margin-left: 670rpx;
+}
+
+.btm {
+    width: 100%;
+    height: 100rpx;
+    background-color: #fff;
+    margin-top: 20rpx;
+    border-bottom: 1px solid #eee;
+}
+
+.out {
+    margin-left: 30rpx;
+    font-size: 32rpx;
+    color: #444444;
+    line-height: 100rpx;
+}
+
+.out_img {
+    width: 14rpx;
+    height: 20rpx;
+    position: relative;
+    left: 74.5%;
+    top: -1px;
+}

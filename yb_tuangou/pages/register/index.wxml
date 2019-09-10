@@ -1,0 +1,47 @@
+<form bindreset="formReset" bindsubmit="formSubmit">
+  <view class="logo_box">
+    <image src="/yb_tuangou/static/images/ren.png"></image>
+  </view>
+  <view class="form_box">
+    <view class="form_li">
+      <view class="form_li_icon">
+        <image src="{{icon.mob_icon}}"></image>
+      </view>
+      <input name="phone" placeholder="请输入手机号" type="number"></input>
+    </view>
+    <view class="form_li">
+      <view class="form_li_icon">
+        <image src="{{icon.pass_word_icon}}"></image>
+      </view>
+      <input name="password" placeholder="请输入密码" type="password"></input>
+    </view>
+    <view class="form_li">
+      <view class="form_li_icon">
+        <image src="{{icon.pass_word_icon}}"></image>
+      </view>
+      <input name="password" placeholder="请再次确认密码" type="password"></input>
+    </view>
+    <view class="form_li">
+     <view class="form_li_icon">
+        <image src="../../static/images/shouye@2x.png"></image>
+      </view>
+      <radio-group class="radio-group" bindchange="radioChange">
+        <label class="radio" wx:for="{{items}}" wx:key="unique">
+          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </radio-group>
+    </view>
+    <view wx:if="{{yqmStatus}}" class="form_li">
+      <view class="form_li_icon">
+        <image src="../../static/images/dingdan_footer.png"></image>
+      </view>
+      <input name="password" placeholder="请输入邀请码" type="password"></input>
+    </view>
+    <view class="form_btn_box">
+      <button class="form_btn" formType="submit">
+        <text>注册</text>
+      </button>
+    </view>
+  </view>
+</form>
+<view class="bottom_li"></view>

@@ -1,0 +1,275 @@
+page {
+    background-color: #f3f3f3;
+}
+
+.box {
+    width: 100%;
+    height: 1000rpx;
+    background: #fff;
+}
+
+.top {
+    width: 100%;
+    height: 240rpx;
+    background: linear-gradient(#ef4423,#f1741b);
+}
+
+.jieshao {
+    width: 690rpx;
+    height: 350rpx;
+    background: #fff;
+    border-radius: 20rpx;
+    position: absolute;
+    margin-left: 30rpx;
+    margin-top: -135rpx;
+    box-shadow: 5px 5px 16px 4px rgba(0,0,0,0.1);
+}
+
+.userinfo-timg {
+    width: 130rpx;
+    height: 130rpx;
+    position: absolute;
+    border-radius: 50%;
+    margin-left: 40.6%;
+    margin-top: -9.7%;
+}
+
+.name {
+    font-size: 32rpx;
+    color: #222;
+    width: 688rpx;
+    height: 40rpx;
+    margin-top: 80rpx;
+    line-height: 40rpx;
+    text-align: center;
+}
+
+.name_dongtai {
+    font-size: 28rpx;
+    color: #444;
+    width: 80%;
+    height: 40rpx;
+    margin-top: 10rpx;
+    line-height: 40rpx;
+    text-align: center;
+    margin-left: 10%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.userinfo-bianji {
+    width: 30rpx;
+    height: 30rpx;
+    position: relative;
+    top: -155rpx;
+    left: 91%;
+}
+
+.yongjin {
+    width: 690rpx;
+    height: 170rpx;
+    position: relative;
+    top: -45rpx;
+}
+
+.yongjin_left {
+    width: 345rpx;
+    height: 120rpx;
+    float: left;
+}
+
+.yongjin_right {
+    width: 345rpx;
+    height: 120rpx;
+    float: right;
+}
+
+.left_num {
+    width: 343rpx;
+    height: 50rpx;
+    color: #ff6000;
+    font-size: 48rpx;
+    margin-top: 40rpx;
+    line-height: 50rpx;
+    text-align: center;
+}
+
+.left_text {
+    width: 343rpx;
+    height: 30rpx;
+    color: #666;
+    font-size: 28rpx;
+    margin-top: 20rpx;
+    line-height: 30rpx;
+    text-align: center;
+}
+
+.fengexian {
+    width: 1rpx;
+    height: 80rpx;
+    background: #eee;
+    position: absolute;
+    margin-left: 340rpx;
+    margin-top: -90rpx;
+}
+
+.section {
+    width: 100%;
+    height: 300rpx;
+    margin-top: 240rpx;
+}
+
+.section_suju {
+    width: 696rpx;
+    height: 100rpx;
+    margin-left: 24rpx;
+    border-bottom: 1rpx solid #eee;
+    position: relative;
+}
+
+.userinfo-shuju {
+    width: 42rpx;
+    height: 42rpx;
+    margin-top: 26rpx;
+}
+
+.suju_text {
+    margin-left: 30rpx;
+    font-size: 32rpx;
+    position: absolute;
+    margin-top: 26rpx;
+    color: #444;
+}
+
+.kefu {
+    margin-left: -8rpx;
+    font-size: 32rpx;
+    position: absolute;
+    margin-top: -42rpx;
+    color: #444;
+}
+
+.userinfo-right {
+    width: 14rpx;
+    height: 26rpx;
+    margin-left: 635rpx;
+    position: absolute;
+    margin-top: 36rpx;
+}
+
+.fengexian_bg {
+    width: 100%;
+    height: 20rpx;
+    background: #f3f3f3;
+}
+
+.lianxi {
+    width: 100%;
+    height: 180rpx;
+    position: relative;
+}
+
+.footer {
+    width: 100%;
+    height: 98rpx;
+    position: fixed;
+    bottom: 0rpx;
+    background: #fff;
+    box-shadow: 0rpx -1rpx 0rpx 0rpx rgba(238,238,238,1);
+}
+
+.ionic {
+    width: 100%;
+    height: 98rpx;
+}
+
+.userinfo-shouye {
+    width: 46rpx;
+    height: 46rpx;
+    margin-left: 101rpx;
+    margin-top: 14rpx;
+}
+
+.shouye_text {
+    position: absolute;
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 60rpx;
+    margin-left: -46rpx;
+}
+
+.footer_shouye {
+    float: left;
+}
+
+.userinfo-dingdan {
+    width: 46rpx;
+    height: 46rpx;
+    margin-left: 206rpx;
+    margin-top: 14rpx;
+}
+
+.dingdan_text {
+    position: absolute;
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 60rpx;
+    margin-left: -45rpx;
+}
+
+.userinfo-wode {
+    width: 46rpx;
+    height: 46rpx;
+    margin-left: 206rpx;
+    margin-top: 14rpx;
+}
+
+.wode_text {
+    position: absolute;
+    color: #999;
+    font-size: 24rpx;
+    margin-top: 60rpx;
+    margin-left: -45rpx;
+}
+
+.footer_danji {
+    display: none;
+}
+
+.userinfo-avatar {
+    width: 130rpx;
+    height: 130rpx;
+    position: absolute;
+    border-radius: 50%;
+    margin-left: 40.6%;
+    margin-top: -9.7%;
+}
+
+.service_box {
+    padding: 29rpx;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #ccc;
+    overflow: hidden;
+    filter: alpha(Opacity=0);
+    opacity: 0;
+}
+
+.user_service {
+    float: left;
+    opacity: 0;
+}
+
+.wx_app_copyright {
+    background-color: #f3f3f3;
+    height: auto;
+    line-height: 30rpx;
+    text-align: center;
+}
+
+.wx_app_copyright text {
+    font-size: 22rpx;
+    color: #d5d5d5;
+}

@@ -1,0 +1,8 @@
+<form bindsubmit="modify_avatar">
+    <view class="top_head_border">
+        <image bindtap="uploadimg" class="top_head" mode="aspectFill" name="image" src="{{form_data.img}}"></image>
+        <view>
+            <button class="top_text" formType="submit" mode="aspecFill">确认修改</button>
+        </view>
+    </view>
+</form>

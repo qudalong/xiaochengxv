@@ -1,0 +1,71 @@
+<view class="box">
+    <view class="top">
+        <view class="title">
+            <view class="navigation">
+                <view class="nana">
+                    <view bindtap="bindTapStyle" class="putongdingdan {{type==1?'navigation_b':''}}" data-style="1">
+                        <text>普通订单</text>
+                    </view>
+                </view>
+                <!-- 
+                <view class="nana">
+                    <view bindtap="bindTapStyle" class="kanjiadingdan {{type==2?'navigation_b':''}}" data-style="2">
+                        <text>砍价订单</text>
+                    </view>
+                </view>
+                <view class="nana">
+                    <view bindtap="bindTapStyle" class="pintuandingdan {{type==3?'navigation_b':''}}" data-style="3">
+                        <text>拼团订单</text>
+                    </view>
+                </view>
+                -->
+                <view class="nana">
+                    <view bindtap="bindTapStyle" class="miaoshadingdan {{type==4?'navigation_b':''}}" data-style="4">
+                        <text>秒杀订单</text>
+                    </view>
+                </view>
+            </view>
+            <!--订单搜索-->
+            <view class='fui-header1'>
+              <view  class='searchbar'>
+                <icon size='18' type='search'></icon>
+                <input placeholder='请输入关键字进行搜索'  bindconfirm='keywordLoad' bindinput='getKeyword'></input>
+              </view>
+            </view>
+
+
+
+            <view class="footer-btn">
+                <view class="footer-btn1">
+                    <view bindtap="bindTapStatus" class="quanbu" data-status="0" style="color:{{status==0?'#ff6000':'#666666'}}">
+                        <text>全部</text>
+                        <view class="xiahuaxian1 {{status!=0?'index':''}}"></view>
+                    </view>
+                </view>
+                <view class="footer-btn2">
+                    <view bindtap="bindTapStatus" class="daishouhuo" data-status="1" style="color:{{status==1?'#ff6000':'#666666'}}">
+                        <text>待收货</text>
+                        <view class="xiahuaxian {{status!=1?'index':''}}"></view>
+                    </view>
+                </view>
+                <view class="footer-btn3">
+                    <view bindtap="bindTapStatus" class="daihexiao" data-status="2" style="color:{{status==2?'#ff6000':'#666666'}}">
+                        <text>待核销</text>
+                        <view class="xiahuaxian {{status!=2?'index':''}}"></view>
+                    </view>
+                </view>
+                <view class="footer-btn4">
+                    <view bindtap="bindTapStatus" class="yihexiao" data-status="3" style="color:{{status==3?'#ff6000':'#666666'}}">
+                        <text>已核销</text>
+                        <view class="xiahuaxian {{status!=3?'index':''}}"></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+    <include src="order.wxml" wx:if="{{type==1}}"></include>
+    <include src="kanjia.wxml" wx:if="{{type==2}}"></include>
+    <include src="pingtuan.wxml" wx:if="{{type==3}}"></include>
+    <include src="miaosha.wxml" wx:if="{{type==4}}"></include>
+    <view class="wenzi">暂无更多数据</view>
+</view>

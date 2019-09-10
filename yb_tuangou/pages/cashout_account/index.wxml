@@ -1,0 +1,23 @@
+<form bindsubmit="formSubmit">
+    <view class="box">
+        <view class="bg">
+            <view class="yanzhengma">
+                <input class="input_mima" name="zhanghao" placeholder="请输入提现账号"></input>
+            </view>
+            <view class="yanzhengma">
+                <view bindtap="bindShowMsg" class="text">
+                    <text>{{text}}</text>
+                    <image bindtap="bindViewTap" class="userinfo-jiantou {{select?'select_img_rotate':''}}" mode="cover" src="{{icon.jiantou}}"></image>
+                </view>
+                <view class="zhifubao" wx:if="{{select}}">
+                    <view bindtap="mySelect" class="select_one" data-i="0" data-name="微信">微信</view>
+                    <view bindtap="mySelect" class="select_one" data-i="1" data-name="支付宝">支付宝</view>
+                    <view bindtap="mySelect" class="select_one" data-i="2" data-name="银行卡">银行卡</view>
+                </view>
+            </view>
+        </view>
+        <view class="num">
+            <button class="num_tixian" formType="submit" style="font-size:32rpx;">确定修改</button>
+        </view>
+    </view>
+</form>

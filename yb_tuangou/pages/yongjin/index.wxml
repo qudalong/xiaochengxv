@@ -1,0 +1,49 @@
+<view class="box">
+    <view class="top">
+        <view class="jinge">
+            <view class="jinge_num">
+                <text bindtap="tttt">{{info.today_account}}</text>
+            </view>
+        </view>
+        <view class="jinge_text">今日结算(元)</view>
+        <view class="leiji">
+            <view class="fengexian"></view>
+            <view class="leiji_left">
+                <view class="left_num">
+          {{info.total_account}}
+        </view>
+                <view class="left_text">累计结算(元)</view>
+            </view>
+            <view class="leiji_left">
+                <view class="left_num">
+          {{info.stay_account}}
+        </view>
+                <view class="left_text">待结算(元)</view>
+            </view>
+        </view>
+    </view>
+    <view class="jieshao">
+        <view class="tab">
+            <view class="left">
+                <view bindtap="select" class="{{selected?'yijiesuan':'default'}}" data-w="w">
+          已结算
+        </view>
+                <view bindtap="select" class="{{selected?'yanse':'xiahuxian'}}" data-w="w"></view>
+            </view>
+            <view class="right">
+                <view bindtap="select" class="{{select?'daijiesuan':'default1'}}" data-y="y">
+          待结算
+        </view>
+                <view bindtap="select" class="{{select?'yanse1':'xiahuxian1'}}" data-y="y"></view>
+            </view>
+        </view>
+        <view class="tab_yijiesuan">
+            <view class="time" wx:for="{{list}}">
+                <text class="date">{{item.create_time}}</text>
+                <text class="money">{{item.price}}</text>
+                <text class="jiesuan">{{item.order_status}}</text>
+            </view>
+        </view>
+        <view class="wenzi">暂无更多数据</view>
+    </view>
+</view>

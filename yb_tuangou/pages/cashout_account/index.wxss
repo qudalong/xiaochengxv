@@ -1,0 +1,117 @@
+page {
+    background-color: #f3f3f3;
+}
+
+.box {
+    width: 100%;
+    height: 100%;
+    background: #eeeeee;
+}
+
+.bg {
+    width: 702rpx;
+    height: 200rpx;
+    margin-left: 24rpx;
+    background: #fff;
+    margin-top: 50rpx;
+    position: absolute;
+    border: 1rpx solid #dddddd;
+}
+
+.yanzhengma {
+    width: 702rpx;
+    height: 100rpx;
+    border-bottom: 1rpx solid #eeeeee;
+}
+
+.input_text {
+    width: 460rpx;
+    height: 100rpx;
+    font-size: 32rpx;
+    color: #222;
+    margin-left: 30rpx;
+    float: left;
+}
+
+.input_yanzhengma {
+    width: 210rpx;
+    height: 100rpx;
+    font-size: 30rpx;
+    color: #ef4423;
+    float: right;
+    line-height: 100rpx;
+    background: #fff;
+}
+
+.input_mima {
+    width: 672rpx;
+    height: 100rpx;
+    font-size: 32rpx;
+    color: #222;
+    margin-left: 30rpx;
+    float: left;
+}
+
+.fengexian {
+    width: 1rpx;
+    height: 40rpx;
+    background: #eeeeee;
+    position: absolute;
+    margin-top: 30rpx;
+    margin-left: 470rpx;
+}
+
+.zhifubao {
+    width: 700rpx;
+    height: 294rpx;
+    font-size: 32rpx;
+    color: #222222;
+    position: absolute;
+    background: #fff;
+    z-index: 4;
+}
+
+.text {
+    font-size: 32rpx;
+    color: #222;
+    line-height: 100rpx;
+    margin-left: 30rpx;
+}
+
+.userinfo-jiantou {
+    width: 27rpx;
+    height: 27rpx;
+    position: relative;
+    left: 77.5%;
+    transition: transform 0.3s;
+    transition: transform 0.3s,-webkit-transform 0.3s;
+    line-height: 100rpx;
+    bottom: 2.5px;
+}
+
+.select_img_rotate {
+    transform: rotate(180deg);
+}
+
+.select_one {
+    width: 600rpx;
+    height: 98rpx;
+    font-size: 32rpx;
+    color: #666;
+    line-height: 98rpx;
+    margin-left: 30rpx;
+}
+
+.num {
+    width: 690rpx;
+    height: 88rpx;
+    position: fixed;
+    top: 300rpx;
+    margin-left: 30rpx;
+}
+
+.num_tixian {
+    border-radius: 44rpx;
+    background: #ef4423;
+    color: #fff;
+}

@@ -1,0 +1,17 @@
+<form bindsubmit="formSubmit">
+    <view class="box">
+        <view class="bg">
+            <view class="yanzhengma">
+                <input class="input_text" name="yanzhengma" placeholder="请输入验证码"></input>
+                <view class="fengexian"></view>
+                <button bindtap="{{text!='获取验证码'&&text!='重新发送'?'':'setInterval'}}" class="input_yanzhengma">{{text}}</button>
+            </view>
+            <view class="yanzhengma">
+                <input class="input_mima" name="phone" placeholder="请输入新手机号"></input>
+            </view>
+        </view>
+        <view class="num">
+            <button class="num_tixian" formType="submit" style="font-size:32rpx;">确定修改</button>
+        </view>
+    </view>
+</form>

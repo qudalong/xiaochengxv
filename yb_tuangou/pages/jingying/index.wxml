@@ -1,0 +1,39 @@
+<view class="box">
+    <view class="top">
+        <view class="jinge">
+            <view class="jinge_num">
+        {{userinfo.moneyList}}
+      </view>
+            <image bindtap="bindViewTap" class="userinfo-rili" mode="cover" src="{{icon.rili}}"></image>
+        </view>
+        <view class="jinge_text">累计成交总额(元)</view>
+        <view class="leiji">
+            <view class="fengexian"></view>
+            <view class="leiji_left">
+                <view class="left_num">
+          {{userinfo.commission_count}}
+        </view>
+                <view class="left_text">累计提拥总额(元)</view>
+            </view>
+            <view class="leiji_left">
+                <view class="left_num">
+          {{userinfo.orderCount}}
+        </view>
+                <view class="left_text">累计总单数(单)</view>
+            </view>
+        </view>
+    </view>
+    <view class="jieshao">
+        <view class="jieshao_num">
+      {{userinfo.today_commission}}
+      <text class="num">{{userinfo.today_list}}</text>
+        </view>
+        <view class="jieshao_text">
+      今日佣金(元)
+      <text class="num">今日订单(单)</text>
+        </view>
+        <view class="chart-iframe">
+            <canvas bindtouchend="myCanvasTouchEnd" bindtouchmove="myCanvasTouchMove" bindtouchstart="myCanvasTouchStart" canvasId="myCanvas" disableScroll="true" style="width:{{myCanvasStyle.width}}px; height: {{myCanvasStyle.height}}px;"></canvas>
+        </view>
+    </view>
+</view>

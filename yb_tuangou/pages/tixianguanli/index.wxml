@@ -1,0 +1,67 @@
+<view class="box">
+    <view class="top">
+        <view class="jinge">
+            <view class="jinge_num">
+        {{userinfo.commission_count}}
+      </view>
+        </view>
+        <view class="jinge_text">累计佣金(元)</view>
+        <view class="leiji">
+            <view class="fengexian"></view>
+            <view class="leiji_left">
+                <view class="left_num">
+         {{userinfo.commission_after}}
+        </view>
+                <view class="left_text">已提现(元)</view>
+            </view>
+            <view class="leiji_left">
+                <view class="left_num">
+         {{userinfo.commission_before}}
+        </view>
+                <view class="left_text">未提现(元)</view>
+            </view>
+        </view>
+    </view>
+    <view class="jieshao">
+        <view class="tab">
+            <view class="left">
+                <view bindtap="select" class="{{selected?'yijiesuan':'default'}}" data-w="w">
+          申请记录
+        </view>
+                <view bindtap="select" class="{{selected?'yanse':'xiahuxian'}}" data-w="w"></view>
+            </view>
+            <view class="right">
+                <view bindtap="select" class="{{select?'daijiesuan':'default1'}}" data-y="y">
+          提现记录
+        </view>
+                <view bindtap="select" class="{{select?'yanse1':'xiahuxian1'}}" data-y="y"></view>
+            </view>
+        </view>
+        <view class="{{selected?'show':'hidden'}}">
+            <view class="tab_yijiesuan" wx:for="{{list}}">
+                <view class="time" wx:if="{{item.status!=2}}">
+                    <view>{{item.create_time}}</view>
+                    <view class="qianshu">{{item.price}}</view>
+                    <view class="xiangqing" wx:if="{{item.status==0}}">待审核</view>
+                    <view class="xiangqing_yishenhe" wx:elif="{{item.status==1}}">已审核</view>
+                    <view class="xiangqing_daishenhe" wx:elif="{{item.status==3}}">已拒绝</view>
+                </view>
+            </view>
+        </view>
+        <view class="{{select?'show':'hidden'}}" wx:for="{{list}}">
+            <view class="tab_yijiesuan_tixian">
+                <view class="time" wx:if="{{item.status==2}}">
+                    <view>{{item.create_time}}</view>
+                    <view class="qianshu">{{item.price}}</view>
+                    <view class="xiangqing_yishenhe">已到账</view>
+                </view>
+            </view>
+        </view>
+        <view class="wanmei" wx:if="loaded && list.length==0">
+      暂无更多数据
+    </view>
+    </view>
+    <view class="num">
+        <button bindtap="bindViewTap" class="num_tixian" data-index="11" style="font-size:32rpx;">申请提现</button>
+    </view>
+</view>

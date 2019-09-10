@@ -1,0 +1,10 @@
+<import src="/yb_tuangou/utils/wxParse/wxParse.wxml"></import>
+<view class="page_content" wx:if="{{detail.law}}">
+    <view class="wxParse case_content">
+        <rich-text nodes="{{detail.law}}" wx:if="{{!use_wxParse}}"></rich-text>
+        <template is="wxParse" data="{{wxParseData:wxParseData.nodes}}" wx:if="{{use_wxParse}}"></template>
+    </view>
+</view>
+<navigator hoverClass="none" style="padding-top:40rpx;padding-bottom:40rpx;" wx:if="{{!detail.law}}">
+    <view style="text-align:center;color:#999;font-size:0.7rem;">暂无内容</view>
+</navigator>

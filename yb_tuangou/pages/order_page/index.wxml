@@ -1,0 +1,96 @@
+<view class="bg" wx:if="{{show&&type==1}}">
+    <view class="section">
+        <view class="bianhao">
+            <text class="bianhao_text">订单编号：{{info.order_no}}</text>
+            <text class="bianhao_daishouhuo">{{info.status_name}}</text>
+        </view>
+        <view class="shuiguo_chengzi" wx:for="{{info.goods}}">
+            <image class="userinfo-hong" mode="cover" src="{{item.pic}}"></image>
+            <text class="jieshao">{{item.goods_name}}</text>
+            <text class="guige" wx:if="{{item.sku_name}}">{{item.sku_name}}</text>
+            <text class="jiage">
+                <text style="font-size:24rpx">￥</text>{{item.price}}</text>
+        </view>
+        <view class="heji">合计:
+      <text class="fuhao" style="color:#ff1f1f">￥</text>
+            <text class="text_yanse">{{info.pay_money}}</text> 核销后可得佣金：
+      <text class="fuhao" style="color:#ff1f1f">￥</text>
+            <text class="text_yanse">{{info.yj_price}}</text>
+            <button bindtap="finish" class="btn" data-id="{{info.order_no}}" wx:if="{{i==1&&info.status_name=='待核销'}}">确认核销</button>
+            <button bindtap="verifyOrder" class="btn" data-id="{{info.order_no}}" wx:if="{{i==2&&info.status_name=='待收货'}}">确认收货</button>
+            <button bindtap="refund" class="btn" data-id="{{info.order_no}}" wx:if="{{i==3&&info.status_name=='待退货'}}">确认退货</button>
+        </view>
+    </view>
+</view>
+<view class="bg" wx:if="{{show&&type==2}}">
+    <view class="section">
+        <view class="bianhao">
+            <text class="bianhao_text">订单编号：{{info.order_no}}</text>
+            <text class="bianhao_daishouhuo">{{info.status_name}}</text>
+        </view>
+        <view class="shuiguo_chengzi">
+            <image class="userinfo-hong" mode="cover" src="{{info.bargain_pic}}"></image>
+            <text class="jieshao">{{info.bargain_name}}</text>
+            <text class="guige" wx:if="{{info.sku_name}}">{{info.sku_name}}</text>
+            <text class="jiage">
+                <text style="font-size:24rpx">￥</text>{{info.original_price}}</text>
+        </view>
+        <view class="heji">合计:
+      <text class="fuhao" style="color:#ff1f1f">￥</text>
+            <text class="text_yanse">{{info.pay_money}}</text> 核销后可得佣金：
+      <text class="fuhao" style="color:#ff1f1f">￥</text>
+            <text class="text_yanse">{{info.yj_price}}</text>
+            <button bindtap="finish2" class="btn" data-id="{{info.order_no}}" wx:if="{{i==1&&info.status_name=='待核销'}}">确认核销</button>
+            <button bindtap="verifyOrder" class="btn" data-id="{{info.order_no}}" wx:if="{{i==2&&info.status_name=='待收货'}}">确认收货</button>
+            <button bindtap="refund" class="btn" data-id="{{info.order_no}}" wx:if="{{i==3&&info.status_name=='待退货'}}">确认退货</button>
+        </view>
+    </view>
+</view>
+<view class="bg" wx:if="{{show&&type==3}}">
+    <view class="section">
+        <view class="bianhao">
+            <text class="bianhao_text">订单编号：{{info.orderNum}}</text>
+            <text class="bianhao_daishouhuo">{{info.status_name}}</text>
+        </view>
+        <view class="shuiguo_chengzi">
+            <image class="userinfo-hong" mode="cover" src="{{info.goods.pic}}"></image>
+            <text class="jieshao">{{info.goods.name}}</text>
+            <text class="guige" wx:if="{{info.sku_name}}">{{info.sku_name}}</text>
+            <text class="jiage">
+                <text style="font-size:24rpx">￥</text>{{info.goods.price}}</text>
+        </view>
+        <view class="heji">合计:
+      <text class="fuhao" style="color:#ff1f1f">￥</text>
+            <text class="text_yanse">{{info.totalPrice}}</text> 核销后可得佣金：
+      <text class="fuhao" style="color:#ff1f1f">￥</text>
+            <text class="text_yanse">{{info.yj_price}}</text>
+            <button bindtap="finish3" class="btn" data-id="{{info.order_no}}" wx:if="{{i==1&&info.status_name=='待核销'}}">确认核销</button>
+            <button bindtap="verifyOrder" class="btn" data-id="{{info.order_no}}" wx:if="{{i==2&&info.status_name=='待收货'}}">确认收货</button>
+            <button bindtap="refund" class="btn" data-id="{{info.order_no}}" wx:if="{{i==3&&info.status_name=='待退货'}}">确认退货</button>
+        </view>
+    </view>
+</view>
+<view class="bg" wx:if="{{show&&type==4}}">
+    <view class="section">
+        <view class="bianhao">
+            <text class="bianhao_text">订单编号：{{info.order_no}}</text>
+            <text class="bianhao_daishouhuo">{{info.status_name}}</text>
+        </view>
+        <view class="shuiguo_chengzi">
+            <image class="userinfo-hong" mode="cover" src="{{info.bargain_pic}}"></image>
+            <text class="jieshao">{{info.bargain_name}}</text>
+            <text class="guige" wx:if="{{info.sku_name}}">{{info.sku_name}}</text>
+            <text class="jiage">
+                <text style="font-size:24rpx">￥</text>{{info.original_price}}</text>
+        </view>
+        <view class="heji">合计:
+      <text class="fuhao" style="color:#ff1f1f">￥</text>
+            <text class="text_yanse">{{info.pay_money}}</text> 核销后可得佣金：
+      <text class="fuhao" style="color:#ff1f1f">￥</text>
+            <text class="text_yanse">{{info.yj_price}}</text>
+            <button bindtap="finish4" class="btn" data-id="{{info.order_no}}" wx:if="{{i==1&&info.status_name=='待核销'}}">确认核销</button>
+            <button bindtap="verifyOrder" class="btn" data-id="{{info.order_no}}" wx:if="{{i==2&&info.status_name=='待收货'}}">确认收货</button>
+            <button bindtap="refund" class="btn" data-id="{{info.order_no}}" wx:if="{{i==3&&info.status_name=='待退货'}}">确认退货</button>
+        </view>
+    </view>
+</view>

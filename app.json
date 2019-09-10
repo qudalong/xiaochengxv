@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "yb_tuangou/pages/register/index",
+    "yb_tuangou/pages/index/index",
+    "yb_tuangou/pages/order/detail/index",
+    "yb_tuangou/pages/member/index",
+    "yb_tuangou/pages/order/index",
+    "yb_tuangou/pages/login/index",
+    "yb_tuangou/pages/jingying/index",
+    "yb_tuangou/pages/yongjin/index",
+    "yb_tuangou/pages/tixianguanli/index",
+    "yb_tuangou/pages/change_phone/index",
+    "yb_tuangou/pages/change_password/index",
+    "yb_tuangou/pages/change_data/index",
+    "yb_tuangou/pages/cashout_account/index",
+    "yb_tuangou/pages/modify_avatar/index",
+    "yb_tuangou/pages/order_page/index",
+    "yb_tuangou/pages/policy/index",
+    "yb_tuangou/pages/withdraw_request/index",
+    "yb_tuangou/pages/order/msdetail/index"
+    
+  ],
+  "window": {
+    "backgroundColor": "#f2f2f2",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F4F4F4",
+    "navigationBarTitleText": "",
+    "navigationBarTextStyle": "black",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#8b8b8b",
+    "selectedColor": "#ff6000",
+    "list": [
+      {
+        "pagePath": "yb_tuangou/pages/index/index",
+        "text": "首页",
+        "iconPath": "yb_tuangou/static/images/shouye@2x.png",
+        "selectedIconPath": "yb_tuangou/static/images/shouye2@2x.png"
+      },
+      {
+        "pagePath": "yb_tuangou/pages/order/index",
+        "text": "订单",
+        "iconPath": "yb_tuangou/static/images/dingdan_footer.png",
+        "selectedIconPath": "yb_tuangou/static/images/dingdan2@2x.png"
+      },
+      {
+        "pagePath": "yb_tuangou/pages/member/index",
+        "text": "我的",
+        "iconPath": "yb_tuangou/static/images/wode@2x.png",
+        "selectedIconPath": "yb_tuangou/static/images/wode2@2x.png"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [
+    "wx88cfed3af12ba2b5",
+    "wx701ffd9531188705"
+  ],
+  "debug": false,
+  "sitemapLocation": "sitemap.json"
+}
