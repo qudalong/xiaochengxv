@@ -36,11 +36,14 @@ Page({
     });
   },
   showDetails: function (e) {
-    var descImg=e.currentTarget.dataset.img;
-    this.setData({
-      descImg,
-      showDetails: true
-    });
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/product_desc/product_desc',
+    })
+    // var descImg=e.currentTarget.dataset.img;
+    // this.setData({
+    //   descImg,
+    //   showDetails: true
+    // });
   },
 
   closeShadow() {

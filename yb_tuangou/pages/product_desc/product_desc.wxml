@@ -1,0 +1,10 @@
+<view class='cover-detail'>
+  <image class='imgUrl' mode="widthFix" src="https://mp.ucloudant.com/attachment/images/56/2018/09/Ax6G5tiRIOHM5imiG6Z8M2t8rhLOm5.jpg"></image>
+  <view class='good-info'>
+    <view class='name'>大吉大利比萨</view>
+    <view class='details'>比萨好吃不贵</view>
+    <view class='row row-line'>
+      <view class='money'>￥ 12.00</view>
+    </view>
+  </view>
+</view>

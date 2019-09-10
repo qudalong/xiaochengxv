@@ -38,4 +38,15 @@
   </view>
   <view class='btn'>选好了</view>
 </view>
-
+<!--详情弹窗  -->
+<view wx:if='{{showDetails}}' class="drawer_screen" bindtap="closeShowDetails"></view>
+<view wx:if='{{showDetails}}' class='cover-detail'>
+  <image class='imgUrl' mode="widthFix" src="{{descImg}}"></image>
+  <view class='good-info'>
+    <view class='name'>大吉大利比萨</view>
+    <view class='details'>比萨好吃不贵</view>
+    <view class='row row-line'>
+      <view class='money'>￥ 12.00</view>
+    </view>
+  </view>
+</view>

@@ -1,9 +1,10 @@
 {
   "pages": [
     "yb_tuangou/pages/product/product",
+    "yb_tuangou/pages/product_desc/product_desc",
+    "yb_tuangou/pages/index/index",
     "yb_tuangou/pages/login/index",
     "yb_tuangou/pages/register/index",
-    "yb_tuangou/pages/index/index",
     "yb_tuangou/pages/order/detail/index",
     "yb_tuangou/pages/member/index",
     "yb_tuangou/pages/order/index",
