@@ -128,4 +128,5 @@
 }
 .row navigator{
   text-align: right;
+  color: #666;
 }

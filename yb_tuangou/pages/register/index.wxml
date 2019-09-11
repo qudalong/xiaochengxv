@@ -27,7 +27,7 @@
       </view>
       <radio-group class="radio-group" bindchange="radioChange">
         <label class="radio" wx:for="{{items}}" wx:key="unique">
-          <radio value="{{item.name}}" checked="{{item.checked}}" />{{item.value}}
+          <radio value="{{item.name}}" color="#fe775a" checked="{{item.checked}}" />{{item.value}}
         </label>
       </radio-group>
     </view>
