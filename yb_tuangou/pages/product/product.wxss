@@ -2,7 +2,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  bottom: 100rpx;
+  bottom: 0;
   width: 100%;
   display: flex;
   background: #f0f0f0;
@@ -15,9 +15,7 @@
 
 
 .left-wrapper {
-  /* width: 200rpx; */
   text-align: center;
-  padding-right: 20rpx;
   font-size: 30rpx;
   background: #f0f0f0;
 }
@@ -65,7 +63,7 @@
   background: #fff;
   text-align: left;
   padding: 0 5px;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .operation {
@@ -89,13 +87,9 @@
   background: #fff;
 }
 
-.type-wrapper .item:last-child {
-  margin-bottom: 0;
-}
-
 .active {
   background: #fff;
-  color: #6d9eeb;
+  color: #ff6000;
 }
 /* 购物车详情 */
 .shop-cart-list {

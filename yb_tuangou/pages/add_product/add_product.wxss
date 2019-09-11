@@ -11,6 +11,9 @@
 }
 .desc{
   align-items: stretch;
+}.textarea{
+  padding-top: 10rpx;
+  line-height: 1.4;
 }
 .addImg{
   width: 160rpx;

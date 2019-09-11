@@ -31,13 +31,38 @@
 			"current": -1,
 			"list": []
 		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
 		"game": {
 			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
-			"list": []
+			"current": 2,
+			"list": [
+				{
+					"id": -1,
+					"name": "yb_tuangou/pages/add_product/add_product",
+					"pathName": "yb_tuangou/pages/add_product/add_product",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "yb_tuangou/pages/product/product",
+					"pathName": "yb_tuangou/pages/product/product",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "yb_tuangou/pages/sellLevel/sellLevel",
+					"pathName": "yb_tuangou/pages/sellLevel/sellLevel",
+					"scene": null
+				}
+			]
 		}
 	}
 }

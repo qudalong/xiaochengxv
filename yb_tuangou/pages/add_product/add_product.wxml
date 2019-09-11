@@ -13,7 +13,7 @@
   </view>
   <view class="form_li desc">
     <view class="lable">商品详情:</view>
-    <textarea bindinput="bindDesc" class="inp" placeholder="请输入" auto-height="true"></textarea>
+    <textarea bindinput="bindDesc" class="inp textarea" placeholder="请输入" auto-height="true"></textarea>
   </view>
   <view class="form_li last">
     <view class="lable">商品图片:</view>

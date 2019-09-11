@@ -469,7 +469,12 @@
 .icon-smileface:before {
     content: "\e974";
 }
-
+.row3{
+  display: -webkit-box;
+-webkit-box-orient: vertical;
+-webkit-line-clamp: 3;
+overflow: hidden;
+}
 .icon-picture:before {
     content: "\e975";
 }
