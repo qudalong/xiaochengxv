@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -60,6 +60,13 @@
 					"id": -1,
 					"name": "yb_tuangou/pages/sellLevel/sellLevel",
 					"pathName": "yb_tuangou/pages/sellLevel/sellLevel",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "yb_tuangou/pages/checkList/checkList",
+					"pathName": "yb_tuangou/pages/checkList/checkList",
 					"scene": null
 				}
 			]
