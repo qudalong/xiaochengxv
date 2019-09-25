@@ -7,21 +7,22 @@
             <view class="form_li_icon">
                 <image src="{{icon.mob_icon}}"></image>
             </view>
-            <input name="phone" placeholder="请输入手机号" type="number"></input>
+            <input name="phone" placeholder="请输入手机号" value="15238036285" type="number"></input>
         </view>
         <view class="form_li">
             <view class="form_li_icon">
                 <image src="{{icon.pass_word_icon}}"></image>
             </view>
-            <input name="password" placeholder="请输入密码" type="password"></input>
+            <input name="password" placeholder="请输入密码" value="123456" type="password"></input>
         </view>
         <view class="form_btn_box">
             <button class="form_btn" formType="submit">
                 <text>确定登录</text>
             </button>
         </view>
-         <view class="row">
-          <navigator url="../register/index">注册新用户</navigator>
+         <view bindtap="toReginter" class="row">
+         注册新用户
+          <!-- <navigator url="../register/index"></navigator> -->
         </view>
     </view>
 </form>

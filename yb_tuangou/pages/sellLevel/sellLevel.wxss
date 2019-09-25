@@ -1,8 +1,11 @@
 @import '../add_product/add_product.wxss';
 .lable{
-  width: 240rpx;
-  /* text-align: right; */
+  width: 180rpx;
+  text-align: right;
 }
 .gary{
   color: #959595;
+}
+.form_li{
+   font-size: 28rpx;
 }

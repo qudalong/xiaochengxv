@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -67,6 +67,20 @@
 					"id": -1,
 					"name": "yb_tuangou/pages/checkList/checkList",
 					"pathName": "yb_tuangou/pages/checkList/checkList",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "yb_tuangou/pages/register/index",
+					"pathName": "yb_tuangou/pages/register/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "yb_tuangou/pages/login/index",
+					"pathName": "yb_tuangou/pages/login/index",
 					"scene": null
 				}
 			]

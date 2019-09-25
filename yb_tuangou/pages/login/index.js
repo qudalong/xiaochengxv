@@ -4,6 +4,11 @@ Page({
     data: {
         icon: o.requirejs("icons")
     },
+  toReginter(){
+    wx.navigateTo({
+      url: '../register/index'
+    })
+  },
     onLoad: function(o) {},
     formSubmit: function(o) {
         console.log(o);

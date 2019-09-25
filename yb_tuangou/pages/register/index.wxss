@@ -1,5 +1,5 @@
 .logo_box {
-    padding: 2rem;
+    padding: 2rem 0 1rem;
     text-align: center;
 }
 
@@ -47,7 +47,10 @@
 .form_box .form_li input {
     height: 3rem;
     line-height: 3rem;
-    font-size: 1rem;
+    font-size: 28rpx;
+}
+.radio-group{
+  font-size: 28rpx;
 }
 
 .form_box .form_li .get_ver_box {
@@ -96,6 +99,7 @@
     background: #fe775a;
     border-radius: 0.2rem;
     border: 0;
+    font-size: 28rpx;
 }
 
 .form_btn::after {

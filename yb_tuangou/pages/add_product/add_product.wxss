@@ -4,6 +4,7 @@
   align-items: center;
   padding-left: 0 !important;
   height: auto !important;
+  font-size: 28rpx;
 }
 .inp{
   flex: 1;
