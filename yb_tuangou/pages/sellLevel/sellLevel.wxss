@@ -2,9 +2,10 @@
 .lable{
   width: 180rpx;
   text-align: right;
+  /* color: #9c9c9c; */
 }
 .gary{
-  color: #959595;
+  color: #333;
 }
 .form_li{
    font-size: 28rpx;
