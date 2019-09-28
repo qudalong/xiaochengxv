@@ -107,5 +107,5 @@ Page({
     this.setData({
       yqm: e.detail.value
     });
-  },
+  }
 });
