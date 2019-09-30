@@ -4,9 +4,10 @@ var t, e = require("yb_tuangou/utils/promise").Promise;
 
 App({
     onShow: function(t) {},
-    version: "1.0.2",
+    version: "1.0",
     onLaunch: function(t) {
         this.deviceInfo = this.promise.getDeviceInfo();
+        this.util.getUserInfo();
     },
     promise: {
         getDeviceInfo: function() {
@@ -66,7 +67,7 @@ App({
     globalData: {
         appid: "liu2417301781",
         userInfo: null,
-        app_name: "壹佰小程序"
+        app_name: ""
     },
     config: {
         background: "#8b8b8b",

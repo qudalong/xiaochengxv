@@ -74,15 +74,15 @@ util.makeurl = function(e) {
     if (-1 == n.indexOf("http://") && -1 == n.indexOf("https://") && (n = util.url(n, e.data)), 
     getUrlParam(n, "state") || e.data && e.data.state || !t || (n = n + "&state=we7sid-" + t), 
     !e.data || !e.data.m) {
-        var a = getCurrentPages();
-        a.length && (a = a[getCurrentPages().length - 1]) && a.__route__ && (n = n + "&m=" + a.__route__.split("/")[0]);
+        //var a = getCurrentPages();
+        //a.length && (a = a[getCurrentPages().length - 1]) && a.__route__ && (n = n + "&m=" + a.__route__.split("/")[0]);
     }
     var r = getSign(n, e.data);
     return r && (n = n + "&sign=" + r), n || !1;
 }, util.url = function(e, t) {
     var n = getApp(), a = n.siteInfo.siteroot + "?i=" + n.siteInfo.uniacid + "&t=" + n.siteInfo.multiid + "&v=" + n.version + "&from=wxapp&";
-    if (e && ((e = e.split("/"))[0] && (a += "c=" + e[0] + "&"), e[1] && (a += "a=" + e[1] + "&"), 
-    e[2] && (a += "do=" + e[2] + "&")), t && "object" === (void 0 === t ? "undefined" : _typeof(t))) for (var r in t) r && t.hasOwnProperty(r) && t[r] && (a += r + "=" + t[r] + "&");
+    //if (e && ((e = e.split("/"))[0] && (a += "c=" + e[0] + "&"), e[1] && (a += "a=" + e[1] + "&"), 
+   // e[2] && (a += "do=" + e[2] + "&")), t && "object" === (void 0 === t ? "undefined" : _typeof(t))) for (var r in t) r && t.hasOwnProperty(r) && t[r] && (a += r + "=" + t[r] + "&");
     return a;
 }, util.request = function(a) {
     require("./underscore.js");

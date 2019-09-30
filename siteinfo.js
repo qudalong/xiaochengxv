@@ -1,6 +1,5 @@
 module.exports = {
-
-    name: "智讯网络",
+    name: "",
     uniacid: "4",
     acid: "4",
     version: "1.0.8",
