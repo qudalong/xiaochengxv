@@ -41,7 +41,8 @@ module.exports = {
         var a = this, i = t.split("/");
         i = i[0] + "_" + i[1], e.comm_id = getApp().getCache("userinfo").id, n && a.loading(), 
         getApp().util.request({
-            url: "entry/wxapp/" + i,
+           // url: "entry/wxapp/" + i,
+            url:t,
             data: e,
             method: "POST",
             success: function(t) {

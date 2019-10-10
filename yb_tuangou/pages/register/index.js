@@ -18,7 +18,9 @@ Page({
     tel: '',
     pwd: '',
     repwd: '',
-    yqm: ''
+    yqm: '',
+    level:'1',
+    v_real_name:''
   },
   register() {
     const {
@@ -26,8 +28,18 @@ Page({
       pwd,
       repwd,
       yqm,
-      yqmStatus
+      v_real_name,
+      yqmStatus,
+      level
     } = this.data;
+
+    if(!v_real_name.trim()){
+      wx.showToast({
+        title: '请输入姓名',
+        icon: 'none'
+      });
+      return
+    }
     if (!tel.trim()) {
       wx.showToast({
         title: '请输入手机号',
@@ -74,19 +86,55 @@ Page({
         return
       }
     }
+
+    //提交
+    n.post("wx/user/reg.html",{
+      password: pwd,
+      phone:tel,
+      username:tel,
+      v_real_name: v_real_name,
+      repassword:repwd,
+      i_level:level,
+      v_yq_code:yqm
+
+    },function(data){
+
+        if(data.code == 0){
+          n.error(
+            data.info
+          );
+          return ;
+        }else{
+          n.success("注册成功!");
+          setTimeout(function () {
+            n.jump("/yb_tuangou/pages/login/index", 3);
+          }, 1e3);
+        }
+       // console.log(data);
+
+    });
+    
   },
 
   radioChange: function(e) {
     const level = e.detail.value;
     if (level == 'b') {
       this.setData({
-        yqmStatus: true
+        yqmStatus: true,
+        level:2
       })
     } else {
       this.setData({
-        yqmStatus: false
+        yqmStatus: false,
+        level:1
       })
     }
+  },
+  bindRealName(e){
+    this.setData({
+      v_real_name: e.detail.value
+
+    });
   },
   bindTel(e) {
     this.setData({

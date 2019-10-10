@@ -14,6 +14,7 @@ var a = "/yb_tuangou/static/images/index_img/", g = "/yb_tuangou/static/images/m
 module.exports = (n(i = {
     mob_icon: "/yb_tuangou/static/images/mob_icon.png",
     pass_word_icon: "/yb_tuangou/static/images/pass_word_icon.png",
+    name_icon: "/yb_tuangou/static/images/wode@2x.png",
     hexiao: a + "hexiao@2x.png",
     shouhuo: a + "shouhuo@2x.png",
     tuihuo: a + "tuihuo@2x.png",

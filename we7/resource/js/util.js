@@ -80,7 +80,7 @@ util.makeurl = function(e) {
     var r = getSign(n, e.data);
     return r && (n = n + "&sign=" + r), n || !1;
 }, util.url = function(e, t) {
-    var n = getApp(), a = n.siteInfo.siteroot + "?i=" + n.siteInfo.uniacid + "&t=" + n.siteInfo.multiid + "&v=" + n.version + "&from=wxapp&";
+    var n = getApp(), a = n.siteInfo.siteroot +e+ "?i=" + n.siteInfo.uniacid + "&t=" + n.siteInfo.multiid + "&v=" + n.version + "&from=wxapp&";
     //if (e && ((e = e.split("/"))[0] && (a += "c=" + e[0] + "&"), e[1] && (a += "a=" + e[1] + "&"), 
    // e[2] && (a += "do=" + e[2] + "&")), t && "object" === (void 0 === t ? "undefined" : _typeof(t))) for (var r in t) r && t.hasOwnProperty(r) && t[r] && (a += r + "=" + t[r] + "&");
     return a;
@@ -92,8 +92,8 @@ util.makeurl = function(e) {
     if (-1 == i.indexOf("http://") && -1 == i.indexOf("https://") && (i = util.url(i)), 
     getUrlParam(i, "state") || a.data && a.data.state || !n || (i = i + "&state=we7sid-" + n), 
     !a.data || !a.data.m) {
-        var o = getCurrentPages();
-        o.length && (o = o[getCurrentPages().length - 1]) && o.__route__ && (i = i + "&m=" + o.__route__.split("/")[0]);
+        //var o = getCurrentPages();
+       // o.length && (o = o[getCurrentPages().length - 1]) && o.__route__ && (i = i + "&m=" + o.__route__.split("/")[0]);
     }
     var s = getSign(i, a.data);
     if (s && (i = i + "&sign=" + s), !i) return !1;
@@ -149,13 +149,27 @@ util.makeurl = function(e) {
         wx.login({
             success: function(e) {
                 util.request({
-                    url: "auth/session/openid",
+                  url: "wx/user/codeSwapOpenId.html",
                     data: {
                         code: e.code
                     },
                     cachetime: 0,
                     success: function(e) {
-                        e.data.errno || (t.sessionid = e.data.data.sessionid, wx.setStorageSync("userInfo", t), 
+                      if(!e.data.errno){
+                          if (e.data.code == 1) {
+                            //t.sessionid = e.data.uqid;
+                            wx.setStorageSync("sessionid",e.data.uqid);
+                          } else if (e.data.code == 2) {
+                            t.memberInfo = e.data.user;
+                            wx.setStorageSync("userInfo", t);
+                          }
+                        
+                        //console.log(e);
+                      }
+                       return;
+                       
+                        e.data.errno || (t.sessionid = e.data.data.sessionid, wx.setStorageSync("userInfo", t),
+                        
                         wx.getUserInfo({
                             success: function(e) {
                                 t.wxInfo = e.userInfo, wx.setStorageSync("userInfo", t), util.request({
