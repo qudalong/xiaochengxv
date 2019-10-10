@@ -63,7 +63,8 @@ module.exports = {
         var a = this, i = t.split("/");
         i = i[0] + "_" + i[1], e.comm_id = getApp().getCache("userinfo").id, n && a.loading(), 
         getApp().util.request({
-            url: "entry/wxapp/" + i,
+            //url: "entry/wxapp/" + i,
+            url:t,
             data: e,
             success: function(t) {
                 if (n && a.hideLoading(), "request:ok" == t.errMsg) {
