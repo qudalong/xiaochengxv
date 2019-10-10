@@ -2,9 +2,10 @@
 .form_li{
   display: flex;
   align-items: center;
-  padding-left: 0 !important;
   height: auto !important;
   font-size: 28rpx;
+  background: #fff;
+  padding: 0 20rpx !important;
 }
 .inp{
   flex: 1;
@@ -15,6 +16,10 @@
 }.textarea{
   padding-top: 10rpx;
   line-height: 1.4;
+  min-height: 200rpx;
+}
+.form_box{
+  padding: 0;
 }
 .addImg{
   width: 160rpx;
@@ -27,18 +32,13 @@
 }image {
   width: 100%;
   height: 100%;
+  border-radius: 6rpx;
 }
 .form_box .last:after{
   border-bottom:0;
 }
 /* tupian */
-.goodMgrAdd__basicInfo,
-.goodMgrAdd__license,
-.goodMgrAdd__pic {
-  overflow: hidden;
-  margin: 20rpx;
-  border-radius: 20rpx;
-}
+
 
 .goodMgrAdd__basicInfo .icon-scan {
   display: flex;
@@ -84,7 +84,7 @@
 
 .goodMgrAdd__pic--content {
   display: inline-block;
-  width: 33.33%;
+  width: 25%;
   text-align: center;
 }
 
@@ -124,7 +124,9 @@
   height: 40rpx;
   text-align: center;
   line-height: 40rpx;
-  background-color: #666;
+  background-color: red;
+  color: #fff;
+  border-radius: 50%;
 }
 
 .goodMgrAdd__pic--content>.pic-added>.btn>.added-icon {
@@ -170,4 +172,10 @@
 
 .placeholder-cls {
   text-align: center;
+}
+.bor0:after{
+  border: 0 !important;
+}
+page{
+  background: #f0f0f0;
 }

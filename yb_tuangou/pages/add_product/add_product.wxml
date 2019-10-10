@@ -1,22 +1,9 @@
 <view class="form_box">
-  <view class="form_li">
-    <view class="lable">商品名称:</view>
-    <input bindinput="bindName" class="inp" type="text" placeholder="请输入"></input>
-  </view>
-  <view class="form_li">
-    <view class="lable">商品货号:</view>
-    <input bindinput="bindNumber" class="inp" type="text" placeholder="请输入"></input>
-  </view>
-  <view class="form_li">
-    <view class="lable">商品价格:</view>
-    <input bindinput="bindPrice" class="inp" type="text" placeholder="请输入"></input>
-  </view>
-  <view class="form_li desc">
+  <view class="form_li desc bor0">
     <view class="lable">商品详情:</view>
-    <textarea bindinput="bindDesc" class="inp textarea" placeholder="请输入" auto-height="true"></textarea>
   </view>
-  <view class="form_li last">
-    <view class="lable">商品图片:</view>
+  <view class="form_li desc bor0">
+    <textarea bindinput="bindDesc" class=" textarea" placeholder="请输入商品详情" auto-height="true"></textarea>
   </view>
   <view class="goodMgrAdd__pic">
     <view class="goodMgrAdd__pic--pb20">
@@ -31,6 +18,19 @@
         </button>
       </view>
     </view>
+  </view>
+
+  <view class="form_li" style="margin-top:10px">
+    <view class="lable">商品名称:</view>
+    <input bindinput="bindName" class="inp" type="text" placeholder="请输入商品名称"></input>
+  </view>
+  <view class="form_li">
+    <view class="lable">商品货号:</view>
+    <input bindinput="bindNumber" class="inp" type="text" placeholder="请输入商品货号"></input>
+  </view>
+  <view class="form_li">
+    <view class="lable">商品价格:</view>
+    <input bindinput="bindPrice" class="inp" type="text" placeholder="请输入商品价格"></input>
   </view>
   <view class="form_btn_box">
     <button bindtap="addproduct" class="form_btn">

@@ -14,9 +14,9 @@
       <view wx:if='{{list.length}}' wx:for='{{list}}' wx:for-item="oneItem" wx:for-index="typeOneIndex" wx:key='unquie' id="a{{oneItem.id}}" class='pesticide type-wrapper'>
         <!-- <view class='type-name'>{{oneItem.type_name}}</view> -->
         <view wx:for='{{oneItem.goods}}' wx:for-item="good" wx:for-index="goodIndex" wx:key='unquie' class='item' bindtap="showDetails" >
-          <image src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1568176859147&di=8c5b10f8d6435a0fabc35d11d3a276c3&imgtype=0&src=http%3A%2F%2Fres.cngoldres.com%2Fupload%2F2015%2F0629%2Fcb52841f4a6247bb43fa7af0aa6ca475.jpg' class='imag'></image>
+           <image src='https://mp.ucloudant.com/attachment/{{good.img}}' class='imag'></image>
           <view class='a-right'>
-            <view class="row3">通灵珠宝</view>
+            <view class="row3">{{good.name}}</view>
             <view>下载次数：100</view>
           </view>
         </view>
