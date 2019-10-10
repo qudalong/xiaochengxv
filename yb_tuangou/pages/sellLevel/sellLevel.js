@@ -2,6 +2,9 @@ import {
   floatOpration,
   formatTime
 } from '../../utils/util.js'
+import {
+  request
+} from '../../utils/request.js'
 Page({
 
   /**
@@ -30,20 +33,117 @@ Page({
       buyDate: formatTime(new Date())
     });
   },
+  // 登记
   bindDengji() {
-    if (!this.data.buyName.trim()) {
+    let {
+      buyName,
+      productName,
+      tel,
+      price,
+      resultPrice,
+      discount,
+      sell,
+      yeji,
+      ticheng,
+      beizu,
+      buyDate,
+      birthday
+    } = this.data;
+    if (!buyName.trim()) {
       wx.showToast({
-        title: '请输入购买人名称',
+        title: '请输入购买人姓名',
         icon: 'none'
       });
       return
-    } else if (!this.data.productName.trim()) {
+    } else if (!productName.trim()) {
       wx.showToast({
         title: '请输入产品名称',
         icon: 'none'
       });
       return
+    } else if (!tel.trim()) {
+      wx.showToast({
+        title: '请输入手机号',
+        icon: 'none'
+      });
+      return
+    } else if (!/^[1][3,4,5,7,8][0-9]{9}$/.test(tel)) {
+      wx.showToast({
+        title: '请输入正确的手机号',
+        icon: 'none'
+      });
+      return
+    } else if (!birthday.trim()) {
+      wx.showToast({
+        title: '请选择购买人生日',
+        icon: 'none'
+      });
+      return
+    } else if (!price.trim()) {
+      wx.showToast({
+        title: '请输入标价',
+        icon: 'none'
+      });
+      return
+    } else if (!resultPrice.trim()) {
+      wx.showToast({
+        title: '请输入成交价',
+        icon: 'none'
+      });
+      return
+    } else if (!discount.trim()) {
+      wx.showToast({
+        title: '请输入折扣',
+        icon: 'none'
+      });
+      return
+    } else if (!sell.trim()) {
+      wx.showToast({
+        title: '请输入销售占比',
+        icon: 'none'
+      });
+      return
+    } else if (!yeji.trim()) {
+      wx.showToast({
+        title: '请输入当笔业绩',
+        icon: 'none'
+      });
+      return
+    } else if (!ticheng.trim()) {
+      wx.showToast({
+        title: '请输入销售提成',
+        icon: 'none'
+      });
+      return
+    } else if (!beizu.trim()) {
+      wx.showToast({
+        title: '请输入备注',
+        icon: 'none'
+      });
+      return
     }
+    //发送接口
+    request({
+      url: 'xxxx',
+      method: 'POST',
+      buyName,
+      productName,
+      data: {
+        productClssifty: buyName, //姓名
+        productClssifty: productName, //名称
+        productClssifty: tel, //手机号
+        productClssifty: birthday, //生日
+        productClssifty: buyDate, //购买日期
+        productDesc: price, //标价
+        productClssifty: resultPrice, //成交价
+        productClssifty: discount, //折扣
+        productClssifty: sell, //销售赞比
+        productClssifty: yeji, //当笔业绩
+        productClssifty: beizu //备注
+      }
+    }).then(res => {
+
+    });
   },
   // 购买人
   bindBuyName(e) {

@@ -7,10 +7,10 @@
 </view>
 <view wx:for="{{list}}" wx:key="unique" class="list">
   <view class="list-wrap">
-    <view class="item">张三</view>
+    <view class="item">张三{{index}}</view>
     <view class="item">09/12</view>
-    <view class="item">100000</view>
-    <view class="item">通灵珠宝</view>
+    <view class="item">100000{{index}}</view>
+    <view class="item">通灵珠宝{{index}}</view>
     <view class="item last">
       <radio-group class="radio-group" data-index="{{index}}" bindchange="radioChange">
         <label class="radio" wx:for="{{items}}" wx:key="unique">

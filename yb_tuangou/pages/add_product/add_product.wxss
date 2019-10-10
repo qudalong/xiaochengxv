@@ -64,6 +64,7 @@
 
 .goodMgrAdd__pic {
   background-color: #fff;
+  padding-top:20px 
 }
 
 .goodMgrAdd__pic--text {

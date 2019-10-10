@@ -12,7 +12,8 @@ Page({
     productPrice: '',
     productDesc: '',
     formData: {
-      pics: []
+      pics: [],
+      goods_images:[]
     },
     array: ['砖石', '珠宝', '手表', '首饰']
   },

@@ -2,7 +2,7 @@
   <view class="form_li desc bor0">
     <view class="lable">商品详情:</view>
   </view>
-  <view class="form_li desc bor0">
+  <view class="form_li desc bor0" style="padding-bottom:20px">
     <textarea bindinput="bindDesc" class=" textarea" placeholder="请输入商品详情" auto-height="true"></textarea>
   </view>
   <view class="goodMgrAdd__pic">
@@ -34,7 +34,7 @@
   </view>
   <view class="form_li">
     <view class="lable">商品分类:</view>
-    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <picker bindchange="bindPickerChange" class="inp" value="{{index}}" range="{{array}}">
     <input wx:if="{{!array[index]}}" class="inp" type="text" disabled placeholder="请选择商品分类"></input>
       <view wx:if="{{array[index]}}" class="picker inp">
         {{array[index]}}

@@ -1,13 +1,13 @@
 {
   "pages": [
-    "yb_tuangou/pages/sellLevel/sellLevel",
+    "yb_tuangou/pages/checkList/checkList",
     "yb_tuangou/pages/add_product/add_product",
+    "yb_tuangou/pages/product_desc/product_desc",
+    "yb_tuangou/pages/sellLevel/sellLevel",
     "yb_tuangou/pages/product/product",
     "yb_tuangou/pages/register/index",
     "yb_tuangou/pages/login/index",
     "yb_tuangou/pages/add_classify/add_classify",
-    "yb_tuangou/pages/checkList/checkList",
-    "yb_tuangou/pages/product_desc/product_desc",
     "yb_tuangou/pages/index/index",
     "yb_tuangou/pages/order/detail/index",
     "yb_tuangou/pages/member/index",
