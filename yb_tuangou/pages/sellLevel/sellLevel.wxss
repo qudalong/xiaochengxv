@@ -5,8 +5,17 @@
   /* color: #9c9c9c; */
 }
 .gary{
-  color: #333;
+  color: #666;
 }
 .form_li{
    font-size: 28rpx;
+}
+.bor0:after{
+  border: 0 !important;
+}
+page{
+  background: #f0f0f0;
+}
+.mt10{
+  margin-top: 20rpx;
 }

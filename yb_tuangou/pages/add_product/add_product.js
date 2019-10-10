@@ -1,4 +1,6 @@
-// yb_tuangou/pages/add_product/add_product.js
+import {
+  request
+} from '../../utils/request.js'
 Page({
 
   /**
@@ -11,7 +13,8 @@ Page({
     productDesc: '',
     formData: {
       pics: []
-    }
+    },
+    array: ['砖石', '珠宝', '手表', '首饰']
   },
 
   /**
@@ -20,48 +23,8 @@ Page({
   onLoad: function(options) {
 
   },
-  handleChoosePic: function () {
-    let _this = this
-    wx.chooseImage({
-      count: 9,
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
-      success: function (res) {
-        let pics = _this.data.formData.pics
-        // 添加当前添加到已有数组
-        pics = pics.concat(res.tempFilePaths)
-        // 限制当前图片数量不能超过9张
-        pics.length > 9 && (pics.length = 9);
-        _this.setData({
-          'formData': Object.assign({}, _this.data.formData, {
-            pics: pics
-          })
-        })
-      }
-    })
-  },
-  handleDelPic: function (e) {
-    let index = e.currentTarget.dataset.index
-    let _another_index = ''
-    let {
-      pics,
-      goods_images
-    } = this.data.formData
-    // 遍历查找是否删除原有图片中的图片
-    goods_images.map((v, k) => {
-      if (v.url === pics[index]) {
-        _another_index = k
-      }
-    });
-    (typeof _another_index === 'number') && goods_images.splice(_another_index, 1);
-    pics.splice(index, 1);
-    this.setData({
-      formData: Object.assign({}, this.data.formData, {
-        pics: pics,
-        goods_images: goods_images
-      })
-    })
-  },
+
+  // 添加
   addproduct() {
     if (!this.data.productName.trim()) {
       wx.showToast({
@@ -69,7 +32,7 @@ Page({
         icon: 'none'
       });
       return
-    } else if (!this.data.productNumber.trim()){
+    } else if (!this.data.productNumber.trim()) {
       wx.showToast({
         title: '请输入商品货号',
         icon: 'none'
@@ -93,8 +56,72 @@ Page({
         icon: 'none'
       });
       return
+    } else if (!this.data.array[this.data.index]) {
+      wx.showToast({
+        title: '请选择商品分类',
+        icon: 'none'
+      });
+      return
     }
+    //发送接口
+    request({
+      url: 'xxxx',
+      method: 'POST',
+      data: {
+        productName: this.data.productName, //名称
+        productNumber: this.data.productNumber, //货号
+        productPrice: this.data.productPrice, //价格
+        productDesc: this.data.productDesc, //详情
+        formData: this.data.formData, //图片
+        productClssifty: this.data.array[this.data.index] //分类
+      }
+    }).then(res => {
+
+    });
   },
+  handleChoosePic: function() {
+    let _this = this
+    wx.chooseImage({
+      count: 9,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: function(res) {
+        let pics = _this.data.formData.pics
+        // 添加当前添加到已有数组
+        pics = pics.concat(res.tempFilePaths)
+        // 限制当前图片数量不能超过9张
+        pics.length > 9 && (pics.length = 9);
+        _this.setData({
+          'formData': Object.assign({}, _this.data.formData, {
+            pics: pics
+          })
+        })
+      }
+    })
+  },
+  handleDelPic: function(e) {
+    let index = e.currentTarget.dataset.index
+    let _another_index = ''
+    let {
+      pics,
+      goods_images
+    } = this.data.formData
+    // 遍历查找是否删除原有图片中的图片
+    goods_images.map((v, k) => {
+      if (v.url === pics[index]) {
+        _another_index = k
+      }
+    });
+    (typeof _another_index === 'number') && goods_images.splice(_another_index, 1);
+    pics.splice(index, 1);
+    this.setData({
+      formData: Object.assign({}, this.data.formData, {
+        pics: pics,
+        goods_images: goods_images
+      })
+    })
+  },
+
   bindName(e) {
     const productName = e.detail.value;
     this.setData({
@@ -119,7 +146,11 @@ Page({
       productDesc
     })
   },
-
+  bindPickerChange: function(e) {
+    this.setData({
+      index: e.detail.value
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

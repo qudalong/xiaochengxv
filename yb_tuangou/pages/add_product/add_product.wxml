@@ -32,6 +32,15 @@
     <view class="lable">商品价格:</view>
     <input bindinput="bindPrice" class="inp" type="text" placeholder="请输入商品价格"></input>
   </view>
+  <view class="form_li">
+    <view class="lable">商品分类:</view>
+    <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <input wx:if="{{!array[index]}}" class="inp" type="text" disabled placeholder="请选择商品分类"></input>
+      <view wx:if="{{array[index]}}" class="picker inp">
+        {{array[index]}}
+      </view>
+    </picker>
+  </view>
   <view class="form_btn_box">
     <button bindtap="addproduct" class="form_btn">
       <text>添加</text>

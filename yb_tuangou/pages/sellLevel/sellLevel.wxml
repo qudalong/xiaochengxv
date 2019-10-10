@@ -1,20 +1,20 @@
 <view class="form_box">
   <view class="form_li">
     <view class="lable">购买人姓名:</view>
-    <input bindinput="bindBuyName" class="inp" type="text" placeholder="请输入"></input>
+    <input bindinput="bindBuyName" class="inp" type="text" placeholder="请输入购买人姓名"></input>
   </view>
   <view class="form_li">
     <view class="lable">产品名称:</view>
-    <input bindinput="bindProduceName" class="inp" type="text" placeholder="请输入"></input>
+    <input bindinput="bindProduceName" class="inp" type="text" placeholder="请输入产品名称"></input>
   </view>
   <view class="form_li">
     <view class="lable">购买人手机号:</view>
-    <input bindinput="bindTel" class="inp" type="number" placeholder="请输入"></input>
+    <input bindinput="bindTel" class="inp" type="number" placeholder="请输入购买人手机号"></input>
   </view>
   <view class="form_li">
     <view class="lable">购买人生日:</view>
     <picker class="inp" mode="date" bindchange="bindDateChangeBriday">
-    <view wx:if='{{!birthday}}' class="picker gary">请选择</view>
+    <view wx:if='{{!birthday}}' class="picker gary">请选择购买人生日</view>
     <view wx:if='{{birthday}}' class="picker">{{birthday}}</view>
   </picker>
   </view>
@@ -24,33 +24,35 @@
     <view class="picker">{{buyDate}}</view>
   </picker>
   </view>
-  <view class="form_li">
+  <view class="form_li mt10">
     <view class="lable">标价:</view>
-    <input bindinput="bindPrice" class="inp" type="text" placeholder="请输入"></input>
+    <input bindinput="bindPrice" class="inp" type="text" placeholder="请输入标价"></input>
   </view>
   <view class="form_li">
     <view class="lable">成交价:</view>
-    <input bindinput="bindResultPrice" class="inp" type="text" placeholder="请输入"></input>
+    <input bindinput="bindResultPrice" class="inp" type="text" placeholder="请输入成交价"></input>
   </view>
   <view class="form_li">
     <view class="lable">折扣:</view>
-    <input bindinput="bindDiscount" class="inp" type="text" placeholder="请输入"></input>
+    <input bindinput="bindDiscount" class="inp" type="text" placeholder="请输入折扣"></input>
   </view>
   <view class="form_li">
     <view class="lable">销售占比:</view>
-    <input bindinput="bindSell" class="inp" type="text" placeholder="请输入"></input>
+    <input bindinput="bindSell" class="inp" type="text" placeholder="请输入销售占比"></input>
   </view>
   <view class="form_li">
     <view class="lable">当笔业级:</view>
-    <input bindinput="bindYeJi" class="inp" type="text" placeholder="请输入"></input>
+    <input bindinput="bindYeJi" class="inp" type="text" placeholder="请输入当笔业级"></input>
   </view>
-  <view class="form_li">
+  <view class="form_li mt10">
     <view class="lable">当笔销售提成:</view>
-    <input bindinput="bindtTiCheng" class="inp" type="text" placeholder="请输入"></input>
+    <input bindinput="bindtTiCheng" class="inp" type="text" placeholder="请输入当笔销售提成"></input>
   </view>
-  <view class="form_li desc">
+  <view class="form_li desc bor0">
     <view class="lable">备注:</view>
-    <textarea bindinput="bindMark" class="inp textarea" placeholder="请输入" auto-height="true"></textarea>
+  </view>
+  <view class="form_li desc bor0">
+    <textarea bindinput="bindMark" class="inp textarea" placeholder="请输入备注" auto-height="true"></textarea>
   </view>
   <view class="form_btn_box">
     <button bindtap="bindDengji" class="form_btn">
