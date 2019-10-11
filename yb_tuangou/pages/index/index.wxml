@@ -2,19 +2,19 @@
     <view class="userinfo">
         <view bindtap="scancode" class="tupian" data-i="1">
             <image class="userinfo-hexiao" mode="cover" src="{{icon.hexiao}}"></image>
-            <text class="wenzi">核销</text>
+            <text class="wenzi">审核</text>
         </view>
         <view class="tupian">
             <image bindtap="scancode" class="userinfo-shouhuo" data-i="2" mode="cover" src="{{icon.shouhuo}}"></image>
-            <text class="wenzi_shouhuo">收货</text>
+            <text class="wenzi_shouhuo">产品下载</text>
         </view>
         <view class="tupian">
             <image bindtap="scancode" class="userinfo-tuihuo" data-i="3" mode="cover" src="{{icon.tuihuo}}"></image>
-            <text class="wenzi_tuihuo">退货</text>
+            <text class="wenzi_tuihuo">销售上报</text>
         </view>
         <view class="tupian">
-            <image bindtap="scancode" class="userinfo-tuihuo" data-i="4" mode="cover" src="{{icon.dingdan}}" style="margin-left:130rpx"></image>
-            <text class="wenzi_dingdan" style="margin-left:130rpx">订单</text>
+            <image bindtap="scancode" class="userinfo-tuihuo" data-i="4" mode="cover" src="{{icon.dingdan}}" style="margin-left:120rpx"></image>
+            <text class="wenzi_dingdan" style="margin-left:100rpx">销售等级</text>
         </view>
     </view>
     <view class="section">
@@ -63,16 +63,9 @@
             <view class="zongshuliang_text3">
         销售等级变动
       </view>
-            <view class="zongshuliang_fengexian3"></view>
+        <!--    <view class="zongshuliang_fengexian3"></view>-->
         </view>
-        <view class="zongshuliang">
-            <view class="zongshuliang_number4">
-        {{info.today_order.stay_return}}
-      </view>
-            <view class="zongshuliang_text4">
-        待退货
-      </view>
-        </view>
+        
     </view>
     <view class="fengexian_bg"></view>
     <view class="jinridingdan">
@@ -113,16 +106,9 @@
             <view class="zongshuliang_text3">
         昨日销售额
       </view>
-            <view class="zongshuliang_fengexian3"></view>
+         <!--<view class="zongshuliang_fengexian3"></view>-->
         </view>
-        <view class="zongshuliang">
-            <view class="zongshuliang_number4">
-        {{info.log_order.stay_return}}
-      </view>
-            <view class="zongshuliang_text4">
-        待退货
-      </view>
-        </view>
+        
     </view>
     
      <view class="fengexian_bg"></view>

@@ -26,6 +26,7 @@ page {
     margin-left: 70rpx;
 }
 
+
 .tupian {
     float: left;
 }
@@ -43,7 +44,7 @@ page {
     color: #fff;
     margin-top: 98rpx;
     display: inline-block;
-    margin-left: 120rpx;
+    margin-left: 90rpx;
 }
 
 .userinfo-tuihuo {
@@ -51,7 +52,7 @@ page {
     height: 58rpx;
     position: absolute;
     margin-top: 33rpx;
-    margin-left: 126rpx;
+    margin-left: 30rpx;
 }
 
 .wenzi_tuihuo {
@@ -59,7 +60,7 @@ page {
     color: #fff;
     margin-top: 98rpx;
     display: inline-block;
-    margin-left: 126rpx;
+    margin-left: 60rpx;
 }
 
 .userinfo-tuihuo {
@@ -67,7 +68,7 @@ page {
     height: 58rpx;
     position: absolute;
     margin-top: 33rpx;
-    margin-left: 126rpx;
+    margin-left: 90rpx;
 }
 
 .wenzi_dingdan {
@@ -288,7 +289,7 @@ page {
     margin-top: 90rpx;
     position: absolute;
     margin-left: 10rpx;
-    width: 120rpx;
+    width: 160rpx;
     height: 40rpx;
     line-height: 40rpx;
     text-align: center;

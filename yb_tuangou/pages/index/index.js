@@ -10,7 +10,25 @@ Page({
         marqueeDistance: 0,
         marquee_margin: 30,
         size: 14,
-        interval: 20
+        interval: 20,
+        info:{
+          today_order:{
+            total:11,
+            stay_take:1,
+            stay_cancel:10,
+            already_cancel:0
+          },
+          log_order:{
+            total:30,
+            stay_take:30,
+            already_cancel:10000,
+            stay_cancel:200000
+          },
+          news:{
+            news:'珠宝、珠宝、珠宝'
+          }
+
+        }
     },
     onLoad: function(e) {
         // getApp().getCache("userinfo") || wx.redirectTo({
