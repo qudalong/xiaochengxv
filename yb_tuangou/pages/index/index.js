@@ -55,6 +55,9 @@ Page({
     },
     scancode: function(e) {
         var t = o.pdata(e).i;
+        if(t==1){
+          this.to_order();
+        }
         wx.scanCode({
             onlyFromCamera: !0,
             success: function(e) {
