@@ -1,23 +1,51 @@
 <view class="list-wrap title">
-  <view class="item">姓名</view>
-  <view class="item">日期</view>
-  <view class="item">金额</view>
-  <view class="item">产品名称</view>
-  <view class="item last">状态</view>
+  <view bindtap="tapItem" class="item {{ind==0?'active':''}}" data-ind='0'>全部</view>
+  <view bindtap="tapItem" class="item {{ind==1?'active':''}}" data-ind='1'>待审核</view>
+  <view bindtap="tapItem" class="item {{ind==2?'active':''}}" data-ind='2'>已通过</view>
+  <view bindtap="tapItem" class="item {{ind==3?'active':''}}" data-ind='3'>已驳回</view>
 </view>
-<view wx:for="{{list}}" wx:key="unique" class="list">
-  <view class="list-wrap">
+<!-- 全部 -->
+<view wx:if='{{ind==0}}'>
+  <view wx:for="{{list}}" wx:key="unique" class="list-wrap">
+      <view class="item">张三{{index}}</view>
+      <view class="item">09/12</view>
+      <view class="item">100000{{index}}</view>
+      <view class="item">通灵珠宝{{index}}</view>
+      <view class="item last">
+        <radio-group class="radio-group" data-index="{{index}}" bindchange="radioChange">
+          <label class="radio" wx:for="{{items}}" wx:key="unique">
+            <radio value="{{item.name}}" color="#fe775a" checked="{{item.checked}}" />{{item.value}}
+          </label>
+        </radio-group>
+    </view>
+  </view>
+</view>
+<!-- 待审核 -->
+<view wx:if='{{ind==1}}'>
+<view wx:for="{{list}}" wx:key="unique" class="list-wrap">
+      <view class="item">张三{{index}}</view>
+      <view class="item">09/12</view>
+      <view class="item">100000{{index}}</view>
+      <view class="item">通灵珠宝{{index}}</view>
+      <view class="item">待审核</view>
+  </view>
+</view>
+<!-- 已通过 -->
+<view wx:if='{{ind==2}}'>
+  <view wx:for="{{list}}" wx:key="unique" class="list-wrap">
+      <view class="item">张三{{index}}</view>
+      <view class="item">100000{{index}}</view>
+      <view class="item">通灵珠宝{{index}}</view>
+      <view class="item"><radio value="1" color="#fe775a" checked="true" />审核通过</view>
+  </view>
+</view>
+<!-- 驳回 -->
+<view wx:if='{{ind==3}}'>
+  <view wx:for="{{list}}" wx:key="unique" class="list-wrap">
     <view class="item">张三{{index}}</view>
     <view class="item">09/12</view>
     <view class="item">100000{{index}}</view>
     <view class="item">通灵珠宝{{index}}</view>
-    <view class="item last">
-      <radio-group class="radio-group" data-index="{{index}}" bindchange="radioChange">
-        <label class="radio" wx:for="{{items}}" wx:key="unique">
-          <radio value="{{item.name}}" color="#fe775a" checked="{{item.checked}}" />{{item.value}}
-        </label>
-      </radio-group>
-    </view>
+    <view class="item">驳回</view>
   </view>
-  <textarea wx:if="{{showBH==index}}" auto-focus="true" placeholder="请输入驳回原因" auto-height="true"></textarea>
 </view>

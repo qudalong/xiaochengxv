@@ -17,14 +17,24 @@ Page({
         value: '驳回'
       },
     ],
+    ind: 0
   },
-
+  scroll(e) {
+    console.log(e)
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
 
   },
+  tapItem(e) {
+    this.setData({
+      ind: e.currentTarget.dataset.ind
+    });
+    console.log(this.data.ind)
+  },
+
   radioChange: function(e) {
     const index = e.currentTarget.dataset.index;
     const level = e.detail.value;

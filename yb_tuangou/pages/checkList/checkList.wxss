@@ -1,38 +1,74 @@
-.list-wrap{
+page {
+  background: #f0f0f0;
+}
+
+.list-wrap {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
+}
+
+
+
+.title .item {
   padding: 40rpx 0;
-  border-bottom:1px solid #f0f0f0; 
 }
-.title{
-  background: #ff6000;
-  color: #fff;
+
+.list-wrap .active {
+  color: #ff6000;
+  border-bottom: 1px solid #ff6000;
 }
-.list-wrap .item{
- flex: 1;
- text-align: center;
- font-size: 28rpx;
+
+.list-wrap .item {
+  flex: 1;
+  text-align: center;
+  font-size: 28rpx;
 }
-textarea{
+
+textarea {
   padding: 30rpx;
   line-height: 1.6;
 }
-.list{
-   border-bottom:1px solid #f0f0f0; 
+
+
+.list-wrap .last {
+  flex: 2;
 }
-.list-wrap .last{
- flex: 2;
-}
-.list-wrap .item:active{
+
+.list-wrap .item:active {
   opacity: 0.6;
 }
-.radio-group{
+.list-wrap{
+  padding: 40rpx 0;
+}
+.radio-group {
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding-left:40rpx; 
+  padding-left: 40rpx;
 }
-.radio-group label{
+
+.radio-group label {
   margin-bottom: 10rpx;
+}
+
+.scroll-view-item_H {
+  background: red;
+  height: 100px;
+  width: 100%;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  line-height: 100px;
+  font-size: 30px;
+}
+.list{
+  padding: 20rpx 0;
+  background: #fff;
+}
+.title {
+  margin-bottom: 10rpx;
+   padding:0;
 }
