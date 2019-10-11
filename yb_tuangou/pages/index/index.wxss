@@ -150,6 +150,12 @@ page {
     background-color: white;
 }
 
+.jinridingdan1 {
+    width: 750rpx;
+    height: 90rpx;
+    background-color: white;
+}
+
 .jinridingdan_wenzi {
     width: 700rpx;
     height: 92rpx;
@@ -328,7 +334,7 @@ page {
 
 .userinfo-tuceng {
     width: 702rpx;
-    height: 240rpx;
+    height: 340rpx;
     margin-top: 30rpx;
     margin-left: 24rpx;
     border-radius: 20px;

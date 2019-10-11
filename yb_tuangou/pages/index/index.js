@@ -3,8 +3,8 @@ var e = getApp(), o = e.requirejs("core");
 Page({
     data: {
         icon: e.requirejs("icons"),
-        adUrl: "",
-        adShow: !1,
+        adUrl: '',
+        adShow: true,
         text: "",
         marqueePace: 1,
         marqueeDistance: 0,
@@ -18,6 +18,10 @@ Page({
         // }), this.getAdInfo();
     },
     onShow: function() {
+       var url = this.data.icon.fm;
+        this.setData({
+          adUrl: url
+        });
         // getApp().getCache("userinfo") ? this.getinfo() : wx.redirectTo({
         //     url: "/yb_tuangou/pages/login/index"
         // });
