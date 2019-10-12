@@ -35,6 +35,16 @@ Page({
         //     url: "/yb_tuangou/pages/login/index"
         // }), this.getAdInfo();
     },
+  shenhe(){
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/checkList/checkList'
+    })
+  },
+  shangbao(){
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/sellLevel/sellLevel'
+    })
+  },
     onShow: function() {
        var url = this.data.icon.fm;
         this.setData({
