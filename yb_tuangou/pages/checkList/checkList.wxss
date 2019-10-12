@@ -99,7 +99,7 @@ textarea {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 10rpx;
+  padding: 10rpx 20rpx;
   box-sizing: border-box;
 }
 
