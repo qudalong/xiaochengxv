@@ -20,7 +20,7 @@ Page({
     })
   },
   bindCkSell(){
-    wx.navigateTo({
+    wx.switchTab({
       url: '/yb_tuangou/pages/ckSell/ckSell',
     })
   },
