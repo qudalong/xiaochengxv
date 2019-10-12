@@ -6,22 +6,9 @@ Page({
    */
   data: {
     list: [1, 1, 1, 1],
-    showBH: -1,
-    items: [{
-        name: 'pass',
-        value: '审核通过',
-        checked: 'true'
-      },
-      {
-        name: 'reject',
-        value: '驳回'
-      },
-    ],
     ind: 0
   },
-  scroll(e) {
-    console.log(e)
-  },
+ 
   /**
    * 生命周期函数--监听页面加载
    */
@@ -32,22 +19,9 @@ Page({
     this.setData({
       ind: e.currentTarget.dataset.ind
     });
-    console.log(this.data.ind)
   },
 
-  radioChange: function(e) {
-    const index = e.currentTarget.dataset.index;
-    const level = e.detail.value;
-    if (level == 'reject') {
-      this.setData({
-        showBH: index
-      })
-    } else {
-      this.setData({
-        showBH: -1
-      })
-    }
-  },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

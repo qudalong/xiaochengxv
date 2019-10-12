@@ -6,47 +6,105 @@
 </view>
 <!-- 全部 -->
 <view wx:if='{{ind==0}}'>
-  <view wx:for="{{list}}" wx:key="unique" class="list-wrap">
-    <view class="item">张三{{index}}</view>
-    <view class="item">09/12</view>
-    <view class="item">100000{{index}}</view>
-    <view class="item">通灵珠宝{{index}}</view>
-    <view class="item last">
-      <radio-group class="radio-group" data-index="{{index}}" bindchange="radioChange">
-        <label class="radio" wx:for="{{items}}" wx:key="unique">
-          <radio value="{{item.name}}" color="#fe775a" checked="{{item.checked}}" />{{item.value}}
-        </label>
-      </radio-group>
+  <view wx:for="{{list}}" wx:key="unique" class="row">
+    <view class="row1">
+      <view>
+        <text class="mr20">姓名：张三</text>
+        <text>时间：2019-09-09</text>
+      </view>
+      <view class="base-c">审核通过</view>
+    </view>
+    <view class="product-info">
+      <view class="left">
+        <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
+        <view class="info">
+          <view class="name">TRUELE系列男戒</view>
+          <view>标价:¥45912 | 售价:¥45912 | 提成:¥45912</view>
+          <view>业绩:这是一个销售记录的内容</view>
+        </view>
+      </view>
+    </view>
+    <view class="btn-grounp">
+      <view class="but but1">审核通过</view>
+      <view class="but">驳回</view>
     </view>
   </view>
 </view>
 <!-- 待审核 -->
 <view wx:if='{{ind==1}}'>
-  <view wx:for="{{list}}" wx:key="unique" class="list-wrap">
-    <view class="item">张三{{index}}</view>
-    <view class="item">09/12</view>
-    <view class="item">100000{{index}}</view>
-    <view class="item">通灵珠宝{{index}}</view>
-    <view class="item">待审核</view>
+ <view wx:for="{{list}}" wx:key="unique" class="row">
+    <view class="row1">
+      <view>
+        <text class="mr20">姓名：张三</text>
+        <text>时间：2019-09-09</text>
+      </view>
+      <view class="base-c">待审核</view>
+    </view>
+    <view class="product-info">
+      <view class="left">
+        <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
+        <view class="info">
+          <view class="name">TRUELE系列男戒</view>
+          <view>标价:¥45912 | 售价:¥45912 | 提成:¥45912</view>
+          <view>业绩:这是一个销售记录的内容</view>
+        </view>
+      </view>
+    </view>
+    <view class="btn-grounp">
+      <view class="but but1">审核通过</view>
+      <view class="but">驳回</view>
+    </view>
   </view>
 </view>
 <!-- 已通过 -->
 <view wx:if='{{ind==2}}'>
-  <view wx:for="{{list}}" wx:key="unique" class="list-wrap">
-    <view class="item">张三{{index}}</view>
-    <view class="item">100000{{index}}</view>
-    <view class="item">通灵珠宝{{index}}</view>
-    <view class="item">
-      <radio value="1" color="#fe775a" checked="true" />审核通过</view>
+ <view wx:for="{{list}}" wx:key="unique" class="row">
+    <view class="row1">
+      <view>
+        <text class="mr20">姓名：张三</text>
+        <text>时间：2019-09-09</text>
+      </view>
+      <view class="base-c">已通过</view>
+    </view>
+    <view class="product-info">
+      <view class="left">
+        <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
+        <view class="info">
+          <view class="name">TRUELE系列男戒</view>
+          <view>标价:¥45912 | 售价:¥45912 | 提成:¥45912</view>
+          <view>业绩:这是一个销售记录的内容</view>
+        </view>
+      </view>
+    </view>
+    <view class="btn-grounp">
+      <view class="but but1">审核通过</view>
+      <view class="but">驳回</view>
+    </view>
   </view>
 </view>
 <!-- 驳回 -->
 <view wx:if='{{ind==3}}'>
-  <view wx:for="{{list}}" wx:key="unique" class="list-wrap">
-    <view class="item">张三{{index}}</view>
-    <view class="item">09/12</view>
-    <view class="item">100000{{index}}</view>
-    <view class="item">通灵珠宝{{index}}</view>
-    <view class="item">驳回</view>
+ <view wx:for="{{list}}" wx:key="unique" class="row">
+    <view class="row1">
+      <view>
+        <text class="mr20">姓名：张三</text>
+        <text>时间：2019-09-09</text>
+      </view>
+      <view class="base-c">已驳回</view>
+    </view>
+    <view class="product-info">
+      <view class="left">
+        <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
+        <view class="info">
+          <view class="name">TRUELE系列男戒</view>
+          <view>标价:¥45912 | 售价:¥45912 | 提成:¥45912</view>
+          <view>业绩:这是一个销售记录的内容</view>
+        </view>
+      </view>
+    </view>
+    <view class="btn-grounp">
+      <view class="but but1">审核通过</view>
+      <view class="but">驳回</view>
+    </view>
   </view>
 </view>
