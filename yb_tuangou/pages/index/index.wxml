@@ -8,12 +8,12 @@
       <image bindtap="scancode" class="userinfo-shouhuo" data-i="2" mode="cover" src="{{icon.shouhuo}}"></image>
       <text class="wenzi_shouhuo">产品下载</text>
     </view>
-    <view class="tupian">
-      <image bindtap="shangbao" class="userinfo-tuihuo" data-i="3" mode="cover" src="{{icon.tuihuo}}"></image>
+    <view bindtap="shangbao" class="tupian">
+      <image class="userinfo-tuihuo" data-i="3" mode="cover" src="{{icon.tuihuo}}"></image>
       <text class="wenzi_tuihuo">销售上报</text>
     </view>
-    <view class="tupian">
-      <image bindtap="scancode" class="userinfo-tuihuo" data-i="4" mode="cover" src="{{icon.dingdan}}" style="margin-left:120rpx"></image>
+    <view bindtap="xiaoshou" class="tupian">
+      <image class="userinfo-tuihuo" data-i="4" mode="cover" src="{{icon.dingdan}}" style="margin-left:120rpx"></image>
       <text class="wenzi_dingdan" style="margin-left:100rpx">销售等级</text>
     </view>
   </view>

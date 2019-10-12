@@ -35,31 +35,7 @@ Page({
         //     url: "/yb_tuangou/pages/login/index"
         // }), this.getAdInfo();
     },
-  shenhe(){
-    wx.navigateTo({
-      url: '/yb_tuangou/pages/shenheList/shenheList'
-    })
-  },
-  shangbao(){
-    wx.navigateTo({
-      url: '/yb_tuangou/pages/sellLevel/sellLevel'
-    })
-  },
-  bindCkUser() {
-    wx.navigateTo({
-      url: '/yb_tuangou/pages/ckUser/ckUser',
-    })
-  },
-  bindCkSell() {
-    wx.switchTab({
-      url: '/yb_tuangou/pages/ckSell/ckSell',
-    })
-  },
-  bindCkLevel() {
-    wx.navigateTo({
-      url: '/yb_tuangou/pages/ckLevel/ckLevel',
-    })
-  },
+ 
     onShow: function() {
        var url = this.data.icon.fm;
         this.setData({
@@ -117,5 +93,35 @@ Page({
     onShareAppMessage: function() {},
     onPullDownRefresh: function() {
         this.getinfo(), wx.stopPullDownRefresh();
-    }
+    },
+  shenhe() {
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/shenheList/shenheList'
+    })
+  },
+  xiaoshou() {
+    wx.navigateTo({
+      url: ''
+    })
+  },
+  shangbao() {
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/sellLevel/sellLevel'
+    })
+  },
+  bindCkUser() {
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/ckUser/ckUser'
+    })
+  },
+  bindCkSell() {
+    wx.switchTab({
+      url: '/yb_tuangou/pages/ckSell/ckSell'
+    })
+  },
+  bindCkLevel() {
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/ckLevel/ckLevel'
+    })
+  }
 });

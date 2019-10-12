@@ -1,4 +1,7 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "销售登记"
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#ef4423",
+  "navigationBarTitleText": "销售上报",
+  "navigationBarTextStyle": "white"
 }
