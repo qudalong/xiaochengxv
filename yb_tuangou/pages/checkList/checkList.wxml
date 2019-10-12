@@ -7,36 +7,37 @@
 <!-- 全部 -->
 <view wx:if='{{ind==0}}'>
   <view wx:for="{{list}}" wx:key="unique" class="list-wrap">
-      <view class="item">张三{{index}}</view>
-      <view class="item">09/12</view>
-      <view class="item">100000{{index}}</view>
-      <view class="item">通灵珠宝{{index}}</view>
-      <view class="item last">
-        <radio-group class="radio-group" data-index="{{index}}" bindchange="radioChange">
-          <label class="radio" wx:for="{{items}}" wx:key="unique">
-            <radio value="{{item.name}}" color="#fe775a" checked="{{item.checked}}" />{{item.value}}
-          </label>
-        </radio-group>
+    <view class="item">张三{{index}}</view>
+    <view class="item">09/12</view>
+    <view class="item">100000{{index}}</view>
+    <view class="item">通灵珠宝{{index}}</view>
+    <view class="item last">
+      <radio-group class="radio-group" data-index="{{index}}" bindchange="radioChange">
+        <label class="radio" wx:for="{{items}}" wx:key="unique">
+          <radio value="{{item.name}}" color="#fe775a" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </radio-group>
     </view>
   </view>
 </view>
 <!-- 待审核 -->
 <view wx:if='{{ind==1}}'>
-<view wx:for="{{list}}" wx:key="unique" class="list-wrap">
-      <view class="item">张三{{index}}</view>
-      <view class="item">09/12</view>
-      <view class="item">100000{{index}}</view>
-      <view class="item">通灵珠宝{{index}}</view>
-      <view class="item">待审核</view>
+  <view wx:for="{{list}}" wx:key="unique" class="list-wrap">
+    <view class="item">张三{{index}}</view>
+    <view class="item">09/12</view>
+    <view class="item">100000{{index}}</view>
+    <view class="item">通灵珠宝{{index}}</view>
+    <view class="item">待审核</view>
   </view>
 </view>
 <!-- 已通过 -->
 <view wx:if='{{ind==2}}'>
   <view wx:for="{{list}}" wx:key="unique" class="list-wrap">
-      <view class="item">张三{{index}}</view>
-      <view class="item">100000{{index}}</view>
-      <view class="item">通灵珠宝{{index}}</view>
-      <view class="item"><radio value="1" color="#fe775a" checked="true" />审核通过</view>
+    <view class="item">张三{{index}}</view>
+    <view class="item">100000{{index}}</view>
+    <view class="item">通灵珠宝{{index}}</view>
+    <view class="item">
+      <radio value="1" color="#fe775a" checked="true" />审核通过</view>
   </view>
 </view>
 <!-- 驳回 -->
