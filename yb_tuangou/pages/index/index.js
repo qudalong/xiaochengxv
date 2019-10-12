@@ -3,14 +3,32 @@ var e = getApp(), o = e.requirejs("core");
 Page({
     data: {
         icon: e.requirejs("icons"),
-        adUrl: "",
-        adShow: !1,
+        adUrl: '',
+        adShow: true,
         text: "",
         marqueePace: 1,
         marqueeDistance: 0,
         marquee_margin: 30,
         size: 14,
-        interval: 20
+        interval: 20,
+        info:{
+          today_order:{
+            total:11,
+            stay_take:1,
+            stay_cancel:10,
+            already_cancel:0
+          },
+          log_order:{
+            total:30,
+            stay_take:30,
+            already_cancel:10000,
+            stay_cancel:200000
+          },
+          news:{
+            news:'珠宝、珠宝、珠宝'
+          }
+
+        }
     },
     onLoad: function(e) {
         // getApp().getCache("userinfo") || wx.redirectTo({
@@ -18,6 +36,10 @@ Page({
         // }), this.getAdInfo();
     },
     onShow: function() {
+       var url = this.data.icon.fm;
+        this.setData({
+          adUrl: url
+        });
         // getApp().getCache("userinfo") ? this.getinfo() : wx.redirectTo({
         //     url: "/yb_tuangou/pages/login/index"
         // });
@@ -33,6 +55,9 @@ Page({
     },
     scancode: function(e) {
         var t = o.pdata(e).i;
+        if(t==1){
+          this.to_order();
+        }
         wx.scanCode({
             onlyFromCamera: !0,
             success: function(e) {

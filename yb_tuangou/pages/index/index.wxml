@@ -2,19 +2,19 @@
     <view class="userinfo">
         <view bindtap="scancode" class="tupian" data-i="1">
             <image class="userinfo-hexiao" mode="cover" src="{{icon.hexiao}}"></image>
-            <text class="wenzi">核销</text>
+            <text class="wenzi">审核</text>
         </view>
         <view class="tupian">
             <image bindtap="scancode" class="userinfo-shouhuo" data-i="2" mode="cover" src="{{icon.shouhuo}}"></image>
-            <text class="wenzi_shouhuo">收货</text>
+            <text class="wenzi_shouhuo">产品下载</text>
         </view>
         <view class="tupian">
             <image bindtap="scancode" class="userinfo-tuihuo" data-i="3" mode="cover" src="{{icon.tuihuo}}"></image>
-            <text class="wenzi_tuihuo">退货</text>
+            <text class="wenzi_tuihuo">销售上报</text>
         </view>
         <view class="tupian">
-            <image bindtap="scancode" class="userinfo-tuihuo" data-i="4" mode="cover" src="{{icon.dingdan}}" style="margin-left:130rpx"></image>
-            <text class="wenzi_dingdan" style="margin-left:130rpx">订单</text>
+            <image bindtap="scancode" class="userinfo-tuihuo" data-i="4" mode="cover" src="{{icon.dingdan}}" style="margin-left:120rpx"></image>
+            <text class="wenzi_dingdan" style="margin-left:100rpx">销售等级</text>
         </view>
     </view>
     <view class="section">
@@ -27,7 +27,7 @@
     <view class="fengexian_bg"></view>
     <view class="jinridingdan">
         <view class="jinridingdan_wenzi">
-      今日订单
+      待审核
     </view>
         <view class="zongshuliang">
             <view class="zongshuliang_number">
@@ -43,7 +43,7 @@
         {{info.today_order.stay_take}}
       </view>
             <view class="zongshuliang_text1">
-        待收货
+        用户
       </view>
             <view class="zongshuliang_fengexian1"></view>
         </view>
@@ -52,7 +52,7 @@
         {{info.today_order.stay_cancel}}
       </view>
             <view class="zongshuliang_text2">
-        待核销
+        销售记录
       </view>
             <view class="zongshuliang_fengexian2"></view>
         </view>
@@ -61,30 +61,23 @@
         {{info.today_order.already_cancel}}
       </view>
             <view class="zongshuliang_text3">
-        已核销
+        销售等级变动
       </view>
-            <view class="zongshuliang_fengexian3"></view>
+        <!--    <view class="zongshuliang_fengexian3"></view>-->
         </view>
-        <view class="zongshuliang">
-            <view class="zongshuliang_number4">
-        {{info.today_order.stay_return}}
-      </view>
-            <view class="zongshuliang_text4">
-        待退货
-      </view>
-        </view>
+        
     </view>
     <view class="fengexian_bg"></view>
     <view class="jinridingdan">
         <view class="jinridingdan_wenzi">
-      历史订单
+      总览
     </view>
         <view class="zongshuliang">
             <view class="zongshuliang_number">
         {{info.log_order.total}}
       </view>
             <view class="zongshuliang_text">
-        总数量
+        用户总数
       </view>
             <view class="zongshuliang_fengexian"></view>
         </view>
@@ -93,7 +86,7 @@
       {{info.log_order.stay_take}}
       </view>
             <view class="zongshuliang_text1">
-        待收货
+        产品总数
       </view>
             <view class="zongshuliang_fengexian1"></view>
         </view>
@@ -102,7 +95,7 @@
         {{info.log_order.stay_cancel}}
       </view>
             <view class="zongshuliang_text2">
-        待核销
+        销售总额
       </view>
             <view class="zongshuliang_fengexian2"></view>
         </view>
@@ -111,18 +104,19 @@
         {{info.log_order.already_cancel}}
       </view>
             <view class="zongshuliang_text3">
-        已核销
+        昨日销售额
       </view>
-            <view class="zongshuliang_fengexian3"></view>
+         <!--<view class="zongshuliang_fengexian3"></view>-->
         </view>
-        <view class="zongshuliang">
-            <view class="zongshuliang_number4">
-        {{info.log_order.stay_return}}
-      </view>
-            <view class="zongshuliang_text4">
-        待退货
-      </view>
-        </view>
+        
+    </view>
+    
+     <view class="fengexian_bg"></view>
+    <view class="jinridingdan1">
+        <view class="jinridingdan_wenzi">
+      产品推荐
+    </view>
+     
     </view>
     <view class="fengexian_bg1">
         <image bindtap="bindViewTap" class="userinfo-tuceng" mode="cover" src="{{adUrl}}" wx:if="{{adShow}}"></image>
