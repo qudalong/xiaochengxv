@@ -44,7 +44,7 @@
         <view class="zongshuliang_text1">用户</view>
         <view class="zongshuliang_fengexian1"></view>
       </view>
-      <view bindtap="bindCkSell" class="zongshuliang" style="background:red">
+      <view bindtap="bindCkSell" class="zongshuliang">
         <view class="zongshuliang_number1">
           {{info.today_order.stay_cancel}}
         </view>
