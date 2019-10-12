@@ -1,7 +1,11 @@
 {
   "pages": [
-    "yb_tuangou/pages/checkList/checkList",
     "yb_tuangou/pages/index/index",
+    "yb_tuangou/pages/ckSell/ckSell",
+    "yb_tuangou/pages/shenheList/shenheList",
+    "yb_tuangou/pages/ckLevel/ckLevel",
+    "yb_tuangou/pages/ckUser/ckUser",
+    "yb_tuangou/pages/checkList/checkList",
     "yb_tuangou/pages/sellLevel/sellLevel",
     "yb_tuangou/pages/order/index",
     "yb_tuangou/pages/add_product/add_product",
@@ -50,8 +54,8 @@
         "selectedIconPath": "yb_tuangou/static/images/shouye2@2x.png"
       },
       {
-        "pagePath": "yb_tuangou/pages/order/index",
-        "text": "订单",
+        "pagePath": "yb_tuangou/pages/ckSell/ckSell",
+        "text": "销售记录",
         "iconPath": "yb_tuangou/static/images/dingdan_footer.png",
         "selectedIconPath": "yb_tuangou/static/images/dingdan2@2x.png"
       },

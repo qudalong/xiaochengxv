@@ -30,7 +30,7 @@
       待审核
     </view>
     <view class="row">
-      <view class="zongshuliang">
+      <view bindtap="shenhe" class="zongshuliang">
         <view class="zongshuliang_number1">
           {{info.today_order.total}}
         </view>
@@ -39,16 +39,12 @@
         </view>
         <view class="zongshuliang_fengexian1"></view>
       </view>
-      <view class="zongshuliang">
-        <view class="zongshuliang_number1">
-          {{info.today_order.stay_take}}
-        </view>
-        <view class="zongshuliang_text1">
-          用户
-        </view>
+      <view bindtap="bindCkUser" class="zongshuliang">
+        <view class="zongshuliang_number1">{{info.today_order.stay_take}}</view>
+        <view class="zongshuliang_text1">用户</view>
         <view class="zongshuliang_fengexian1"></view>
       </view>
-      <view class="zongshuliang">
+      <view bindtap="bindCkSell" class="zongshuliang" style="background:red">
         <view class="zongshuliang_number1">
           {{info.today_order.stay_cancel}}
         </view>
@@ -57,7 +53,7 @@
         </view>
         <view class="zongshuliang_fengexian1"></view>
       </view>
-      <view class="zongshuliang">
+      <view bindtap="bindCkLevel" class="zongshuliang">
         <view class="zongshuliang_number1">
           {{info.today_order.already_cancel}}
         </view>

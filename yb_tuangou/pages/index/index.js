@@ -37,12 +37,27 @@ Page({
     },
   shenhe(){
     wx.navigateTo({
-      url: '/yb_tuangou/pages/checkList/checkList'
+      url: '/yb_tuangou/pages/shenheList/shenheList'
     })
   },
   shangbao(){
     wx.navigateTo({
       url: '/yb_tuangou/pages/sellLevel/sellLevel'
+    })
+  },
+  bindCkUser() {
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/ckUser/ckUser',
+    })
+  },
+  bindCkSell() {
+    wx.switchTab({
+      url: '/yb_tuangou/pages/ckSell/ckSell',
+    })
+  },
+  bindCkLevel() {
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/ckLevel/ckLevel',
     })
   },
     onShow: function() {

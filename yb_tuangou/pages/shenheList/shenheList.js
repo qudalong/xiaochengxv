@@ -1,75 +1,81 @@
-// yb_tuangou/pages/checkList/checkList.js
+// yb_tuangou/pages/shenheList/shenheList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [1, 1, 1, 1],
-    ind: 0
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
 
   },
-  tapItem(e) {
-    this.setData({
-      ind: e.currentTarget.dataset.ind
-    });
+  bindCkUser(){
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/ckUser/ckUser',
+    })
   },
-
+  bindCkSell(){
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/ckSell/ckSell',
+    })
+  },
+  bindCkLevel(){
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/ckLevel/ckLevel',
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
+  onShow: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
-    // wx.showLoading({
-    //   title: '刷新中...'
-    // })
+  onPullDownRefresh: function () {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   }
 })

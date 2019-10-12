@@ -1,4 +1,7 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "添加产品"
+  "backgroundTextStyle": "light",
+  "navigationBarBackgroundColor": "#ef4423",
+  "navigationBarTitleText": "添加产品",
+  "navigationBarTextStyle": "white"
 }

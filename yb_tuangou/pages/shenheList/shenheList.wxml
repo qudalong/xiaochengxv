@@ -1,0 +1,17 @@
+<view class="section">
+  <view bindtap="bindCkUser" class="section_suju" data-index="2">
+    <image class="userinfo-shuju" mode="cover" src="/yb_tuangou/static/images/wode2@2x.png"></image>
+    <text class="suju_text">用户审核</text>
+    <image class="userinfo-right" mode="cover" src="/yb_tuangou/static/images/member_img/icon_right@2x.png"></image>
+  </view>
+  <view bindtap="bindCkSell" class="section_suju" data-index="3">
+    <image class="userinfo-shuju" mode="cover" src="/yb_tuangou/static/images/dingdan2@2x.png"></image>
+    <text class="suju_text">销售记录审核</text>
+    <image class="userinfo-right" mode="cover" src="/yb_tuangou/static/images/member_img/icon_right@2x.png"></image>
+  </view>
+  <view bindtap="bindCkLevel" class="section_suju" data-index="4" style="border:none">
+    <image class="userinfo-shuju" mode="cover" src="/yb_tuangou/static/images/member_img/shuju@2x.png"></image>
+    <text class="suju_text">销售等级审核</text>
+    <image class="userinfo-right" mode="cover" src="/yb_tuangou/static/images/member_img/icon_right@2x.png"></image>
+  </view>
+</view>
