@@ -1,4 +1,6 @@
 // yb_tuangou/pages/add_classify/add_classify.js
+var o = getApp(),
+  n = o.requirejs("core");
 Page({
 
   /**
@@ -28,6 +30,29 @@ Page({
         });
         return
     }
+
+    var title = this.data.classifyName;
+    //提交
+    n.post("wx/product/addprocate.html", {
+      title: title
+    }, function (data) {
+
+      if (data.code == 0) {
+        n.error(
+          data.info
+        );
+        return;
+      } else {
+        n.success("添加成功!");
+        setTimeout(function () {
+          n.jump("/yb_tuangou/pages/product/product", 3);
+        }, 1e3);
+      }
+      // console.log(data);
+
+    });
+
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
