@@ -19,6 +19,7 @@ Page({
         });
     },
     onLoad: function(o) {
+      console.log(getApp().getCache("userinfo"));
         getApp().getCache("userinfo") || wx.redirectTo({
             url: "/yb_tuangou/pages/login/index"
         });

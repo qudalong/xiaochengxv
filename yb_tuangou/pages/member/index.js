@@ -9,6 +9,9 @@ Page({
     },
     bindViewTap: function(n) {
         var e = t.pdata(n).index;
+        if(e == 9){
+          t.jump("/yb_tuangou/pages/change_password/index")
+        }
         console.log(123), 1 == e ? t.jump("/yb_tuangou/pages/member/index") : 2 == e ? t.jump("/yb_tuangou/pages/jingying/index") : 3 == e ? t.jump("/yb_tuangou/pages/yongjin/index") : 4 == e ? t.jump("/yb_tuangou/pages/tixianguanli/index") : 6 == e ? t.jump("/yb_tuangou/pages/policy/index") : 7 == e && t.jump("/yb_tuangou/pages/change_data/index");
     },
     onLoad: function(n) {
@@ -17,6 +20,7 @@ Page({
         }), this.getinfo();
     },
     getinfo: function(n) {
+      return;
         var e = this;
         t.get("commander/CommanderCenter", {
             id: getApp().getCache("userinfo").id
@@ -32,6 +36,15 @@ Page({
             is_copyright: !n
         });
     },
+  btnViewTap: function () {
+    wx.showModal({
+      title: "提示",
+      content: "退出当前账号",
+      success: function (n) {
+        n.confirm ? (console.log("用户点击确定"), e.jump("/yb_tuangou/pages/login/index", 3)) : console.log("用户点击取消");
+      }
+    });
+  },
     onReady: function() {},
     tapName: function(n) {
         var e = t.pdata(n);
