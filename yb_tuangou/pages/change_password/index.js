@@ -25,15 +25,18 @@ Page({
         });
     },
     change_password: function(o, e) {
-        console.log("11221");
-        s.get("commander/UpdatePassword", {
+        
+      s.get("wx/user/mdypwd.html", {
             id: getApp().getCache("userinfo").id,
-            password: e,
-            old_password: o
+            newpwd: e,
+            oldpwd: o
         }, function(o) {
-            console.log(o), 0 == o.code ? (s.success("修改成功！"), setTimeout(function() {
+          console.log(o), 1 == o.code ? (s.success(o.info), setTimeout(function() {
                 s.jump("/yb_tuangou/pages/login/index", 3);
-            }, 1e3)) : s.alert(o.msg);
+            }, 1e3)) : wx.showToast({
+              title: o.info,
+              icon: 'none'
+            });;
         });
     },
     onReady: function() {},
