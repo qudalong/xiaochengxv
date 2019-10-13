@@ -1,0 +1,12 @@
+<!--yb_tuangou/pages/yqm/yqm.wxml-->
+  <view class="form_box">
+    <view class="form_li">
+      <view class="lable">邀请码:</view>
+      <input  disabled="true" class="inp" value="{{yqm1}}"  type="text"  ></input>
+    </view>
+    <view class="form_btn_box">
+      <button bindtap="addClassify" class="form_btn">
+        <text>{{btnname}}</text>
+      </button>
+    </view>
+  </view>

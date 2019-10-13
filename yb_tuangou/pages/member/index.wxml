@@ -33,7 +33,7 @@
             <text class="suju_text">修改密码</text>
             <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
         </view>
-        <view bindtap="bindViewTap" class="section_suju" data-index="4" style="border:none">
+        <view bindtap="bindViewTap" class="section_suju" data-index="14" style="border:none">
             <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.tixian}}"></image>
             <text class="suju_text">邀请码</text>
             <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>

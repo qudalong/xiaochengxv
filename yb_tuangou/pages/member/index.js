@@ -11,6 +11,8 @@ Page({
         var e = t.pdata(n).index;
         if(e == 9){
           t.jump("/yb_tuangou/pages/change_password/index")
+        }else if(e ==14){
+          t.jump("/yb_tuangou/pages/yqm/yqm")
         }
         console.log(123), 1 == e ? t.jump("/yb_tuangou/pages/member/index") : 2 == e ? t.jump("/yb_tuangou/pages/jingying/index") : 3 == e ? t.jump("/yb_tuangou/pages/yongjin/index") : 4 == e ? t.jump("/yb_tuangou/pages/tixianguanli/index") : 6 == e ? t.jump("/yb_tuangou/pages/policy/index") : 7 == e && t.jump("/yb_tuangou/pages/change_data/index");
     },

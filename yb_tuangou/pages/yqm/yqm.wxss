@@ -1,0 +1,2 @@
+/* yb_tuangou/pages/yqm/yqm.wxss */
+@import '../add_product/add_product.wxss';
