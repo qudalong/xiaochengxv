@@ -1,0 +1,41 @@
+<!-- 查询 -->
+<view class="serch">
+  <view bindtap="showPicker" wx:if='{{!month}}' class="serchBox gary">请选择查询时间</view>
+  <view bindtap="showPicker" wx:if='{{month}}' class="serchBox">{{month}}月</view>
+  <view class="but serchBtn">查询</view>
+</view>
+<!-- 列表 -->
+<view wx:for="{{list}}" wx:key="unique" class="row">
+  <view class="row1">
+    <view>
+      <text class="mr20">姓名：张三</text>
+      <text>时间：2019-09-09</text>
+    </view>
+    <!-- <view class="base-c">审核通过</view> -->
+  </view>
+  <view class="product-info">
+    <view class="left">
+      <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
+      <view class="info">
+        <view class="name">TRUELE系列男戒</view>
+        <view>标价:¥45912 | 售价:¥45912 | 提成:¥45912</view>
+        <view>业绩:这是一个销售记录的内容</view>
+      </view>
+    </view>
+  </view>
+  <view class="btn-grounp">
+    <view class="but but1">导出</view>
+  </view>
+</view>
+<!-- 自定义月选择器 -->
+<view wx:if="{{showPicker}}" class="dialog">
+  <view class="btns">
+    <view bindtap="hidePicker">取消</view>
+    <view bindtap="bindSure" class="sure">确定</view>
+  </view>
+  <picker-view indicator-style="height: 50px;" value="{{value}}" bindchange="bindChange" class="picker-view">
+    <picker-view-column>
+      <view wx:for="{{months}}" wx:key="unique" style="line-height: 50px">{{item}}月</view>
+    </picker-view-column>
+  </picker-view>
+</view>

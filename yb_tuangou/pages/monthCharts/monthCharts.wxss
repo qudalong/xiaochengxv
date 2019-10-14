@@ -1,0 +1,62 @@
+@import '../ckLevel/ckLevel';
+
+.serch {
+  padding: 30rpx 0;
+  display: flex;
+  align-items: center;
+  margin-left: 14%;
+}
+
+.serchBox {
+  display: inline-block;
+  background: #fff;
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 400rpx;
+  padding-left: 20rpx;
+  border-radius: 6rpx 0 0 6rpx;
+}
+
+.serchBtn {
+  display: inline-block;
+  border-radius: 0 6rpx 6rpx 0;
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 40px;
+  text-align: center;
+  padding: 0 30rpx;
+}
+
+.serchBtn:hover {
+  opacity: 0.8;
+}
+
+/* 自定义月份选择器 */
+
+.picker-view {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 300rpx;
+  text-align: center;
+  z-index: 999;
+  background: #fff;
+}
+
+.btns {
+  box-sizing: border-box;
+  z-index: 999;
+  background: #fff;
+  position: fixed;
+  left: 0;
+  bottom: 300rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30rpx;
+}
+.sure{
+  color: #00B26A;
+}

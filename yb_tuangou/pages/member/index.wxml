@@ -1,47 +1,52 @@
 <view class="box">
-    <view class="top"></view>
-    <view class="jieshao">
-        <image bindtap="bindViewTap" class="userinfo-timg" mode="aspectFill" src="{{userinfo.community_img?userinfo.community_img:'/yb_tuangou/static/images/moren.png'}}"></image>
-        <view class="name">{{userinfo.name}}</view>
-        <view bindtap="tapName" class="name_dongtai" data-hi="WeChat" data-name="1" id="tapTest">{{userinfo.detail_address}}</view>
-        
-        <image bindtap="bindViewTap" class="userinfo-bianji" data-index="7" mode="cover" src="{{icon.bianji}}"></image>
-        <view class="yongjin">
-            <view class="yongjin_left">
-                <view class="left_num">
-     {{userinfo.after_commission}}
-     </view>
-                <view class="left_text">销售等级</view>
-                <view class="fengexian"></view>
-            </view>
-            <view class="yongjin_right">
-                <view class="left_num">
-     {{userinfo.before_commission}}
-     </view>
-                <view class="left_text">用户级别</view>
-            </view>
+  <view class="top"></view>
+  <view class="jieshao">
+    <image bindtap="bindViewTap" class="userinfo-timg" mode="aspectFill" src="{{userinfo.community_img?userinfo.community_img:'/yb_tuangou/static/images/moren.png'}}"></image>
+    <view class="name">{{userinfo.name}}</view>
+    <view bindtap="tapName" class="name_dongtai" data-hi="WeChat" data-name="1" id="tapTest">{{userinfo.detail_address}}</view>
+
+    <image bindtap="bindViewTap" class="userinfo-bianji" data-index="7" mode="cover" src="{{icon.bianji}}"></image>
+    <view class="yongjin">
+      <view class="yongjin_left">
+        <view class="left_num">
+          {{userinfo.after_commission}}
         </view>
+        <view class="left_text">销售等级</view>
+        <view class="fengexian"></view>
+      </view>
+      <view class="yongjin_right">
+        <view class="left_num">
+          {{userinfo.before_commission}}
+        </view>
+        <view class="left_text">用户级别</view>
+      </view>
     </view>
-    <view class="section">
-        <view bindtap="bindViewTap" class="section_suju" data-index="2">
-            <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.shuju}}"></image>
-            <text class="suju_text">销售趋势</text>
-            <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
-        </view>
-        <view bindtap="bindViewTap" class="section_suju" data-index="9">
-            <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.yongjin}}"></image>
-            <text class="suju_text">修改密码</text>
-            <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
-        </view>
-        <view bindtap="bindViewTap" class="section_suju" data-index="14" style="border:none">
-            <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.tixian}}"></image>
-            <text class="suju_text">邀请码</text>
-            <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
-        </view>
+  </view>
+  <view class="section">
+    <view bindtap="bindViewTap" class="section_suju" data-index="1">
+      <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="/yb_tuangou/static/images/member_img/baobiao@2x.png"></image>
+      <text class="suju_text">月报表</text>
+      <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
     </view>
-    <view class="fengexian_bg"></view>
-    <!-- -->
-    <view class="lianxi">
+    <view bindtap="bindViewTap" class="section_suju" data-index="2">
+      <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.shuju}}"></image>
+      <text class="suju_text">销售趋势</text>
+      <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
+    </view>
+    <view bindtap="bindViewTap" class="section_suju" data-index="9">
+      <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.yongjin}}"></image>
+      <text class="suju_text">修改密码</text>
+      <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
+    </view>
+    <view bindtap="bindViewTap" class="section_suju" data-index="14" style="border:none">
+      <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.tixian}}"></image>
+      <text class="suju_text">邀请码</text>
+      <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
+    </view>
+  </view>
+  <view class="fengexian_bg"></view>
+  <!-- -->
+  <view class="lianxi">
     <!-- 
         <view class="section_suju">
             <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.kefu}}"></image>
@@ -67,19 +72,19 @@
                 <contact-button class="user_service" sessionFrom="weapp" size="20" type="default-light"></contact-button>
             </view>
         </view>-->
-        <view bindtap="bindViewTap" class="section_suju" data-index="6">
-            <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.yinsi}}"></image>
-            <text class="suju_text">排行</text>
-            <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
-        </view>
-
-         <view bindtap="btnViewTap" class="section_suju" data-index="6">
-            <image bindtap="btnViewTap" class="userinfo-shuju" mode="cover" src="{{icon.jiantou}}"></image>
-            <text class="suju_text">退出登录</text>
-          
-        </view>
+    <view bindtap="bindViewTap" class="section_suju" data-index="6">
+      <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.yinsi}}"></image>
+      <text class="suju_text">排行</text>
+      <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
     </view>
+
+    <view bindtap="btnViewTap" class="section_suju" data-index="6">
+      <image bindtap="btnViewTap" class="userinfo-shuju" mode="cover" src="{{icon.jiantou}}"></image>
+      <text class="suju_text">退出登录</text>
+
+    </view>
+  </view>
 </view>
 <view bindlongpress="copyright" class="wx_app_copyright" style="height:4vh;">
-    <text wx:if="{{is_copyright}}"> v{{version}}</text>
+  <text wx:if="{{is_copyright}}"> v{{version}}</text>
 </view>

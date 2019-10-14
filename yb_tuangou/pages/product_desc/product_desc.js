@@ -10,7 +10,9 @@ Page({
     vertical: false,
     autoplay: false,
     interval: 2000,
-    duration: 500
+    duration: 500,
+    src:'',
+    tapStatus:false
   },
 
   /**
@@ -19,11 +21,57 @@ Page({
   onLoad: function(options) {
 
   },
-  previewImage(e) {
-    wx.previewImage({
-      current: e.target.dataset.src,
-      urls: this.data.imgs 
+  downloadImg(e) {　　　　　　　　　　　　　　　
+    wx.downloadFile({
+      url: this.data.src,
+      success: (res) => {　　　　　　　　　　　　
+        wx.saveImageToPhotosAlbum({　　　　　　　　　
+          filePath: res.tempFilePath,
+          success(res) {
+            wx.showToast({
+              title: '下载成功',
+              icon: 'success',
+              duration: 2000
+            })
+          },
+          fail: function(err) {
+            if (err.errMsg === "saveImageToPhotosAlbum:fail auth deny") {
+              wx.openSetting({
+                success(settingdata) {
+                  console.log(settingdata)
+                  if (settingdata.authSetting['scope.writePhotosAlbum']) {
+                    console.log('获取权限成功，给出再次点击图片保存到相册的提示。')
+                    wx.showToast({
+                      title: '成功授权，请再次下载',
+                      icon: 'success',
+                      duration: 2000
+                    })
+                  } else {
+                    wx.showToast({
+                      title: '请先授权',
+                      icon: 'success',
+                      duration: 2000
+                    })
+                    console.log('获取权限失败，给出不给权限就无法正常使用的提示')
+                  }
+                }
+              })
+            }
+          }
+        })
+      }
     })
+  },
+  closeBigImg(){
+    this.setData({
+      tapStatus: false
+    });
+  },
+  previewImage(e) {
+    this.setData({
+      src: e.target.dataset.src,
+      tapStatus:true
+    });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

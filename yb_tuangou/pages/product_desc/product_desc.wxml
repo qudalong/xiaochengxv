@@ -10,3 +10,8 @@
     金刚石俗称“金刚钻”。也就是我们常说的钻石的原身，它是一种由碳元素组成的矿物，是碳元素的同素异形体。金刚石是自然界中天然存在的最坚硬的物质。金刚石的用途非常广泛，例如：工艺品、工业中的切割工具。石墨可以在高温、高压下形成人造金刚石。也是贵重宝石。
   </view>
 </view>
+<!-- 图片下预览和下载-->
+<view bindtap="closeBigImg" wx:if="{{tapStatus}}" class="bigImgBg">
+  <image mode="aspectFit" class="bigImg" data-url="{{src}}" src="{{src}}"></image>
+</view>
+<view bindtap="downloadImg" wx:if="{{tapStatus}}" data-url="{{src}}" class="downloadImg">下载图片</view>
