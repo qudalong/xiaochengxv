@@ -110,4 +110,4 @@
   </view>
 </view>
 <!-- 悬浮按钮 -->
-<view class="add-btn">+</view>
+<view bindtap="toShangBao" class="add-btn">+</view>

@@ -1,9 +1,9 @@
 {
   "pages": [
     "yb_tuangou/pages/index/index",
+    "yb_tuangou/pages/sellLevel/sellLevel",        
     "yb_tuangou/pages/ckUser/ckUser",
     "yb_tuangou/pages/ck/ckDesc",
-    "yb_tuangou/pages/sellLevel/sellLevel",        
     "yb_tuangou/pages/product_desc/product_desc",
     "yb_tuangou/pages/add_product/add_product",
     "yb_tuangou/pages/product/product",

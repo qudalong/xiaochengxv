@@ -15,6 +15,11 @@ Page({
   onLoad: function (options) {
 
   },
+  toShangBao() {
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/sellLevel/sellLevel'
+    })
+  },
   toDesc() {
     wx.navigateTo({
       url: '/yb_tuangou/pages/ck/ckDesc'

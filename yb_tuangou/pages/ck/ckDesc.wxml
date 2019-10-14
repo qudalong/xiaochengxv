@@ -42,7 +42,7 @@
   </view>
 </view>
 <!-- 弹窗 -->
-<view wx:if="{{showDia}}" class="dialog">
+<view wx:if="{{showDia}}" class="dialog" >
   <view class="center-con">
     <textarea class="textarea" maxlength="-1" placeholder="请输入驳回原因"></textarea>
     <view class="btn-grounp">
