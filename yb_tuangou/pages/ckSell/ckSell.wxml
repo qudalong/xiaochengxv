@@ -7,7 +7,7 @@
 </view>
 <!-- 全部 -->
 <view wx:if='{{ind==0}}'>
-  <view wx:for="{{list}}" wx:key="unique" class="row">
+  <view  bindtap="toDesc" wx:for="{{list}}" wx:key="unique" class="row">
     <view class="row1">
       <view>
         <text class="mr20">姓名：张三</text>

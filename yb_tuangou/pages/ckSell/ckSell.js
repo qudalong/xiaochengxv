@@ -15,6 +15,11 @@ Page({
   onLoad: function (options) {
 
   },
+  toDesc() {
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/ck/ckDesc'
+    })
+  },
   tapItem(e) {
     this.setData({
       ind: e.currentTarget.dataset.ind

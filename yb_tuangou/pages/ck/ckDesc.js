@@ -1,12 +1,11 @@
-// yb_tuangou/pages/checkList/checkList.js
+// yb_tuangou/pages/ck/ckDesc.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [1, 1, 1, 1],
-    ind: 0
+    showDia:false
   },
 
   /**
@@ -15,17 +14,17 @@ Page({
   onLoad: function (options) {
 
   },
-  toDesc() {
-    wx.navigateTo({
-      url: '/yb_tuangou/pages/ck/ckDesc'
+  reject(){
+    this.setData({
+      showDia:true
     })
   },
-  tapItem(e) {
+  hideDia(){
+    console.log('123')
     this.setData({
-      ind: e.currentTarget.dataset.ind
-    });
+      showDia:false
+    })
   },
-
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -59,9 +58,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    // wx.showLoading({
-    //   title: '刷新中...'
-    // })
+
   },
 
   /**

@@ -1,0 +1,53 @@
+ <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
+<view class="block">
+  <view class="title">
+    <view>用户信息</view>
+    <view class="btn-grounp">
+      <view class="but but1">审核通过</view>
+      <view bindtap="reject" class="but">驳回</view>
+    </view>
+  </view>
+  <view class="group-row">
+    <view class="row">
+      <view class="label">姓名:</view>
+      <view class="cont">张三</view>
+    </view>
+    <view class="row">
+      <view class="label">时间:</view>
+      <view class="cont">2019-09-09</view>
+    </view>
+    <view class="row">
+      <view class="label">审核状态:</view>
+      <view class="cont">审核通过</view>
+    </view>
+  </view>
+</view>
+<view class="block">
+  <view class="title">
+    <view>商品信息</view>
+  </view>
+  <view class="group-row">
+    <view class="row">
+      <view class="label">商品名称:</view>
+      <view class="cont">TRUELE系列男戒</view>
+    </view>
+    <view class="row">
+      <view class="label">价格:</view>
+      <view class="cont">￥45912</view>
+    </view>
+    <view class="row">
+      <view class="label">业绩:</view>
+      <view class="cont">这是一个销售记录的内容</view>
+    </view>
+  </view>
+</view>
+<!-- 弹窗 -->
+<view wx:if="{{showDia}}" class="dialog">
+  <view class="center-con">
+    <textarea class="textarea" maxlength="-1" placeholder="请输入驳回原因"></textarea>
+    <view class="btn-grounp">
+      <view catchtap="hideDia" class="but">取消</view>
+      <view catchtap="hideDia" class="but but1">提交</view>
+    </view>
+  </view>
+</view>

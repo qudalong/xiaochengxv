@@ -7,6 +7,7 @@
 .good-info {
   padding: 10rpx 30rpx 20rpx;
   font-size: 30rpx;
+  line-height: 1.6;
 }
 
 .imgUrl {

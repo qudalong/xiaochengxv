@@ -1,10 +1,12 @@
 <view class='cover-detail'>
-  <image class='imgUrl' mode="widthFix" src="https://mp.ucloudant.com/attachment/images/56/2018/09/Ax6G5tiRIOHM5imiG6Z8M2t8rhLOm5.jpg"></image>
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="#2C9F67">
+    <block wx:for="{{imgs}}" wx:key="*this">
+      <swiper-item>
+        <image bindtap='previewImage' data-src="{{item}}" class='imgUrl' mode="widthFix" src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
   <view class='good-info'>
-    <view class='name'>大吉大利比萨</view>
-    <view class='details'>比萨好吃不贵</view>
-    <view class='row row-line'>
-      <view class='money'>￥ 12.00</view>
-    </view>
+    金刚石俗称“金刚钻”。也就是我们常说的钻石的原身，它是一种由碳元素组成的矿物，是碳元素的同素异形体。金刚石是自然界中天然存在的最坚硬的物质。金刚石的用途非常广泛，例如：工艺品、工业中的切割工具。石墨可以在高温、高压下形成人造金刚石。也是贵重宝石。
   </view>
 </view>
