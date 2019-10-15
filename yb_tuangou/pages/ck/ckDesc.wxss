@@ -82,4 +82,5 @@
 }
 .img{
   min-height: 300rpx;
+  width: 100%;
 }
