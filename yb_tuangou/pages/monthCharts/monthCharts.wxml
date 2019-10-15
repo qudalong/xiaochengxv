@@ -5,26 +5,28 @@
   <view class="but serchBtn">查询</view>
 </view>
 <!-- 列表 -->
-<view wx:for="{{list}}" wx:key="unique" class="row">
-  <view class="row1">
-    <view>
-      <text class="mr20">姓名：张三</text>
-      <text>时间：2019-09-09</text>
+<view class="lis">
+  <view wx:for="{{list}}" wx:key="unique" class="row">
+    <view class="row1">
+      <view>
+        <text class="mr20">姓名：张三</text>
+        <text>时间：2019-09-09</text>
+      </view>
+      <!-- <view class="base-c">审核通过</view> -->
     </view>
-    <!-- <view class="base-c">审核通过</view> -->
-  </view>
-  <view class="product-info">
-    <view class="left">
-      <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
-      <view class="info">
-        <view class="name">TRUELE系列男戒</view>
-        <view>标价:¥45912 | 售价:¥45912 | 提成:¥45912</view>
-        <view>业绩:这是一个销售记录的内容</view>
+    <view class="product-info">
+      <view class="left">
+        <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
+        <view class="info">
+          <view class="name">TRUELE系列男戒</view>
+          <view>标价:¥45912 | 售价:¥45912 | 提成:¥45912</view>
+          <view>业绩:这是一个销售记录的内容</view>
+        </view>
       </view>
     </view>
-  </view>
-  <view class="btn-grounp">
-    <view class="but but1">导出</view>
+    <view class="btn-grounp">
+      <view class="but but1">导出</view>
+    </view>
   </view>
 </view>
 <!-- 自定义月选择器 -->

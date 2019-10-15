@@ -8,6 +8,13 @@ page {
   justify-content: space-around;
   border-bottom: 1px solid #f0f0f0;
   background: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.row:first-child{
+  margin-top: 120rpx;
 }
 
 .title .item {

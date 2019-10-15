@@ -4,9 +4,16 @@
   padding: 30rpx 0;
   display: flex;
   align-items: center;
-  margin-left: 14%;
+  padding-left: 14%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #f0f0f0;
 }
-
+.lis{
+  margin-top: 102rpx;
+}
 .serchBox {
   display: inline-block;
   background: #fff;
