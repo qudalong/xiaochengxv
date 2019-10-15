@@ -35,7 +35,7 @@
       <view class="label">价格:</view>
       <view class="cont">￥45912</view>
     </view>
-    <view class="row">
+    <view class="row" style="border:none">
       <view class="label">业绩:</view>
       <view class="cont">这是一个销售记录的内容</view>
     </view>
