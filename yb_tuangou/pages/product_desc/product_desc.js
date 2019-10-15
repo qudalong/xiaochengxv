@@ -40,7 +40,6 @@ Page({
                 success(settingdata) {
                   console.log(settingdata)
                   if (settingdata.authSetting['scope.writePhotosAlbum']) {
-                    console.log('获取权限成功，给出再次点击图片保存到相册的提示。')
                     wx.showToast({
                       title: '成功授权，请再次下载',
                       icon: 'success',
@@ -52,7 +51,6 @@ Page({
                       icon: 'success',
                       duration: 2000
                     })
-                    console.log('获取权限失败，给出不给权限就无法正常使用的提示')
                   }
                 }
               })
