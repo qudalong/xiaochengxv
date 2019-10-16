@@ -5,14 +5,15 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgs: ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571027970665&di=b16fc45c50c2619195b8c848f485b73c&imgtype=0&src=http%3A%2F%2Fphoto.16pic.com%2F00%2F50%2F08%2F16pic_5008652_b.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571027970665&di=c3bfacd0ccc853f525b3525e86099d7e&imgtype=0&src=http%3A%2F%2Fpic2.cxtuku.com%2F00%2F07%2F22%2Fb911baf2ca66.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571027970663&di=4bfda92fcd053ac0223f246590cd387c&imgtype=0&src=http%3A%2F%2Fpic45.nipic.com%2F20140715%2F10657291_172631119640_2.jpg'],
+    imgs: ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571221567475&di=bc9da921fb1bf76978efa1d8659acd58&imgtype=0&src=http%3A%2F%2Fimg3.qjy168.com%2Fprovide%2F2015%2F01%2F26%2F5659968_20150126092733.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571221567474&di=cc261e4313732c19de6a795d05d9133a&imgtype=0&src=http%3A%2F%2Fimg1.juimg.com%2F140928%2F330630-14092PJ32495.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571027970663&di=4bfda92fcd053ac0223f246590cd387c&imgtype=0&src=http%3A%2F%2Fpic45.nipic.com%2F20140715%2F10657291_172631119640_2.jpg'],
     indicatorDots: true,
     vertical: false,
     autoplay: false,
     interval: 2000,
     duration: 500,
-    src:'',
-    tapStatus:false
+    tapStatus: false,
+    src: '',
+    ind: 0
   },
 
   /**
@@ -20,6 +21,21 @@ Page({
    */
   onLoad: function(options) {
 
+  },
+  // 切換下載
+  changeItem(e) {
+    let {
+      imgs
+    } = this.data;
+    var ind = e.detail.current;
+    for (let i in imgs) {
+      if (ind == i) {
+        this.setData({
+          ind,
+          src: imgs[i]
+        });
+      }
+    }
   },
   downloadImg(e) {　　　　　　　　　　　　　　　
     wx.downloadFile({
@@ -60,7 +76,7 @@ Page({
       }
     })
   },
-  closeBigImg(){
+  closeBigImg() {
     this.setData({
       tapStatus: false
     });
@@ -68,7 +84,7 @@ Page({
   previewImage(e) {
     this.setData({
       src: e.target.dataset.src,
-      tapStatus:true
+      tapStatus: true
     });
   },
   /**
