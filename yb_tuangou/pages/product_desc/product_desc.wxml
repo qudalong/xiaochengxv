@@ -1,5 +1,5 @@
 <view class='cover-detail'>
-  <swiper bindchange='changeItem' indicator-dots="{{indicatorDots}}"  autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="#2C9F67">
+  <swiper bindchange='changeItem' indicator-dots="{{indicatorDots}}" current='{{ind}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="#2C9F67">
     <block wx:for="{{imgs}}" wx:key="*this">
       <swiper-item item-id>
         <image bindtap='previewImage' data-src="{{item}}" class='imgUrl' mode="widthFix" src="{{item}}"></image>
@@ -11,11 +11,13 @@
   </view>
 </view>
 <!-- 图片下预览和下载-->
-<swiper wx:if="{{tapStatus}}" bindtap="closeBigImg" bindchange='changeItem'  current='{{ind}}' class="bigImgBg" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="#2C9F67">
-  <block wx:for="{{imgs}}" wx:key="*this">
-    <swiper-item>
-      <image bindtap='previewImage' data-src="{{item}}" class='imgUrl bigImg' mode="widthFix" src="{{item}}"></image>
-    </swiper-item>
-  </block>
-</swiper>
-<view bindtap="downloadImg" wx:if="{{tapStatus}}" data-url="{{src}}" class="downloadImg">下载图片</view>
+<block wx:if="{{tapStatus}}">
+  <swiper bindtap="closeBigImg" bindchange='changeItem' current='{{ind}}' class="bigImgBg" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="#2C9F67">
+    <block wx:for="{{imgs}}" wx:key="*this">
+      <swiper-item>
+        <image bindtap='previewImage' data-src="{{item}}" class='imgUrl bigImg' mode="widthFix" src="{{item}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view bindtap="downloadImg" data-url="{{src}}" class="downloadImg">下载图片</view>
+</block>
