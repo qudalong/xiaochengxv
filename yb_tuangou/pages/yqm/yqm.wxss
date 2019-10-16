@@ -1,2 +1,15 @@
 /* yb_tuangou/pages/yqm/yqm.wxss */
 @import '../add_product/add_product.wxss';
+.flex{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin:20rpx 30rpx;
+}
+.form_btn{
+  width: 70% !important;
+}
+.f1{
+  flex: 1;
+  margin-left:30rpx;
+}

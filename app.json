@@ -1,5 +1,6 @@
 {
   "pages": [
+    "yb_tuangou/pages/yqm/yqm",
     "yb_tuangou/pages/index/index",
     "yb_tuangou/pages/notice/notice",
     "yb_tuangou/pages/ck/ckDesc",
@@ -29,8 +30,7 @@
     "yb_tuangou/pages/order_page/index",
     "yb_tuangou/pages/policy/index",
     "yb_tuangou/pages/withdraw_request/index",
-    "yb_tuangou/pages/order/msdetail/index",
-    "yb_tuangou/pages/yqm/yqm"
+    "yb_tuangou/pages/order/msdetail/index"
   ],
   "window": {
     "backgroundColor": "#f2f2f2",

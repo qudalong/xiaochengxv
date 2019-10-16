@@ -4,9 +4,12 @@
       <view class="lable">邀请码:</view>
       <input  disabled="true" class="inp" value="{{yqm1}}"  type="text"  ></input>
     </view>
-    <view class="form_btn_box">
+    <view class="form_btn_box flex">
       <button bindtap="addClassify" class="form_btn">
         <text>{{btnname}}</text>
+      </button>
+      <button bindtap="textPaste" class="form_btn f1">
+        <text>复制</text>
       </button>
     </view>
   </view>
