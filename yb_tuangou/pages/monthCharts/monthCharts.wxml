@@ -3,6 +3,7 @@
   <view bindtap="showPicker" wx:if='{{!month}}' class="serchBox gary">请选择查询时间</view>
   <view bindtap="showPicker" wx:if='{{month}}' class="serchBox">{{month}}月</view>
   <view class="but serchBtn">查询</view>
+  <view class="export">导出</view>
 </view>
 <!-- 列表 -->
 <view class="lis">
@@ -23,9 +24,6 @@
           <view>业绩:这是一个销售记录的内容</view>
         </view>
       </view>
-    </view>
-    <view class="btn-grounp">
-      <view class="but but1">导出</view>
     </view>
   </view>
 </view>

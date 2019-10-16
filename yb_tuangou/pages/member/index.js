@@ -16,6 +16,8 @@ Page({
       t.jump("/yb_tuangou/pages/yqm/yqm")
     } else if (e == 1) {
       t.jump("/yb_tuangou/pages/monthCharts/monthCharts")
+    } else if (e == 2) {
+      t.jump("/yb_tuangou/pages/notice/notice")
     }
     console.log(123), 1 == e ? t.jump("/yb_tuangou/pages/member/index") : 2 == e ? t.jump("/yb_tuangou/pages/jingying/index") : 3 == e ? t.jump("/yb_tuangou/pages/yongjin/index") : 4 == e ? t.jump("/yb_tuangou/pages/tixianguanli/index") : 6 == e ? t.jump("/yb_tuangou/pages/policy/index") : 7 == e && t.jump("/yb_tuangou/pages/change_data/index");
   },

@@ -23,6 +23,11 @@
     </view>
   </view>
   <view class="section">
+    <view bindtap="bindViewTap" class="section_suju" data-index="2">
+      <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="/yb_tuangou/static/images/member_img/baobiao@2x.png"></image>
+      <text class="suju_text">发布通知</text>
+      <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
+    </view>
     <view bindtap="bindViewTap" class="section_suju" data-index="1">
       <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="/yb_tuangou/static/images/member_img/baobiao@2x.png"></image>
       <text class="suju_text">月报表</text>

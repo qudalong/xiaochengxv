@@ -1,0 +1,12 @@
+.textarea{
+  padding: 20rpx;
+  line-height: 1.6;
+  background: #f0f0f0;
+  min-height: 300rpx;
+  box-sizing: border-box;
+  margin-top:10rpx;
+  border-radius: 10rpx;
+}
+.row{
+  padding: 30rpx;
+}
