@@ -1,17 +1,76 @@
 // yb_tuangou/pages/notice/notice.js
+var o = getApp(),
+  s = o.requirejs("core");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    notice:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var user = o.getCache("userinfo");
+    var _this = this;
+    user || wx.redirectTo({
+      url: "/yb_tuangou/pages/login/index"
+    });
+
+    s.get("wx/user/selnotice.html", {
+      id: user.id
+    }, function (o) {
+       if(o.code == 1){
+          _this.setData({
+            notice: o.data.v_content
+          });
+
+          
+
+
+       }
+    });
+
+
+  },
+
+
+  save:function(){
+   
+
+    var notice = this.data.notice;
+    if(!notice.trim()){
+      wx.showToast({
+        title: '请输入通知内容',
+        icon: 'none'
+      });
+      return;
+    }
+
+    var user = o.getCache("userinfo");
+    s.get("wx/user/updnotice.html", {
+      id: user.id,
+      content:notice
+    }, function (o) {
+      if (o.code == 1) {
+        s.success(o.msg);
+      }else{
+        s.error(o.msg);
+      }
+    });
+
+
+  },
+
+  bindMark:function(e){
+    var notice = e.detail.value;
+    this.setData({
+      notice: notice
+    });
+
 
   },
 
