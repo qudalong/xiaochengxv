@@ -1,4 +1,4 @@
 <view class="row">
-  <view class="lable"> 发布通知</view>
   <textarea bindinput="bindMark" class="textarea" maxlength="-1" placeholder="请输入通知内容" auto-height="true" auto-focus="true"></textarea>
+  <view class="btnApply hover"> 发布</view>
 </view>
