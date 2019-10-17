@@ -32,10 +32,11 @@
     <view class="lable">商品价格:</view>
     <input bindinput="bindPrice" class="inp" type="text" placeholder="请输入商品价格"></input>
   </view>
-  <view class="form_li">
+  <view class="form_li relative">
+    <image class="down" src="/yb_tuangou/static/images/jiantou@2x.png"></image>
     <view class="lable">商品分类:</view>
     <picker bindchange="bindPickerChange" class="inp" value="{{index}}" range="{{array}}">
-    <input wx:if="{{!array[index]}}" class="inp" type="text" disabled placeholder="请选择商品分类"></input>
+      <input wx:if="{{!array[index]}}" class="inp" type="text" disabled placeholder="请选择商品分类"></input>
       <view wx:if="{{array[index]}}" class="picker inp">
         {{array[index]}}
       </view>

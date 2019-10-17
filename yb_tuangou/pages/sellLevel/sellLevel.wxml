@@ -11,18 +11,20 @@
     <view class="lable">购买人手机号:</view>
     <input bindinput="bindTel" class="inp" type="number" placeholder="请输入购买人手机号"></input>
   </view>
-  <view class="form_li">
+  <view class="form_li relative">
     <view class="lable">购买人生日:</view>
+    <image class="down" src="/yb_tuangou/static/images/jiantou@2x.png"></image>
     <picker class="inp" mode="date" bindchange="bindDateChangeBriday">
-    <view wx:if='{{!birthday}}' class="picker gary">请选择购买人生日</view>
-    <view wx:if='{{birthday}}' class="picker">{{birthday}}</view>
-  </picker>
+      <view wx:if='{{!birthday}}' class="picker gary">请选择购买人生日</view>
+      <view wx:if='{{birthday}}' class="picker">{{birthday}}</view>
+    </picker>
   </view>
-  <view class="form_li">
+  <view class="form_li relative">
     <view class="lable">购买日期:</view>
+    <image class="down" src="/yb_tuangou/static/images/jiantou@2x.png"></image>
     <picker class="inp" mode="date" value="{{buyDate}}" bindchange="bindDateChangeBuy">
-    <view class="picker">{{buyDate}}</view>
-  </picker>
+      <view class="picker">{{buyDate}}</view>
+    </picker>
   </view>
   <view class="form_li mt10">
     <view class="lable">标价:</view>
@@ -52,7 +54,7 @@
     <view class="lable" style="text-align:left;padding-left:10px">备注:</view>
   </view>
   <view class="form_li desc bor0">
-    <textarea bindinput="bindMark" class="inp textarea"  maxlength="-1"  placeholder="请输入备注" auto-height="true"  style="padding-left:10px"></textarea>
+    <textarea bindinput="bindMark" class="inp textarea" maxlength="-1" placeholder="请输入备注" auto-height="true" style="padding-left:10px"></textarea>
   </view>
   <view class="form_btn_box">
     <button bindtap="bindDengji" class="form_btn">

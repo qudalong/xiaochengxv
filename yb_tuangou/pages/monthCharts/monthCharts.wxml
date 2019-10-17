@@ -1,6 +1,7 @@
 <!-- 查询 -->
 <view class="serch">
-  <view bindtap="showPicker" wx:if='{{!month}}' class="serchBox gary">请选择查询时间</view>
+  <view bindtap="showPicker" wx:if='{{!month}}' class="serchBox gary relative">请选择查询时间
+  <image class="down" src="/yb_tuangou/static/images/jiantou@2x.png"></image></view>
   <view bindtap="showPicker" wx:if='{{month}}' class="serchBox">{{month}}月</view>
   <view class="but serchBtn">查询</view>
   <view class="export">导出</view>

@@ -15,6 +15,18 @@ page {
 .hover:hover {
   opacity: 0.8;
 }
+.relative{
+  position: relative;
+}
+
+.down{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 30rpx;
+  width: 16px;
+  height: 16px;
+}
 
 .form_btn {
   width: 90% !important;
