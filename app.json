@@ -1,6 +1,7 @@
 {
   "pages": [
     "yb_tuangou/pages/index/index",
+    "yb_tuangou/pages/policy/index",
     "yb_tuangou/pages/notice/notice",
     "yb_tuangou/pages/product_desc/product_desc",
     "yb_tuangou/pages/yqm/yqm",
@@ -28,7 +29,6 @@
     "yb_tuangou/pages/cashout_account/index",
     "yb_tuangou/pages/modify_avatar/index",
     "yb_tuangou/pages/order_page/index",
-    "yb_tuangou/pages/policy/index",
     "yb_tuangou/pages/withdraw_request/index",
     "yb_tuangou/pages/order/msdetail/index"
   ],
