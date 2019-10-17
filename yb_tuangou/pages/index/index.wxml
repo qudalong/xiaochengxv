@@ -21,7 +21,7 @@
     <image bindtap="bindViewTap" class="userinfo-gonggao" mode="cover" src="{{icon.shequtoutiao}}"></image>
     <view class="fengexian"></view>
     <view class="gonggao">
-      <text class="gundong">{{info.news.news}}</text>
+      <text class="gundong">{{news}}</text>
     </view>
   </view>
   <view class="fengexian_bg"></view>

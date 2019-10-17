@@ -11,6 +11,7 @@ Page({
         marquee_margin: 30,
         size: 14,
         interval: 20,
+        news: '珠宝、珠宝、珠宝',
         info:{
           today_order:{
             total:11,
@@ -25,17 +26,38 @@ Page({
             stay_cancel:200000
           },
           news:{
-            news:'珠宝、珠宝、珠宝'
+           
           }
 
         }
     },
     onLoad: function(e) {
+
+      this.loadNotice();
         // getApp().getCache("userinfo") || wx.redirectTo({
         //     url: "/yb_tuangou/pages/login/index"
         // }), this.getAdInfo();
     },
  
+ //加载通知
+    loadNotice:function(){
+
+      var _this = this;
+      o.get("wx/user/selnotice.html", {
+        id: 1
+      }, function (o) {
+        if (o.code == 1) {
+
+          _this.setData({
+            news: o.data.v_content
+          });
+
+        }
+      });
+
+
+
+    },
     onShow: function() {
        var url = this.data.icon.fm;
         this.setData({
