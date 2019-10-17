@@ -9,7 +9,7 @@
 }
 
 .btnApply{
-  padding: 14rpx 20rpx;
+  padding: 14rpx 26rpx;
   border-radius: 6rpx;
   background: #00B26A;
   color: #fff;
