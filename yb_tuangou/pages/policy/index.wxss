@@ -8,24 +8,28 @@
   padding: 20rpx 0;
   border-bottom: 1rpx solid #f0f0f0;
 }
+
 .ranking {
   position: relative;
   height: 38rpx;
-  width:38rpx;
+  width: 38rpx;
   border-radius: 50%;
-  line-height:38rpx;
+  line-height: 38rpx;
   text-align: center;
   background: #667686;
   color: #fff;
 }
-.b1{
-  background:#DF9A69; 
+
+.b1 {
+  background: #df9a69;
 }
-.b2{
-  background:#DF9A69; 
+
+.b2 {
+  background: #df9a69;
 }
-.b3{
-  background:#DF9A69; 
+
+.b3 {
+  background: #df9a69;
 }
 
 .hg {
