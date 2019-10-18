@@ -81,19 +81,18 @@ Page({
     });
   },
   handleChoosePic: function() {
-    let _this = this
     wx.chooseImage({
       count: 9,
       sizeType: ['original', 'compressed'],
       sourceType: ['album', 'camera'],
-      success: function(res) {
-        let pics = _this.data.formData.pics
+      success: (res)=> {
+        let pics = this.data.formData.pics
         // 添加当前添加到已有数组
         pics = pics.concat(res.tempFilePaths)
         // 限制当前图片数量不能超过9张
         pics.length > 9 && (pics.length = 9);
-        _this.setData({
-          'formData': Object.assign({}, _this.data.formData, {
+        this.setData({
+          'formData': Object.assign({}, this.data.formData, {
             pics: pics
           })
         })
