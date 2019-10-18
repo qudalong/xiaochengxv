@@ -71,3 +71,15 @@
   left: 50%;
   transform: translate(-50%,-50%);
 }
+.title{
+  font-size: 30rpx;
+  font-weight: bold;
+  text-align: center;
+  margin: 10rpx 0;
+}
+.type{
+  font-size: 30rpx;
+}
+.desc{
+  margin-top: 10rpx;
+}
