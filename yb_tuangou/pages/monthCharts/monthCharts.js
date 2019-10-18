@@ -21,8 +21,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {},
-  
+  onLoad: function(options) {
+  },
+
   // 查询
   bindSearch() {
     var month = this.data.month;
@@ -42,11 +43,15 @@ Page({
   // 获取报表数据
   getDataForMonth() {
     request({
-      url: 'https://mp.ucloudant.com/app/index.php?i=56&t=0&v=9.2&from=wxapp&c=entry&a=wxapp&do=Dishes&m=zh_dianc&sign=819fcd817f0aeb118075924d12978351&id=5&dishes_type=2',
+      url: 'http://www.icprj.com/IC/api/faPublic/list',
+      method: 'POST',
+      data: {
+        type: 1
+      }
     }).then(res => {
       wx.hideLoading();
       this.setData({
-        list: res.data[0].goods
+        list: res.data.rows
       })
     });
   },

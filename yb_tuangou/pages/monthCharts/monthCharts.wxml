@@ -13,17 +13,17 @@
     <view wx:for="{{list}}" wx:key="unique" class="row">
       <view class="row1">
         <view>
-          <text class="mr20">姓名：张三</text>
-          <text>时间：2019-09-09</text>
+          <text class="mr20">姓名：{{item.username}}</text>
+          <text>时间：{{item.createtime}}</text>
         </view>
         <!-- <view class="base-c">审核通过</view> -->
       </view>
       <view class="product-info">
         <view class="left">
-          <image class="img" src="https://mp.ucloudant.com/attachment/{{item.img}}"></image>
+          <image class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571397355485&di=2dc84f250d0cd7e861bc97519e1f6e7c&imgtype=0&src=http%3A%2F%2Fimg.juimg.com%2Ftuku%2Fyulantu%2F130512%2F240411-13051221525937.jpg"></image>
           <view class="info">
-            <view class="name">{{item.name}}</view>
-            <view>标价:¥{{item.sit_ys_num}} | 售价:¥{{item.xs_num}} | 提成:¥{{item.num}}</view>
+            <view class="name">{{item.title}}</view>
+            <view>标价:¥{{item.pId}} | 售价:¥{{item.id}} | 提成:¥{{item.userId}}</view>
             <view>业绩:这是一个销售记录的内容</view>
           </view>
         </view>
