@@ -11,6 +11,14 @@ page {
   background: rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
+.ep{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.w4{
+  width: 500rpx;
+}
 .empty{
   margin-top: 200rpx;
   text-align: center;

@@ -1,8 +1,8 @@
 {
   "pages": [
-    "yb_tuangou/pages/index/index",
-    "yb_tuangou/pages/policy/index",
     "yb_tuangou/pages/monthCharts/monthCharts",
+    "yb_tuangou/pages/policy/index",
+    "yb_tuangou/pages/index/index",
     "yb_tuangou/pages/product_desc/product_desc",
     "yb_tuangou/pages/notice/notice",
     "yb_tuangou/pages/yqm/yqm",

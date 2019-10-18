@@ -9,8 +9,8 @@
       </view>
       <image class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571397355485&di=2dc84f250d0cd7e861bc97519e1f6e7c&imgtype=0&src=http%3A%2F%2Fimg.juimg.com%2Ftuku%2Fyulantu%2F130512%2F240411-13051221525937.jpg"></image>
       <view class="infos">
-        <view class="row">{{item.title}}</view>
-        <view class="row">细腻卓著的雕琢,独具匠心的设计</view>
+        <view class="row ep w4">{{item.title}}</view>
+        <view class="row ep w4">细腻卓著的雕琢,独具匠心的设计</view>
         <view class="row">￥{{item.id}}</view>
       </view>
     </view>
