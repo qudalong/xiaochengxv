@@ -76,3 +76,9 @@
 .sure{
   color: #00B26A;
 }
+.product-info .left {
+  align-items: stretch;
+}
+.info{
+  line-height: 1.7;
+}

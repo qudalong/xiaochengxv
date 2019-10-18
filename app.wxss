@@ -11,7 +11,11 @@ page {
   background: rgba(0, 0, 0, 0.5);
   z-index: 10;
 }
-
+.empty{
+  margin-top: 200rpx;
+  text-align: center;
+  color: #666;
+}
 .hover:hover {
   opacity: 0.8;
 }

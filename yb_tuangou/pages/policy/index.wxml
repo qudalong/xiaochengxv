@@ -1,16 +1,21 @@
-<view class="ranking-wrap">
-  <view wx:for='{{list}}' wx:key='unquie' class="item">
-    <view class="ranking {{index==0?'b1':''||index==1?'b2':''||index==2?'b3':''}}">
-      <image wx:if="{{index==0}}" class="hg" src="/yb_tuangou/static/images/rank_head_first_50@3x.png"></image>
-      <image wx:if="{{index==1}}" class="hg" src="/yb_tuangou/static/images/rank_head_third_45@3x.png"></image>
-      <image wx:if="{{index==2}}" class="hg" src="/yb_tuangou/static/images/rank_head_second_45@3x.png"></image>
-      {{index+1}}
-    </view>
-    <image class="img" src="http://img3.imgtn.bdimg.com/it/u=1828520497,4070743848&fm=26&gp=0 .jpg"></image>
-    <view class="infos">
-      <view class="row">BVLGARI宝格丽珠宝</view>
-      <view class="row">细腻卓著的雕琢,独具匠心的设计</view>
-      <view class="row">￥100万</view>
+<block wx:if="{{rankList.length}}">
+  <view class="ranking-wrap">
+    <view wx:for='{{rankList}}' wx:key='unquie' class="item">
+      <view class="ranking {{index==0?'b1':''||index==1?'b2':''||index==2?'b3':''}}">
+        <image wx:if="{{index==0}}" class="hg" src="/yb_tuangou/static/images/rank_head_first_50@3x.png"></image>
+        <image wx:if="{{index==1}}" class="hg" src="/yb_tuangou/static/images/rank_head_third_45@3x.png"></image>
+        <image wx:if="{{index==2}}" class="hg" src="/yb_tuangou/static/images/rank_head_second_45@3x.png"></image>
+        {{index+1}}
+      </view>
+      <image class="img" src="https://mp.ucloudant.com/attachment/{{item.img}}"></image>
+      <view class="infos">
+        <view class="row">{{item.name}}</view>
+        <view class="row">细腻卓著的雕琢,独具匠心的设计</view>
+        <view class="row">￥{{item.money}}</view>
+      </view>
     </view>
   </view>
-</view>
+</block>
+<block wx:if="{{!rankList.length}}">
+  <view class="empty">暂无记录</view>
+</block>
