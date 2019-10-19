@@ -4,13 +4,16 @@ import {
 } from '../../utils/util.js'
 import {
   request
-} from '../../utils/request.js'
+} from '../../utils/request.js';
+var n = getApp();
+var t = n.requirejs("core");
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+   
     buyName: '',
     productName: '',
     tel: '',
@@ -97,53 +100,72 @@ Page({
         icon: 'none'
       });
       return
-    } else if (!sell.trim()) {
+    } else if (!sell) {
       wx.showToast({
         title: '请输入销售占比',
         icon: 'none'
       });
       return
-    } else if (!yeji.trim()) {
+    } else if (!yeji) {
       wx.showToast({
         title: '请输入当笔业绩',
         icon: 'none'
       });
       return
-    } else if (!ticheng.trim()) {
+    } else if (!ticheng) {
       wx.showToast({
         title: '请输入销售提成',
         icon: 'none'
       });
       return
     } else if (!beizu.trim()) {
-      wx.showToast({
-        title: '请输入备注',
-        icon: 'none'
-      });
-      return
+      // wx.showToast({
+      //   title: '请输入备注',
+      //   icon: 'none'
+      // });
+      // return
     }
-    //发送接口
-    request({
-      url: 'xxxx',
-      method: 'POST',
-      buyName,
-      productName,
-      data: {
-        productClssifty: buyName, //姓名
-        productClssifty: productName, //名称
-        productClssifty: tel, //手机号
-        productClssifty: birthday, //生日
-        productClssifty: buyDate, //购买日期
-        productDesc: price, //标价
-        productClssifty: resultPrice, //成交价
-        productClssifty: discount, //折扣
-        productClssifty: sell, //销售赞比
-        productClssifty: yeji, //当笔业绩
-        productClssifty: beizu //备注
-      }
-    }).then(res => {
-
+    let u = getApp().getCache("userinfo");
+    let uid = u.id;
+    let v_real_name = u.v_real_name;
+    let _this = this;
+    t.post("wx/scale/add.html", {
+      i_uid: uid,
+      v_real_name: v_real_name,
+      v_buy_name:buyName,
+      v_pro_name: productName, //名称
+      v_buy_phone: tel, //手机号
+      v_buy_bir: birthday, //生日
+      dtm_repdate: buyDate, //购买日期
+      i_show_je: price, //标价
+      i_jy_je: resultPrice, //成交价
+      i_rebate: discount, //折扣
+      i_sale_pre: sell, //销售赞比
+      i_current_yj: yeji, //当笔业绩
+      i_royalty: ticheng,//销售提成
+      v_remarker: beizu //备注
+    }, function (data) {
+        if(data.code == 1){
+            t.success(data.msg);
+            _this.setData({
+              buyName:'',
+              productName:'',
+              tel:'',
+              birthday:'',
+             // buyDate:'',
+              price:'',
+              resultPrice:'',
+              discount:'',
+              sell:'',
+              yeji:'',
+              ticheng:'',
+              beizu:''
+            });
+        }else{
+          t.error(data.msg);
+        }
     });
+
   },
   // 购买人
   bindBuyName(e) {
@@ -153,6 +175,7 @@ Page({
   },
   // 产品名称
   bindProduceName(e) {
+    console.log(e.detail.value);
     this.setData({
       productName: e.detail.value
     });
@@ -163,41 +186,137 @@ Page({
       tel: e.detail.value
     });
   },
+  validationPrice(v){
+    let a = /^(\d+|\d+\.\d{1,2})$/;
+    if (!a.test(v)) {
+      wx.showToast({
+        title: '请输入正确的金额（保留两位小数）',
+        icon: 'none'
+      });
+      return false;
+    }
+
+  },
+  //计算折扣:
+  caculeDisCount(){
+
+    var bj = this.data.price;
+   // console.log(this.data);
+    if(!bj){
+      return;
+    }
+    var result = this.data.resultPrice;
+    if(!result){
+      return;
+    }
+    bj = parseFloat(bj);
+    if(bj < 0){
+      return;
+    }
+    let discount = parseFloat(result)/parseFloat(bj);
+    //console.log(discount);
+    this.setData({
+      discount:discount.toFixed(2)
+    });
+
+
+
+
+
+  },
   // 标价
   bindPrice(e) {
+    let bj = e.detail.value;
+    if (this.validationPrice(bj)){
+      return;
+    }
     this.setData({
       price: e.detail.value
     });
+    this.caculeDisCount();
   },
   // 成交价
   bindResultPrice(e) {
+    let result = e.detail.value;
+    if (this.validationPrice(result)) {
+      return;
+    }
     this.setData({
       resultPrice: e.detail.value
     });
+    this.caculeDisCount();
+    this.caculeYj();
+    this.caculeTiCheng();
   },
   // 折扣
   bindDiscount(e) {
-    this.setData({
-      discount: e.detail.value
-    });
+    // this.setData({
+    //   discount: e.detail.value
+    // });
   },
   // 销售占比
   bindSell(e) {
+    let sell = e.detail.value;
+    if (this.validationPrice(sell)) {
+      return;
+    }
+    sell = sell/100;
+    if(sell > 1){
+        wx.showToast({
+          title: '销售占比不能大于1',
+        });
+        return;
+    }
     this.setData({
-      sell: e.detail.value
+      sell: parseFloat(e.detail.value)
     });
+    this.caculeYj();
+  },
+  //计算当比业绩
+  caculeYj(){
+      let result = this.data.resultPrice;
+      if(!result){
+        return;
+      }
+    let sell = this.data.sell;
+    if(!sell){
+        return;
+    }
+    result = parseFloat(result);
+    sell = parseFloat(sell/100);
+     let yj = result * sell;
+     this.setData({
+       yeji: yj.toFixed(2)
+     })
+
   },
   // 当笔业级
   bindYeJi(e) {
+    // this.setData({
+    //   yeji: e.detail.value
+    // });
+  },
+  caculeTiCheng(){
+    let result = this.data.resultPrice;
+    if(!result){
+      reutrn;
+    }
+    let u = getApp().getCache("userinfo");
+    let i_rebate = parseFloat(u.i_rebate);
+
+    result = parseFloat(result);
+    var tc = result * (i_rebate/100);
     this.setData({
-      yeji: e.detail.value
+      ticheng: tc.toFixed(2)
     });
   },
   // 当笔销售提成
   bindtTiCheng(e) {
-    this.setData({
-      ticheng: e.detail.value
-    });
+
+    
+    // this.setData({
+    //   ticheng: e.detail.value
+    // });
   },
   // 备注
   bindMark(e) {

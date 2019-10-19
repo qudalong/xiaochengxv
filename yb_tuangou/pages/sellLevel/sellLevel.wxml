@@ -1,15 +1,15 @@
 <view class="form_box">
   <view class="form_li">
     <view class="lable">购买人姓名:</view>
-    <input bindinput="bindBuyName" class="inp" type="text" placeholder="请输入购买人姓名"></input>
+    <input bindinput="bindBuyName" class="inp" type="text" placeholder="请输入购买人姓名" value="{{buyName}}"></input>
   </view>
   <view class="form_li">
     <view class="lable">产品名称:</view>
-    <input bindinput="bindProduceName" class="inp" type="text" placeholder="请输入产品名称"></input>
+    <input bindinput="bindProduceName" class="inp" type="text"  value="{{productName}}" placeholder="请输入产品名称"></input>
   </view>
   <view class="form_li">
     <view class="lable">购买人手机号:</view>
-    <input bindinput="bindTel" class="inp" type="number" placeholder="请输入购买人手机号"></input>
+    <input bindinput="bindTel" class="inp" type="number" value="{{tel}}" placeholder="请输入购买人手机号"></input>
   </view>
   <view class="form_li relative">
     <view class="lable">购买人生日:</view>
@@ -28,33 +28,33 @@
   </view>
   <view class="form_li mt10">
     <view class="lable">标价:</view>
-    <input bindinput="bindPrice" class="inp" type="text" placeholder="请输入标价"></input>
+    <input bindinput="bindPrice" class="inp" type="text"  value="{{price}}" placeholder="请输入标价"></input>
   </view>
   <view class="form_li">
     <view class="lable">成交价:</view>
-    <input bindinput="bindResultPrice" class="inp" type="text" placeholder="请输入成交价"></input>
+    <input bindinput="bindResultPrice" class="inp" type="text" value="{{resultPrice}}" placeholder="请输入成交价"></input>
   </view>
   <view class="form_li">
     <view class="lable">折扣:</view>
-    <input bindinput="bindDiscount" class="inp" type="text" placeholder="请输入折扣"></input>
+    <input bindinput="bindDiscount" class="inp" type="text"  disabled="true" placeholder="=标价/成交价" value="{{discount}}"></input>
   </view>
   <view class="form_li">
-    <view class="lable">销售占比:</view>
-    <input bindinput="bindSell" class="inp" type="text" placeholder="请输入销售占比"></input>
+    <view class="lable">销售占比(%):</view>
+    <input bindinput="bindSell" class="inp" type="text" value="{{sell}}" placeholder="请输入销售占比"></input>
   </view>
   <view class="form_li">
-    <view class="lable">当笔业级:</view>
-    <input bindinput="bindYeJi" class="inp" type="text" placeholder="请输入当笔业级"></input>
+    <view class="lable">当笔业绩:</view>
+    <input bindinput="bindYeJi" class="inp" type="text"  disabled="true" placeholder="=成交价*销售占比" value="{{yeji}}"></input>
   </view>
   <view class="form_li mt10">
     <view class="lable">当笔销售提成:</view>
-    <input bindinput="bindtTiCheng" class="inp" type="text" placeholder="请输入当笔销售提成"></input>
+    <input bindinput="bindtTiCheng" class="inp" type="text" placeholder="=成交价*提成系数"  disabled="true" value="{{ticheng}}" ></input>
   </view>
   <view class="form_li desc bor0">
     <view class="lable" style="text-align:left;padding-left:10px">备注:</view>
   </view>
   <view class="form_li desc bor0">
-    <textarea bindinput="bindMark" class="inp textarea" maxlength="-1" placeholder="请输入备注" auto-height="true" style="padding-left:10px"></textarea>
+    <textarea bindinput="bindMark" class="inp textarea" maxlength="-1" placeholder="请输入备注" auto-height="true" style="padding-left:10px" value="{{beizu}}"></textarea>
   </view>
   <view class="form_btn_box">
     <button bindtap="bindDengji" class="form_btn">
