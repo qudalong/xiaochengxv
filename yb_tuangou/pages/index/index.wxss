@@ -6,7 +6,7 @@ page {
 
 .rule {
   position: fixed;
-  top: 21%;
+  top: 24%;
   right: 0;
   background: rgba(0, 0, 0, 0.4);
   color: #fff;
@@ -59,7 +59,7 @@ page {
 .rule-wrap .content {
   padding: 30rpx;
   line-height: 1.6;
-  height: 300rpx;
+  height: 400rpx;
   overflow-y: scroll;
   text-align: left;
 }
