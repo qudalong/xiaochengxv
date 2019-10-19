@@ -17,7 +17,7 @@ page {
 }
 
 .rule .img {
-  width: 50rpx;
+  width: 46rpx;
   height: 40rpx;
   margin-right: 6rpx;
 }
