@@ -6,6 +6,8 @@ Page({
     icon: n.requirejs("icons"),
     version: n.version,
     status: 0,
+    userinfo:{},
+
     is_copyright: !1
   },
   bindViewTap: function(n) {
@@ -22,9 +24,24 @@ Page({
     console.log(123), 1 == e ? t.jump("/yb_tuangou/pages/member/index") : 2 == e ? t.jump("/yb_tuangou/pages/jingying/index") : 3 == e ? t.jump("/yb_tuangou/pages/yongjin/index") : 4 == e ? t.jump("/yb_tuangou/pages/tixianguanli/index") : 6 == e ? t.jump("/yb_tuangou/pages/policy/index") : 7 == e && t.jump("/yb_tuangou/pages/change_data/index");
   },
   onLoad: function(n) {
-    getApp().getCache("userinfo") || wx.redirectTo({
+    let user = getApp().getCache("userinfo");
+    user|| wx.redirectTo({
       url: "/yb_tuangou/pages/login/index"
-    }), this.getinfo();
+    });
+
+    let userinfo = this.data.userinfo;
+    if(user){
+      
+      userinfo.name = user.v_real_name;
+      if(user.i_level == 0){
+        
+      }
+
+      this.setData({
+        userinfo:userinfo
+      });
+
+    }
   },
   getinfo: function(n) {
     return;
