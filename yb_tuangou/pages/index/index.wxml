@@ -138,7 +138,7 @@
       </view>
     </view>
   </view>
-   <view class="jinridingdan">
+  <view class="jinridingdan">
     <view class="jinridingdan_wenzi">
       总览
     </view>
@@ -166,7 +166,7 @@
           1200
         </view>
         <view class="zongshuliang_text1">
-         总销售额
+          总销售额
         </view>
         <!--<view class="zongshuliang_fengexian3"></view>-->
       </view>
@@ -181,5 +181,22 @@
   </view>
   <view class="fengexian_bg1">
     <image bindtap="bindViewTap" class="userinfo-tuceng" mode="cover" src="{{adUrl}}" wx:if="{{adShow}}"></image>
+  </view>
+</view>
+<!-- 规则 -->
+<view bindtap="showRule" class="rule hover">
+  <image class="img" src="/yb_tuangou/static/images/member_img/tixian@2x.png"></image>规则</view>
+<!-- 弹窗 -->
+<view wx:if="{{showDia}}" class="dialog ">
+  <view class="rule-wrap">
+    <view class="title">活动规则<view bindtap="hideRule" class="close">x</view></view>
+    <view class="content">
+     <view class="line">1.佳都科技發生的空間福克佳都科技發生的空間</view>
+     <view class="line">1.佳都科技發生的空間福克佳都科技發生的空間</view>
+     <view class="line">1.佳都科技發生的空間福克佳都科技發生的空間</view>
+     <view class="line">1.佳都科技發生的空間福克佳都科技發生的空間</view>
+     <view class="line">1.佳都科技發生的空間福克佳都科技發生的空間</view>
+     
+    </view>
   </view>
 </view>
