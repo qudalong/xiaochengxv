@@ -9,7 +9,9 @@ page {
     height: 170rpx;
     background: linear-gradient(#ef4423,#f1741b);
 }
-
+.pb0{
+  padding-bottom: 0 !important;
+}
 .userinfo-hexiao {
     width: 58rpx;
     height: 58rpx;

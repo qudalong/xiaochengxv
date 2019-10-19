@@ -25,7 +25,7 @@
     </view>
   </view>
   <view class="fengexian_bg"></view>
-  <view class="jinridingdan">
+  <view class="jinridingdan pb0">
     <view class="jinridingdan_wenzi">
       待审核
     </view>
@@ -64,7 +64,6 @@
       </view>
     </view>
   </view>
-  <view class="fengexian_bg"></view>
   <view class="jinridingdan">
     <view class="jinridingdan_wenzi">
       总览
@@ -108,7 +107,71 @@
       </view>
     </view>
   </view>
-
+  <view class="fengexian_bg"></view>
+  <view class="jinridingdan pb0">
+    <view class="jinridingdan_wenzi">
+      销售日报
+    </view>
+    <view class="row">
+      <view class="zongshuliang">
+        <view class="zongshuliang_number1">
+          12
+        </view>
+        <view class="zongshuliang_text1">
+          总数
+        </view>
+        <view class="zongshuliang_fengexian1"></view>
+      </view>
+      <view class="zongshuliang">
+        <view class="zongshuliang_number1">1</view>
+        <view class="zongshuliang_text1">今日</view>
+        <view class="zongshuliang_fengexian1"></view>
+      </view>
+      <view class="zongshuliang">
+        <view class="zongshuliang_number1">8</view>
+        <view class="zongshuliang_text1">通过</view>
+        <view class="zongshuliang_fengexian1"></view>
+      </view>
+      <view class="zongshuliang">
+        <view class="zongshuliang_number1">0</view>
+        <view class="zongshuliang_text1">驳回</view>
+      </view>
+    </view>
+  </view>
+   <view class="jinridingdan">
+    <view class="jinridingdan_wenzi">
+      总览
+    </view>
+    <view class="row">
+      <view class="zongshuliang">
+        <view class="zongshuliang_number1">
+          10000
+        </view>
+        <view class="zongshuliang_text1">
+          今日销售额
+        </view>
+        <view class="zongshuliang_fengexian1"></view>
+      </view>
+      <view class="zongshuliang">
+        <view class="zongshuliang_number1">
+          1
+        </view>
+        <view class="zongshuliang_text1">
+          今日排名
+        </view>
+        <view class="zongshuliang_fengexian1"></view>
+      </view>
+      <view class="zongshuliang">
+        <view class="zongshuliang_number1">
+          1200
+        </view>
+        <view class="zongshuliang_text1">
+         总销售额
+        </view>
+        <!--<view class="zongshuliang_fengexian3"></view>-->
+      </view>
+    </view>
+  </view>
   <view class="fengexian_bg"></view>
   <view class="jinridingdan1">
     <view class="jinridingdan_wenzi">
