@@ -2,35 +2,7 @@ var e = getApp(),
   o = e.requirejs("core");
 
 Page({
-<<<<<<< HEAD
-    data: {
-        icon: e.requirejs("icons"),
-        adUrl: '',
-        adShow: true,
-        text: "",
-        marqueePace: 1,
-        marqueeDistance: 0,
-        marquee_margin: 30,
-        size: 14,
-        interval: 20,
-        news: '珠宝、珠宝、珠宝',
-        info:{
-          today_order:{
-            total:11,
-            stay_take:1,
-            stay_cancel:10,
-            already_cancel:0
-          },
-          log_order:{
-            total:30,
-            stay_take:30,
-            already_cancel:10000,
-            stay_cancel:200000
-          },
-          news:{
-           
-          }
-=======
+
   data: {
     showDia: false,
     icon: e.requirejs("icons"),
@@ -56,16 +28,19 @@ Page({
         stay_cancel: 200000
       },
       news: {
-        news: '珠宝、珠宝、珠宝'
+        news: '暂无公告'
       }
->>>>>>> 58deb3b778b1cbf97a254c4f57c12f89ac139664
+
 
     }
   },
   onLoad: function(e) {
-    // getApp().getCache("userinfo") || wx.redirectTo({
-    //     url: "/yb_tuangou/pages/login/index"
-    // }), this.getAdInfo();
+    let user = getApp().getCache("userinfo");
+    user || wx.redirectTo({
+        url: "/yb_tuangou/pages/login/index"
+    });
+    this.updUser(user.id);
+    this.loadNotice();
   },
   showRule() {
     this.setData({
@@ -79,13 +54,12 @@ Page({
   },
 
   onShow: function() {
+    
     var url = this.data.icon.fm;
     this.setData({
       adUrl: url
     });
-    // getApp().getCache("userinfo") ? this.getinfo() : wx.redirectTo({
-    //     url: "/yb_tuangou/pages/login/index"
-    // });
+    
   },
   getAdInfo: function() {
     var n = this;
@@ -96,32 +70,10 @@ Page({
       });
     });
   },
-  scancode: function(e) {
-    var t = o.pdata(e).i;
-    if (t == 1) {
-      this.to_order();
-    }
-    wx.scanCode({
-      onlyFromCamera: !0,
-      success: function(e) {
-        if (e.result.indexOf("_") < 0) o.alert("二维码无效");
-        else {
-          var n = e.result.split("_");
-          o.jump("/yb_tuangou/pages/order_page/index?order_no=" + n[0] + "&type=" + n[1] + "&i=" + t);
-        }
-<<<<<<< HEAD
-    },
-    onLoad: function(e) {
 
-      this.loadNotice();
-        // getApp().getCache("userinfo") || wx.redirectTo({
-        //     url: "/yb_tuangou/pages/login/index"
-        // }), this.getAdInfo();
-    },
  
  //加载通知
     loadNotice:function(){
-
       var _this = this;
       o.get("wx/user/selnotice.html", {
         id: 1
@@ -134,7 +86,17 @@ Page({
 
         }
       });
+    },
+    updUser(uid){
 
+      o.post("wx/user/updwx_user.html", {
+        id: uid
+      }, function (o) {
+        if (o.code == 1) {
+          e.setCache("userinfo",o.data);      
+
+        }
+      });
 
 
     },
@@ -143,9 +105,9 @@ Page({
         this.setData({
           adUrl: url
         });
-        // getApp().getCache("userinfo") ? this.getinfo() : wx.redirectTo({
-        //     url: "/yb_tuangou/pages/login/index"
-        // });
+        getApp().getCache("userinfo") ? '': wx.redirectTo({
+            url: "/yb_tuangou/pages/login/index"
+        });
     },
     getAdInfo: function() {
         var n = this;
@@ -194,13 +156,11 @@ Page({
     },
     onShareAppMessage: function() {},
     onPullDownRefresh: function() {
-        this.getinfo(), wx.stopPullDownRefresh();
+        //this.getinfo(),
+         wx.stopPullDownRefresh();
     },
-=======
-      },
-      fail: function(e) {}
-    });
-  },
+
+     
   to_order: function() {
     o.jump("/yb_tuangou/pages/order/index", 3);
   },
@@ -222,10 +182,7 @@ Page({
     });
   },
   onShareAppMessage: function() {},
-  onPullDownRefresh: function() {
-    this.getinfo(), wx.stopPullDownRefresh();
-  },
->>>>>>> 58deb3b778b1cbf97a254c4f57c12f89ac139664
+ 
   shenhe() {
     wx.navigateTo({
       url: '/yb_tuangou/pages/shenheList/shenheList'

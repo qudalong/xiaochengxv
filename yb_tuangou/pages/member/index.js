@@ -33,6 +33,8 @@ Page({
     if(user){
       
       userinfo.name = user.v_real_name;
+      userinfo.after_commission = user.v_scale_level_name;
+      userinfo.before_commission = user.v_level_name;
       if(user.i_level == 0){
         
       }
