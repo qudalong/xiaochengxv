@@ -33,7 +33,7 @@ page {
 }
 
 .rule-wrap .title {
-  background: #ff6000;
+  background: #EF4423;
   font-size: 40rpx;
   text-align: center;
   padding: 30rpx 0;

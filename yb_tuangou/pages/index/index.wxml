@@ -191,11 +191,11 @@
   <view class="rule-wrap">
     <view class="title">活动规则<view bindtap="hideRule" class="close">x</view></view>
     <view class="content">
-     <view class="line">1.佳都科技發生的空間福克佳都科技發生的空間</view>
-     <view class="line">1.佳都科技發生的空間福克佳都科技發生的空間</view>
-     <view class="line">1.佳都科技發生的空間福克佳都科技發生的空間</view>
-     <view class="line">1.佳都科技發生的空間福克佳都科技發生的空間</view>
-     <view class="line">1.佳都科技發生的空間福克佳都科技發生的空間</view>
+     <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+     <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+     <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+     <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+     <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
      
     </view>
   </view>
