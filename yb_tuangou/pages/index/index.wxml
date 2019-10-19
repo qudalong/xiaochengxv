@@ -187,16 +187,26 @@
 <view bindtap="showRule" class="rule hover">
   <image class="img" src="/yb_tuangou/static/images/member_img/tixian@2x.png"></image>规则</view>
 <!-- 弹窗 -->
-<view wx:if="{{showDia}}" class="dialog ">
-  <view class="rule-wrap">
-    <view class="title">活动规则<view bindtap="hideRule" class="close">x</view></view>
-    <view class="content">
-     <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-     <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-     <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-     <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-     <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-     
-    </view>
+<view wx:if="{{showDia}}" class="dialog" catchtouchmove="true"> </view>
+<view wx:if="{{showDia}}" class="rule-wrap">
+  <view class="title">活动规则
+    <view bindtap="hideRule" class="close">x</view>
+  </view>
+  <view class="content">
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
+
   </view>
 </view>
