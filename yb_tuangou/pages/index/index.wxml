@@ -25,7 +25,7 @@
     </view>
   </view>
   <view class="fengexian_bg"></view>
-  <view class="jinridingdan">
+  <view class="jinridingdan pb0">
     <view class="jinridingdan_wenzi">
       待审核
     </view>
@@ -108,7 +108,7 @@
     </view>
   </view>
   <view class="fengexian_bg"></view>
-  <view class="jinridingdan">
+  <view class="jinridingdan pb0">
     <view class="jinridingdan_wenzi">
       销售日报
     </view>
