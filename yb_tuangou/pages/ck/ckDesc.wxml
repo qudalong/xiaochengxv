@@ -44,7 +44,7 @@
 <!-- 弹窗 -->
 <view wx:if="{{showDia}}" class="dialog" >
   <view class="center-con">
-    <textarea class="textarea" auto-focus="true" maxlength="-1" placeholder="请输入驳回原因"></textarea>
+    <textarea class="textarea" bindinput="inputReason" auto-focus="true" maxlength="-1" placeholder="请输入驳回原因"></textarea>
     <view class="btn-grounp">
       <view catchtap="hideDia" class="but">取消</view>
       <view catchtap="hideDia" class="but but1">提交</view>

@@ -147,7 +147,9 @@ textarea {
 .but1 {
   background: #2c9f67;
 }
-
+.but_bg_red{
+  background: #ff6000;
+}
 .but:hover {
   opacity: 0.8;
 }
