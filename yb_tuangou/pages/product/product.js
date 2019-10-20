@@ -17,9 +17,13 @@ Page({
     heightArr: [],
     containerH: 0,
     closeShadow: false,
-    showDetails:false
+    showDetails: false
   },
-  onLoad: function (options) {
+  onLoad: function(options) {
+    this.getScrollInitData();
+  },
+
+  getScrollInitData() {
     request({
       url: 'https://mp.ucloudant.com/app/index.php?i=56&t=0&v=9.2&from=wxapp&c=entry&a=wxapp&do=Dishes&m=zh_dianc&sign=819fcd817f0aeb118075924d12978351&id=5&dishes_type=2',
     }).then(res => {
@@ -27,39 +31,25 @@ Page({
         list: res.data
       })
     }).then(() => {
-     
-    })
-  },
-  closeShowDetails: function () {
-    this.setData({
-      showDetails: !this.data.showDetails
+      let query = wx.createSelectorQuery();
+      let heightArr = [];
+      let s = 0;
+      query.selectAll('.pesticide').boundingClientRect((react) => {
+        react.forEach((res) => {
+          s += res.height;
+          heightArr.push(s)
+        });
+        this.setData({
+          heightArr
+        })
+      });
+      query.select('.content').boundingClientRect((res) => {
+        this.setData({
+          containerH: res.height
+        })
+      }).exec()
     });
   },
-  showDetails: function (e) {
-    wx.navigateTo({
-      url: '/yb_tuangou/pages/product_desc/product_desc',
-    })
-    // var descImg=e.currentTarget.dataset.img;
-    // this.setData({
-    //   descImg,
-    //   showDetails: true
-    // });
-  },
-
-  closeShadow() {
-    this.setData({
-      closeShadow: false
-    })
-  },
-
-  showCartList() {
-    if (this.data.selectFoods.length) {
-      this.setData({
-        closeShadow: true
-      })
-    }
-  },
-
 
   //左边点击联动
   chooseType(e) {
@@ -91,26 +81,29 @@ Page({
       }
     }
   },
+  showDetails: function (e) {
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/product_desc/product_desc',
+    })
+  },
 
-
-  onReady: function () {
-
-  },
-  onHide: function () {
-   
-  },
-  onShow: function () {
-  },
-  onUnload: function () {
-   
-  },
-  onPullDownRefresh: function () {
+  onReady: function() {
 
   },
-  onReachBottom: function () {
+  onHide: function() {
 
   },
-  onShareAppMessage: function () {
+  onShow: function() {},
+  onUnload: function() {
+
+  },
+  onPullDownRefresh: function() {
+
+  },
+  onReachBottom: function() {
+
+  },
+  onShareAppMessage: function() {
 
   }
 })
