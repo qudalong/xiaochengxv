@@ -154,9 +154,10 @@ Page({
       url: '/yb_tuangou/pages/sellLevel/sellLevel'
     })
   },
-  toDesc() {
+  toDesc(e) {
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/yb_tuangou/pages/ck/ckDesc'
+      url: '/yb_tuangou/pages/ck/ckDesc?itemid='+id
     })
   },
   tapItem(e) {
