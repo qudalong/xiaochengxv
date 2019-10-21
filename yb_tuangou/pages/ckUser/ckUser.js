@@ -152,12 +152,82 @@ Page({
       url: '/yb_tuangou/pages/ck/ckDesc'
     })
   },
+  //切换顶部tab
   tapItem(e) {
-    this.setData({
-      ind: e.currentTarget.dataset.ind
-    });
-  },
+    let ind = e.currentTarget.dataset.ind;
+    let _this = this;
+    switch (parseInt(ind)){
+      case 0://全部
+        _this.setData({
+          status:''
+        });
+        break;
+      case 1://待审核
+        _this.setData({
+          status:0
+        });
+        break;
+      case 2://审核通过
+        _this.setData({
+            status:1
+        });
 
+        break;
+      case 3://驳回
+        _this.setData({
+            status:2
+        });
+        break;
+      default:
+        _this.setData({
+            status:''
+        });
+
+    }
+    this.setData({
+      ind: e.currentTarget.dataset.ind,
+      list:[],
+      page:1,
+      running:false
+    });
+    this.loadUsers();
+  },
+  //审核通过
+  checkPass(e){
+    let item_id = e.currentTarget.dataset.id;
+
+    if(!item_id){
+      return;
+    }
+
+    let uid = this.data.uid;
+    a.post('wx/user/checkuser.html', {
+      uid: uid,
+      status: 1,
+      id: item_id
+    }, function (e) {
+      if (e.code == 1) {
+        a.success(e.msg);
+        _this.setData({
+          reason: '',
+          showDia: false,
+          page: 1,
+          running: false,
+          list: []
+        });
+
+        _this.loadUsers();
+
+      } else {
+        a.error(e.msg);
+      }
+
+    });
+
+
+
+
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -206,7 +276,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.loadData();
   },
 
   /**
