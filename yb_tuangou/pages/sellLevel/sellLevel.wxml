@@ -58,7 +58,7 @@
   </view>
   <view class="form_btn_box">
     <button bindtap="bindDengji" class="form_btn">
-      <text>登记</text>
+      <text>{{btn_text}}</text>
     </button>
   </view>
 </view>

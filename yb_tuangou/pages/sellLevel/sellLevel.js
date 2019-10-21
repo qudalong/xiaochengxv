@@ -25,7 +25,8 @@ Page({
     ticheng: '',
     beizu: '',
     buyDate: '',
-    birthday: ''
+    birthday: '',
+    btn_text:'上报'
   },
 
   /**
@@ -33,8 +34,52 @@ Page({
    */
   onLoad: function(options) {
     this.setData({
-      buyDate: formatTime(new Date())
+      buyDate: formatTime(new Date()),
+      item_id:''
     });
+    let item_id =  options.item_id;
+    if(item_id){
+      this.setData({
+        btn_text:'修改',
+        item_id: item_id
+      });
+      this.loadDataById(item_id);
+
+    }
+  },
+  //根据id查询数据
+  loadDataById(item_id) {
+
+   
+    let _this = this;
+    if (item_id) {
+
+      t.post("wx/scale/selbyid.html", {
+        id: item_id
+      }, function (e) {
+        if (e.code == 1) {
+          _this.setData({
+            buyName:e.data.v_buy_name,
+            productName:e.data.v_pro_name,
+            tel:e.data.v_buy_phone,
+            birthday:e.data.v_buy_bir,
+            buyDate:e.data.dtm_repdate,
+            price:e.data.i_show_je,
+            resultPrice:e.data.i_jy_je,
+            discount:e.data.i_rebate,
+            sell:e.data.i_sale_pre,
+            yeji:e.data.i_current_yj,
+            ticheng:e.data.i_royalty,
+            beizu: e.data.v_remarker
+          });
+
+        }
+     });
+
+
+    }
+
+
   },
   // 登记
   bindDengji() {
@@ -94,7 +139,7 @@ Page({
         icon: 'none'
       });
       return
-    } else if (!discount.trim()) {
+    } else if (!discount) {
       wx.showToast({
         title: '请输入折扣',
         icon: 'none'
@@ -129,8 +174,14 @@ Page({
     let uid = u.id;
     let v_real_name = u.v_real_name;
     let _this = this;
+    let id = '';
+    let item_id = this.data.item_id;
+    if(item_id){
+      id = item_id;
+    }
     t.post("wx/scale/add.html", {
       i_uid: uid,
+      id:id,
       v_real_name: v_real_name,
       v_buy_name:buyName,
       v_pro_name: productName, //名称
@@ -145,8 +196,17 @@ Page({
       i_royalty: ticheng,//销售提成
       v_remarker: beizu //备注
     }, function (data) {
+        console.log(data);
         if(data.code == 1){
             t.success(data.msg);
+            if(data.skip && data.skip == 1){
+              console.log("==============");
+              wx.navigateBack({
+                delta: 1
+              });
+              
+              return ;
+            }
             _this.setData({
               buyName:'',
               productName:'',

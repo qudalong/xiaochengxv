@@ -1,43 +1,84 @@
- <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
+<!--  <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>-->
 <view class="block">
   <view class="title">
     <view>用户信息</view>
-    <view class="btn-grounp">
-      <view class="but but1">审核通过</view>
+    <view class="btn-grounp" wx:if="{{status == 0}}">
+      <view class="but but1" bindtap="checkPass" data-id="{{id}}">审核通过</view>
       <view bindtap="reject" class="but">驳回</view>
+    </view>
+      <view class="btn-grounp" wx:if="{{status == 1 && i_uid == uid}}">
+      <view class="but but1" bindtap="mdy">修改</view>      
     </view>
   </view>
   <view class="group-row">
     <view class="row">
       <view class="label">姓名:</view>
-      <view class="cont">张三</view>
+      <view class="cont">{{v_buy_name}}</view>
     </view>
     <view class="row">
       <view class="label">时间:</view>
-      <view class="cont">2019-09-09</view>
+      <view class="cont">{{dtm_repdate}}</view>
     </view>
     <view class="row">
       <view class="label">审核状态:</view>
-      <view class="cont">审核通过</view>
+      <view class="cont" wx:if="{{status == 0}}">待审核</view>
+      <view class="cont" wx:if="{{status == 1}}">已驳回</view>
+      <view class="cont" wx:if="{{status == 2}}">审核通过</view>
+    </view>
+     <view class="row" wx:if="{{status == 1}}">
+      <view class="label">驳回原因:</view>
+      <view class="cont">{{v_reason}}</view>
     </view>
   </view>
 </view>
 <view class="block">
   <view class="title">
-    <view>商品信息</view>
+    <view>销售信息</view>
   </view>
   <view class="group-row">
     <view class="row">
       <view class="label">商品名称:</view>
-      <view class="cont">TRUELE系列男戒</view>
+      <view class="cont">{{v_pro_name}}</view>
     </view>
     <view class="row">
-      <view class="label">价格:</view>
-      <view class="cont">￥45912</view>
+      <view class="label">购买人:</view>
+      <view class="cont">{{v_buy_name}}</view>
+    </view>
+    <view class="row">
+      <view class="label">手机号:</view>
+      <view class="cont">{{v_buy_phone}}</view>
+    </view>
+    <view class="row">
+      <view class="label">生日:</view>
+      <view class="cont">{{v_buy_bir}}</view>
+    </view>
+    <view class="row">
+      <view class="label">标价:</view>
+      <view class="cont">￥{{i_show_je}}</view>
+    </view>
+    <view class="row">
+      <view class="label">成交价:</view>
+      <view class="cont">￥{{i_jy_je}}</view>
+    </view>
+    <view class="row">
+      <view class="label">折扣:</view>
+      <view class="cont">{{i_rebate}}</view>
+    </view>
+    <view class="row">
+      <view class="label">销售占比:</view>
+      <view class="cont">{{i_sale_pre}}%</view>
+    </view>
+      <view class="row">
+      <view class="label">当比业绩:</view>
+      <view class="cont">{{i_current_yj}}</view>
+    </view>
+      <view class="row">
+      <view class="label">销售提成:</view>
+      <view class="cont">{{i_royalty}}</view>
     </view>
     <view class="row" style="border:none">
-      <view class="label">业绩:</view>
-      <view class="cont">这是一个销售记录的内容</view>
+      <view class="label">备注:</view>
+      <view class="cont">{{v_remarker}}</view>
     </view>
   </view>
 </view>
@@ -46,8 +87,8 @@
   <view class="center-con">
     <textarea class="textarea" bindinput="inputReason" auto-focus="true" maxlength="-1" placeholder="请输入驳回原因"></textarea>
     <view class="btn-grounp">
-      <view catchtap="hideDia" class="but">取消</view>
-      <view catchtap="hideDia" class="but but1">提交</view>
+      <view catchtap="closeBhDialog" class="but">取消</view>
+      <view catchtap="submitBh" class="but but1">提交</view>
     </view>
   </view>
 </view>
