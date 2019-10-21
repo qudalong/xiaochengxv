@@ -105,6 +105,14 @@ Page({
           uid: u.id
         });
       }
+      if(options.ind){
+        //首页跳转
+        this.setData({
+            ind:options.ind,
+            status:0
+
+        });
+       }
       this.loadUsers();
     //console.log(this
   },

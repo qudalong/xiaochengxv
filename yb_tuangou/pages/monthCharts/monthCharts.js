@@ -4,7 +4,9 @@ for (let i = 1; i <= 12; i++) {
 }
 import {
   request
-} from '../../utils/request.js'
+} from '../../utils/request.js';
+var app = getApp();
+var a = app.requirejs("core");
 Page({
 
   /**
@@ -12,7 +14,8 @@ Page({
    */
   data: {
     list: [],
-    month: '',
+    //month: '',
+   
     months: months,
     showPicker: false,
     monthF: 1
@@ -22,6 +25,27 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    this.selDates();
+    // this.setData({
+    //     value:[1]
+    // });
+  },
+
+  selDates(){
+    let _this = this;
+    a.post('wx/monthrep/selmonth.html', {
+     
+    }, function (e) {
+      if (e.code == 1) {
+        _this.setData({
+            value: e.v,
+            months:e.data,
+            month: e.currentMonth,
+         });
+       } 
+     });
+
+
   },
 
   // 查询
@@ -73,9 +97,19 @@ Page({
       showPicker: true
     });
   },
+  getMonthValue(i){
+
+    let data = this.data.months;
+    return data[i];
+
+  },
+
   bindChange: function(e) {
+   
+    let v = this.getMonthValue(e.detail.value[0]);
     this.setData({
-      monthF: e.detail.value[0] + 1
+      monthF: v,
+      value:e.detail.value
     })
   },
 

@@ -6,6 +6,10 @@ Page({
    */
   data: {
     list: [1, 1, 1, 1],
+    status:'',
+    running:false,
+    page:1,
+    levelImg:'',    
     ind: 0
   },
 
@@ -13,7 +17,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let u = app.getCache('userinfo');    
+    u || wx.redirectTo({
+      url: "/yb_tuangou/pages/login/index"
+    });
+    //判断是否管理员
+    if (u.i_level == 0) {
+      this.setData({
+        isAdmin: 0,
+        uid: u.id
+      });
+    } else {
+      this.setData({
+        isAdmin: 1,
+        uid: u.id
+      });
+    }
   },
   toDesc() {
     wx.navigateTo({
