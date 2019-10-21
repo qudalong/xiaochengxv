@@ -1,1 +1,13 @@
 @import '../ckLevel/ckLevel';
+
+.base-c2{
+  color:#2c9f67
+}
+
+.base-c0 {
+  color: blue;
+}
+
+.base-c1{
+  color:red;
+}
