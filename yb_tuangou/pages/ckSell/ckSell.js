@@ -44,6 +44,18 @@ Page({
     this.loadData();
 
   },
+  //修改窗口
+  mdy(e) {
+
+    let item_id = e.currentTarget.dataset.id;
+    if(item_id){
+      wx.navigateTo({
+        url: '/yb_tuangou/pages/sellLevel/sellLevel?item_id=' + item_id
+      })
+
+    }
+
+  },
   //点击驳回按钮
   bh(e){
   //  console.log(e);
@@ -215,6 +227,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
+      this.setData({
+        list:[],
+        running:false,
+        page:1
+      });
+      this.loadData();
 
   },
 
