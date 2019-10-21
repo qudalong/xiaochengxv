@@ -194,6 +194,12 @@ Page({
     // wx.showLoading({
     //   title: '刷新中...'
     // })
+
+    this.setData({
+      list: [],
+      page: 1,
+      loaded: !1
+    }), this.loadUsers(), wx.stopPullDownRefresh();
   },
 
   /**
