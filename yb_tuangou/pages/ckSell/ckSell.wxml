@@ -36,7 +36,7 @@
       <view class="but"  catchtap="bh" data-id="{{item.id}}">驳回</view>
     </view>
      <view class="btn-grounp" wx:if="{{item.status == 1 && uid == item.i_uid}}">
-      <view class="but but1 but_bg_red">修改</view>
+      <view class="but but1 but_bg_red" catchtap="mdy"   data-id="{{item.id}}">修改</view>
    
     </view>
   </view>

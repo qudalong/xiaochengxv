@@ -81,6 +81,8 @@ Page({
 
 
   },
+
+  
   // 登记
   bindDengji() {
     let {
@@ -201,9 +203,12 @@ Page({
             t.success(data.msg);
             if(data.skip && data.skip == 1){
               console.log("==============");
-              wx.navigateBack({
-                delta: 1
-              });
+              setTimeout(function(){
+                wx.navigateBack({
+                  delta: 1
+                });
+
+              },500);
               
               return ;
             }
