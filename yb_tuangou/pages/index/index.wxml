@@ -199,7 +199,7 @@
   <view class="content">
     <view wx:for="{{list}}" wx:key="unique" class="item">
       <view>第{{index+1}}名</view>
-      <view>20</view>
+      <view>{{20-index}}</view>
     </view>
   </view>
 </view>
