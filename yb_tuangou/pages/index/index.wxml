@@ -192,21 +192,14 @@
   <view class="title">活动规则
     <view bindtap="hideRule" class="close">x</view>
   </view>
+  <view class="fixTitle">
+   <view>名次</view>
+    <view>奖金占比(%)</view>
+  </view>
   <view class="content">
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-    <view class="line">1.佳都科技發生的空間福克佳都科技發生</view>
-
+    <view wx:for="{{list}}" wx:key="unique" class="item">
+    <view>第{{index+1}}名</view>
+    <view>20</view>
+    </view>
   </view>
 </view>

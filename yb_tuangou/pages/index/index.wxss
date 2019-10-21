@@ -63,6 +63,19 @@ page {
   overflow-y: scroll;
   text-align: left;
 }
+.rule-wrap .content .item ,.fixTitle{
+  padding: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.fixTitle{
+ padding: 30rpx 30rpx 0 30rpx;
+ font-weight: bold;
+}
+.rule-wrap .content .item:nth-child(even) {
+  background: #FDEFD5;
+}
 
 .userinfo {
   width: 750rpx;
