@@ -40,6 +40,18 @@ Page({
       }
     }
   },
+  updateinc(){
+    let item_id = this.data.item_id;
+    if(!item_id){
+      return ;
+    }
+
+    a.post("wx/product/adddown.html",{
+      id:item_id
+    },function(data){
+
+    })
+  },
   downloadImg(e) {　　　　　　　　　　　　　　　
     wx.downloadFile({
       url: this.data.src,
@@ -51,7 +63,8 @@ Page({
               title: '下载成功',
               icon: 'success',
               duration: 2000
-            })
+            });
+            updateinc();
           },
           fail: function(err) {
             if (err.errMsg === "saveImageToPhotosAlbum:fail auth deny") {
