@@ -40,6 +40,11 @@ Page({
           uid: u.id
         });
     }
+    if(options.ind){
+      this.setData({
+        ind:options.ind
+      });
+    }
     //console.log(this.data.isAdmin);
     this.loadData();
 

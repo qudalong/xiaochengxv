@@ -13,6 +13,7 @@ Page({
     marqueeDistance: 0,
     marquee_margin: 30,
     size: 14,
+    isAdmin:0,
     interval: 20,
     info: {
       today_order: {
@@ -38,8 +39,19 @@ Page({
     user || wx.redirectTo({
       url: "/yb_tuangou/pages/login/index"
     });
+    if(user.i_level == 0){
+        this.setData({
+            isAdmin:1
+        });
+
+    }else{
+        this.setData({
+            isAdmin:0
+        });
+    }
     this.updUser(user.id);
     this.loadNotice();
+    this.selScaleLevel();
   },
   showRule() {
     this.setData({
@@ -86,6 +98,20 @@ Page({
       }
     });
   },
+  //查询销售等级
+  selScaleLevel(){
+    let _this = this;
+    o.post("wx/monthrep/sellevel.html",{},function(e){
+
+           if(e.code == 1 &&  e.data){
+              _this.setData({
+                list:e.data
+              });
+           }
+      });
+
+  },
+  //更新用户信息
   updUser(uid) {
 
     o.post("wx/user/updwx_user.html", {
@@ -132,6 +158,18 @@ Page({
         }
       },
       fail: function(e) {}
+    });
+  },
+  toproduct(){
+    console.log("-------------------")
+    //o.jump( '/yb_tuangou/pages/product/product');
+    wx.switchTab({
+      url: '/yb_tuangou/pages/product/product'
+    });
+  },
+  sendNotice(){
+    wx.navigateTo({
+      url: "/yb_tuangou/pages/notice/notice"
     });
   },
   to_order: function() {
@@ -189,9 +227,9 @@ Page({
     })
   },
   xiaoshou() {
-    wx.navigateTo({
-      url: ''
-    })
+    this.setData({
+      showDia: true
+    });
   },
   shangbao() {
     wx.navigateTo({
@@ -200,12 +238,12 @@ Page({
   },
   bindCkUser() {
     wx.navigateTo({
-      url: '/yb_tuangou/pages/ckUser/ckUser'
+      url: '/yb_tuangou/pages/ckUser/ckUser?ind=1'
     })
   },
   bindCkSell() {
     wx.switchTab({
-      url: '/yb_tuangou/pages/ckSell/ckSell'
+      url: '/yb_tuangou/pages/ckSell/ckSell?ind=1'
     })
   },
   bindCkLevel() {

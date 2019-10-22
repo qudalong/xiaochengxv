@@ -1,20 +1,24 @@
 <view class="container">
   <view class="userinfo">
-    <view bindtap="shenhe" class="tupian" data-i="1">
+    <view bindtap="shenhe" class="tupian" data-i="1" wx:if="{{isAdmin == 1}}">
       <image class="userinfo-hexiao" mode="cover" src="{{icon.hexiao}}"></image>
       <text class="wenzi">审核</text>
     </view>
-    <view class="tupian">
-      <image bindtap="scancode" class="userinfo-shouhuo" data-i="2" mode="cover" src="{{icon.shouhuo}}"></image>
+    <view bindtap="toproduct" class="tupian">
+      <image  class="userinfo-shouhuo" data-i="2" mode="cover" src="{{icon.shouhuo}}"></image>
       <text class="wenzi_shouhuo">产品下载</text>
     </view>
     <view bindtap="shangbao" class="tupian">
       <image class="userinfo-tuihuo" data-i="3" mode="cover" src="{{icon.tuihuo}}"></image>
       <text class="wenzi_tuihuo">销售上报</text>
     </view>
-    <view bindtap="xiaoshou" class="tupian">
+    <view bindtap="xiaoshou" class="tupian" wx:if="{{isAdmin ==0}}">
       <image class="userinfo-tuihuo" data-i="4" mode="cover" src="{{icon.dingdan}}" style="margin-left:120rpx"></image>
       <text class="wenzi_dingdan" style="margin-left:100rpx">销售等级</text>
+    </view>
+     <view bindtap="sendNotice" class="tupian" wx:if="{{isAdmin ==1}}">
+      <image class="userinfo-tuihuo" data-i="4" mode="cover" src="{{icon.dingdan}}" style="margin-left:120rpx"></image>
+      <text class="wenzi_dingdan" style="margin-left:100rpx">发送通知</text>
     </view>
   </view>
   <view class="section">
@@ -25,7 +29,7 @@
     </view>
   </view>
   <view class="fengexian_bg"></view>
-  <view class="jinridingdan pb0">
+  <view class="jinridingdan pb0" wx:if="{{isAdmin == 1}}">
     <view class="jinridingdan_wenzi">
       待审核
     </view>
@@ -64,7 +68,7 @@
       </view>
     </view>
   </view>
-  <view class="jinridingdan">
+  <view class="jinridingdan" wx:if="{{isAdmin == 1}}">
     <view class="jinridingdan_wenzi">
       总览
     </view>
@@ -108,7 +112,7 @@
     </view>
   </view>
   <view class="fengexian_bg"></view>
-  <view class="jinridingdan pb0">
+  <view class="jinridingdan pb0" wx:if="{{isAdmin == 0}}">
     <view class="jinridingdan_wenzi">
       销售日报
     </view>
@@ -138,7 +142,7 @@
       </view>
     </view>
   </view>
-  <view class="jinridingdan">
+  <view class="jinridingdan" wx:if="{{isAdmin == 0}}">
     <view class="jinridingdan_wenzi">
       总览
     </view>
@@ -185,11 +189,11 @@
 </view>
 <!-- 规则 -->
 <view bindtap="showRule" class="rule hover">
-  <image class="img" src="/yb_tuangou/static/images/member_img/tixian@2x.png"></image>规则</view>
+  <image class="img" src="/yb_tuangou/static/images/member_img/tixian@2x.png"></image>销售等级说明</view>
 <!-- 弹窗 -->
 <view wx:if="{{showDia}}" class="dialog" catchtouchmove="true"> </view>
 <view wx:if="{{showDia}}" class="rule-wrap">
-  <view class="title">活动规则
+  <view class="title">销售等级说明
     <view bindtap="hideRule" class="close">x</view>
   </view>
   <view class="fixTitle">
@@ -199,9 +203,9 @@
   </view>
   <view class="content">
     <view wx:for="{{list}}" wx:key="unique" class="item">
-      <view>第{{index+1}}名</view>
-      <view>{{100-index}}</view>
-      <view>{{20-index}}</view>
+      <view>{{item.v_level_name}}</view>
+      <view>{{item.i_num}}</view>
+      <view>{{item.i_rebate}}%</view>
     </view>
   </view>
 </view>
