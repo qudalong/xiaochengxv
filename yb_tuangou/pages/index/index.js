@@ -17,16 +17,16 @@ Page({
     interval: 20,
     info: {
       today_order: {
-        total: 11,
-        stay_take: 1,
-        stay_cancel: 10,
+        total: 0,
+        stay_take: 0,
+        stay_cancel: 0,
         already_cancel: 0
       },
       log_order: {
-        total: 30,
-        stay_take: 30,
-        already_cancel: 10000,
-        stay_cancel: 200000
+        total: 0,
+        stay_take: 0,
+        already_cancel: 0,
+        stay_cancel: 0
       },
       news: {
         news: '暂无公告'
@@ -73,13 +73,47 @@ Page({
     });
 
   },
+  //加载所有数据
   loadAllData(){
     let isAdmin = this.data.isAdmin;
     if(isAdmin == 1){
       this.selDsh();
-
+      this.selAdminAll();
     }
+  },
+  loadHeaderPro(){
+    let _this = this;
+    o.post("wx/product/tj.html",{},function(e){
 
+        if(e.code == 1 && e.data){
+            _this.setDat({
+                pro:e.data
+            });
+        }
+
+    });
+
+  },
+  //管理员-总揽
+  selAdminAll(){
+    let _this = this;
+    o.post("wx/user/adminall.html",{},function(e){
+
+        if(e.code == 1){
+          let goods_num = e.goods_num ? e.goods_num:0;
+          let users_num = e.users_num ? e.users_num:0;
+          let days_num = e.days_num ? e.days_num :0.00;
+          let all_num = e.all_num ? e.all_num :0.00;
+          let info = _this.data.info;
+          info.log_order.total = users_num;
+          info.log_order.stay_take = goods_num;
+          info.log_order.stay_cancel = all_num;
+          info.log_order.already_cancel = days_num;
+          _this.setData({
+            info:info
+          });
+        }
+    });
   },
   //管理员-带审核
   selDsh(){
