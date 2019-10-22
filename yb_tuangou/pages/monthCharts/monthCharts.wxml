@@ -5,7 +5,8 @@
   </view>
   <view bindtap="showPicker" wx:if='{{month}}' class="serchBox">{{month}}</view>
   <view bindtap="bindSearch" class="but serchBtn">查询</view>
-  <view class="export">导出</view>
+  <!--
+  <view class="export">导出</view>-->
 </view>
 <!-- 列表 -->
 <view class="lis">

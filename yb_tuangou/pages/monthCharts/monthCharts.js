@@ -58,6 +58,7 @@ Page({
           if (data.data.data && data.data.data.length > 0) {
             _this.setData({
               list: _this.data.list.concat(data.data.data),
+              img:data.img,
               page: page + 1
             });
           }

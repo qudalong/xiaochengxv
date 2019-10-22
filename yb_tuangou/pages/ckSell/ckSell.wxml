@@ -20,7 +20,7 @@
     </view>
     <view class="product-info">
       <view class="left">
-        <image class="img" src="{{scaleImg}}"></image>
+        <image class="img" src="{{img}}"></image>
         <view class="info">
           <view class="name">产品:{{item.v_pro_name}}</view>         
           <view>标价:¥{{item.i_show_je}} | 售价:¥{{item.i_jy_je}} | 折扣:{{item.i_rebate}}</view>
@@ -56,7 +56,7 @@
     </view>
     <view class="product-info">
       <view class="left">
-        <image class="img" src="{{scaleImg}}"></image>
+        <image class="img" src="{{img}}"></image>
         <view class="info">
           <view class="name">产品:{{item.v_pro_name}}</view>         
           <view>标价:¥{{item.i_show_je}} | 售价:¥{{item.i_jy_je}} | 折扣:{{item.i_rebate}}</view>
@@ -90,7 +90,7 @@
     </view>
     <view class="product-info">
       <view class="left">
-        <image class="img" src="{{scaleImg}}"></image>
+        <image class="img" src="{{img}}"></image>
         <view class="info">
           <view class="name">产品:{{item.v_pro_name}}</view>         
           <view>标价:¥{{item.i_show_je}} | 售价:¥{{item.i_jy_je}} | 折扣:{{item.i_rebate}}</view>
@@ -124,7 +124,7 @@
     </view>
     <view class="product-info">
       <view class="left">
-        <image class="img" src="{{scaleImg}}"></image>
+        <image class="img" src="{{img}}"></image>
         <view class="info">
           <view class="name">产品:{{item.v_pro_name}}</view>         
           <view>标价:¥{{item.i_show_je}} | 售价:¥{{item.i_jy_je}} | 折扣:{{item.i_rebate}}</view>
