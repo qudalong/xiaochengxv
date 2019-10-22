@@ -6,105 +6,138 @@
 </view>
 <!-- 全部 -->
 <view wx:if='{{ind==0}}'>
-  <view bindtap="toDesc" wx:for="{{list}}" wx:key="unique" class="row">
+  <view  wx:for="{{list}}" wx:key="unique" wx:for-item="item" data-id="{{item.id}}" class="row">
     <view class="row1">
       <view>
-        <text class="mr20">姓名：张三</text>
-        <text>时间：2019-09-09</text>
+        <text class="mr20">姓名：{{item.v_real_name}}</text>
+        <text>添加时间：{{item.create_at}}</text>
       </view>
-      <view class="base-c">审核通过</view>
+       <view class="base-c" wx:if="{{item.status == 1}}">审核通过</view>
+      <view class="base-c0" wx:if="{{item.status == 0}}">待审核</view>
+      <view class="base-c1" wx:if="{{item.status == 2}}">已驳回</view>
+      <view class="base-c1" wx:if="{{item.status == 3}}">禁用</view>
     </view>
     <view class="product-info">
       <view class="left">
-        <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
+        <image class="img" src="{{userImg}}"></image>
         <view class="info">
-          <view class="name">TRUELE系列男戒</view>
-          <view>标价:¥45912 | 售价:¥45912 | 提成:¥45912</view>
-          <view>业绩:这是一个销售记录的内容</view>
+          <view class="name">电话:{{item.phone}}</view>
+          <view>用户级别:{{item.v_level_name}} | 销售级别:{{item.v_scale_level_name}} | 提成系数:{{item.i_rebate}}%</view>
+          <view wx:if="{{item.i_level == 1}}">邀请码:{{item.v_yq_code}}</view>
+          <view wx:if="{{item.status == 2}}">驳回原因:{{item.v_reason}}</view>
+
         </view>
       </view>
     </view>
-    <view class="btn-grounp">
-      <view class="but but1">审核通过</view>
-      <view class="but">驳回</view>
+    <view class="btn-grounp" wx:if="{{item.status == 0}}">
+      <view catchtap="checkPass"  data-id="{{item.id}}" class="but but1">审核通过</view>
+      <view catchtap="hbdia" data-id="{{item.id}}" class="but">驳回</view>
     </view>
   </view>
 </view>
 <!-- 待审核 -->
 <view wx:if='{{ind==1}}'>
- <view wx:for="{{list}}" wx:key="unique" class="row">
+  <view  wx:for="{{list}}" wx:key="unique" wx:for-item="item" data-id="{{item.id}}" class="row">
     <view class="row1">
       <view>
-        <text class="mr20">姓名：张三</text>
-        <text>时间：2019-09-09</text>
+        <text class="mr20">姓名：{{item.v_real_name}}</text>
+        <text>添加时间：{{item.create_at}}</text>
       </view>
-      <view class="base-c">待审核</view>
+       <view class="base-c" wx:if="{{item.status == 1}}">审核通过</view>
+      <view class="base-c0" wx:if="{{item.status == 0}}">待审核</view>
+      <view class="base-c1" wx:if="{{item.status == 2}}">已驳回</view>
+      <view class="base-c1" wx:if="{{item.status == 3}}">禁用</view>
     </view>
     <view class="product-info">
       <view class="left">
-        <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
+        <image class="img" src="{{userImg}}"></image>
         <view class="info">
-          <view class="name">TRUELE系列男戒</view>
-          <view>标价:¥45912 | 售价:¥45912 | 提成:¥45912</view>
-          <view>业绩:这是一个销售记录的内容</view>
+          <view class="name">电话:{{item.phone}}</view>
+          <view>用户级别:{{item.v_level_name}} | 销售级别:{{item.v_scale_level_name}} | 提成系数:{{item.i_rebate}}%</view>
+          <view wx:if="{{item.i_level == 1}}">邀请码:{{item.v_yq_code}}</view>
+          <view wx:if="{{item.status == 2}}">驳回原因:{{item.v_reason}}</view>
+
         </view>
       </view>
     </view>
-    <view class="btn-grounp">
-      <view class="but but1">审核通过</view>
-      <view class="but">驳回</view>
+    <view class="btn-grounp" wx:if="{{item.status == 0}}">
+      <view catchtap="checkPass"  data-id="{{item.id}}" class="but but1">审核通过</view>
+      <view catchtap="hbdia" data-id="{{item.id}}" class="but">驳回</view>
     </view>
   </view>
 </view>
 <!-- 已通过 -->
 <view wx:if='{{ind==2}}'>
- <view wx:for="{{list}}" wx:key="unique" class="row">
+ <view  wx:for="{{list}}" wx:key="unique" wx:for-item="item" data-id="{{item.id}}" class="row">
     <view class="row1">
       <view>
-        <text class="mr20">姓名：张三</text>
-        <text>时间：2019-09-09</text>
+        <text class="mr20">姓名：{{item.v_real_name}}</text>
+        <text>添加时间：{{item.create_at}}</text>
       </view>
-      <view class="base-c">已通过</view>
+       <view class="base-c" wx:if="{{item.status == 1}}">审核通过</view>
+      <view class="base-c0" wx:if="{{item.status == 0}}">待审核</view>
+      <view class="base-c1" wx:if="{{item.status == 2}}">已驳回</view>
+      <view class="base-c1" wx:if="{{item.status == 3}}">禁用</view>
     </view>
     <view class="product-info">
       <view class="left">
-        <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
+        <image class="img" src="{{userImg}}"></image>
         <view class="info">
-          <view class="name">TRUELE系列男戒</view>
-          <view>标价:¥45912 | 售价:¥45912 | 提成:¥45912</view>
-          <view>业绩:这是一个销售记录的内容</view>
+          <view class="name">电话:{{item.phone}}</view>
+          <view>用户级别:{{item.v_level_name}} | 销售级别:{{item.v_scale_level_name}} | 提成系数:{{item.i_rebate}}%</view>
+          <view wx:if="{{item.i_level == 1}}">邀请码:{{item.v_yq_code}}</view>
+          <view wx:if="{{item.status == 2}}">驳回原因:{{item.v_reason}}</view>
+
         </view>
       </view>
     </view>
-    <view class="btn-grounp">
-      <view class="but but1">审核通过</view>
-      <view class="but">驳回</view>
+    <view class="btn-grounp" wx:if="{{item.status == 0}}">
+      <view catchtap="checkPass"  data-id="{{item.id}}" class="but but1">审核通过</view>
+      <view catchtap="hbdia" data-id="{{item.id}}" class="but">驳回</view>
     </view>
   </view>
 </view>
 <!-- 驳回 -->
 <view wx:if='{{ind==3}}'>
- <view wx:for="{{list}}" wx:key="unique" class="row">
+ <view  wx:for="{{list}}" wx:key="unique" wx:for-item="item" data-id="{{item.id}}" class="row">
     <view class="row1">
       <view>
-        <text class="mr20">姓名：张三</text>
-        <text>时间：2019-09-09</text>
+        <text class="mr20">姓名：{{item.v_real_name}}</text>
+        <text>添加时间：{{item.create_at}}</text>
       </view>
-      <view class="base-c">已驳回</view>
+       <view class="base-c" wx:if="{{item.status == 1}}">审核通过</view>
+      <view class="base-c0" wx:if="{{item.status == 0}}">待审核</view>
+      <view class="base-c1" wx:if="{{item.status == 2}}">已驳回</view>
+      <view class="base-c1" wx:if="{{item.status == 3}}">禁用</view>
     </view>
     <view class="product-info">
       <view class="left">
-        <image class="img" src="http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg"></image>
+        <image class="img" src="{{userImg}}"></image>
         <view class="info">
-          <view class="name">TRUELE系列男戒</view>
-          <view>标价:¥45912 | 售价:¥45912 | 提成:¥45912</view>
-          <view>业绩:这是一个销售记录的内容</view>
+          <view class="name">电话:{{item.phone}}</view>
+          <view>用户级别:{{item.v_level_name}} | 销售级别:{{item.v_scale_level_name}} | 提成系数:{{item.i_rebate}}%</view>
+          <view wx:if="{{item.i_level == 1}}">邀请码:{{item.v_yq_code}}</view>
+          <view wx:if="{{item.status == 2}}">驳回原因:{{item.v_reason}}</view>
+
         </view>
       </view>
     </view>
+    <view class="btn-grounp" wx:if="{{item.status == 0}}">
+      <view catchtap="checkPass"  data-id="{{item.id}}" class="but but1">审核通过</view>
+      <view catchtap="hbdia" data-id="{{item.id}}" class="but">驳回</view>
+    </view>
+  </view>
+</view>
+
+
+
+<!-- 弹窗 -->
+<view wx:if="{{showDia}}" class="dialog" >
+  <view class="center-con">
+    <textarea class="textarea" bindinput="inputReason" auto-focus="true" maxlength="-1" value="{{reason}}" placeholder="请输入驳回原因"></textarea>
     <view class="btn-grounp">
-      <view class="but but1">审核通过</view>
-      <view class="but">驳回</view>
+      <view catchtap="closeBhDialog" class="but">取消</view>
+      <view catchtap="submitBh" class="but but1">提交</view>
     </view>
   </view>
 </view>

@@ -12,7 +12,7 @@ Page({
     showDia:false,
     status:'',
     reason:'',
-    scaleImg:'http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg',
+    img:'http://www.aitaocui.cn/article/uploads/allimg/180528/67_180528164058_1_lit.jpg',
     isAdmin:0,
     ind: 0,
     uid:''
@@ -288,9 +288,10 @@ Page({
             running:false
           });
           if(data.code == 1){
-            if (data.data.data.length>0){
+            if (data.data.data && data.data.data.length>0){
               _this.setData({
                 list: _this.data.list.concat(data.data.data),
+                img: data.img,
                 page: page + 1
               });
 

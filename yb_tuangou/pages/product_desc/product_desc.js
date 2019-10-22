@@ -1,4 +1,7 @@
 // yb_tuangou/pages/product_desc/product_desc.js
+var app = getApp();
+var a = app.requirejs("core");
+
 Page({
 
   /**
@@ -37,6 +40,18 @@ Page({
       }
     }
   },
+  updateinc(){
+    let item_id = this.data.item_id;
+    if(!item_id){
+      return ;
+    }
+
+    a.post("wx/product/adddown.html",{
+      id:item_id
+    },function(data){
+
+    })
+  },
   downloadImg(e) {　　　　　　　　　　　　　　　
     wx.downloadFile({
       url: this.data.src,
@@ -48,7 +63,8 @@ Page({
               title: '下载成功',
               icon: 'success',
               duration: 2000
-            })
+            });
+            updateinc();
           },
           fail: function(err) {
             if (err.errMsg === "saveImageToPhotosAlbum:fail auth deny") {
@@ -75,6 +91,34 @@ Page({
         })
       }
     })
+  },
+  //加载产品详情
+  loadDetail(){
+    let _this = this;
+    let item_id = this.data.item_id;
+    if(!item_id){
+      return;
+    }
+    a.post("wx/product/selprodetail.html",{
+      id:item_id
+
+    },function(data){
+        if(data.code ==1 && data.data){
+            let detail = data.data;
+            if(detail && detail.image){
+
+                let images = image.split("|");
+                _this.setData({
+                  imgs:images,
+                  detail:detail
+                });
+
+            }
+        }
+
+    });
+
+
   },
   closeBigImg() {
     this.setData({
