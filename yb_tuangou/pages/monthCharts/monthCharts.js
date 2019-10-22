@@ -15,10 +15,12 @@ Page({
   data: {
     list: [],
     //month: '',
-   
+    img:'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571397355485&di=2dc84f250d0cd7e861bc97519e1f6e7c&imgtype=0&src=http%3A%2F%2Fimg.juimg.com%2Ftuku%2Fyulantu%2F130512%2F240411-13051221525937.jpg',
     months: months,
     showPicker: false,
-    monthF: 1
+    monthF: 1,
+    running:false,
+    page :1
   },
 
   /**
@@ -30,7 +32,47 @@ Page({
     //     value:[1]
     // });
   },
+  //加载数据
+  selDatas(){
 
+    let month = this.data.monthF;
+    let page = this.data.page;
+    if(!month){
+        return;
+    }
+
+     let _this = this;
+    if (!this.data.running) {
+      _this.setData({
+        running: true
+      });
+     let  param = {};
+      param.month = month;
+      param.page = page;
+      a.post('wx/monthrep/sellist.html', param, function (data) {
+        console.log(data);
+        _this.setData({
+          running: false
+        });
+        if (data.code == 1) {
+          if (data.data.data && data.data.data.length > 0) {
+            _this.setData({
+              list: _this.data.list.concat(data.data.data),
+              page: page + 1
+            });
+          }
+
+        } else {
+          a.error(data.msg);
+        }
+
+      });
+
+    }
+
+
+
+  },
   selDates(){
     let _this = this;
     a.post('wx/monthrep/selmonth.html', {
@@ -42,6 +84,7 @@ Page({
             months:e.data,
             month: e.currentMonth,
          });
+         _this.selDatas();
        } 
      });
 
@@ -56,12 +99,20 @@ Page({
         title: '请选择查询时间',
         icon: 'none'
       });
-      return
+      return;
     }
-    wx.showLoading({
-      title: '查询中...',
+    this.setData({
+        page:1,
+        running:false,
+        list:[]
+
     });
-    this.getDataForMonth();
+    this.selDatas();
+
+    // wx.showLoading({
+    //   title: '查询中...',
+    // });
+    // this.getDataForMonth();
   },
 
   // 获取报表数据
@@ -148,13 +199,19 @@ Page({
     // wx.showLoading({
     //   title: '刷新中...'
     // })
+
+    this.setData({
+      list: [],
+      page: 1,
+      running: false
+    }), this.selDatas(), wx.stopPullDownRefresh();
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function() {
-
+    this.selDatas();
   },
 
   /**

@@ -13,18 +13,18 @@
     <view wx:for="{{list}}" wx:key="unique" class="row">
       <view class="row1">
         <view>
-          <text class="mr20">姓名：{{item.username}}</text>
-          <text>时间：{{item.createtime}}</text>
+          <text class="mr20">姓名：{{item.v_real_name}}</text>
+          <text>时间：{{item.v_month}}</text>
         </view>
         <!-- <view class="base-c">审核通过</view> -->
       </view>
       <view class="product-info">
         <view class="left">
-          <image class="img" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571397355485&di=2dc84f250d0cd7e861bc97519e1f6e7c&imgtype=0&src=http%3A%2F%2Fimg.juimg.com%2Ftuku%2Fyulantu%2F130512%2F240411-13051221525937.jpg"></image>
+          <image class="img" src="{{img}}"></image>
           <view class="info">
-            <view class="name ep w4">{{item.title}}</view>
-            <view>标价:¥{{item.pId}} | 售价:¥{{item.id}} | 提成:¥{{item.userId}}</view>
-            <view>业绩:这是一个销售记录的内容</view>
+            <view class="name ep w4">产品：{{item.v_pro_name}}</view>
+            <view>标价:¥{{item.i_bj}} | 售价:¥{{item.i_sj}} | 折扣:{{item.i_zk}}</view>
+            <view>提成系数:{{item.i_tc_xs}} | 提成:¥{{item.i_tc_all}}</view>
           </view>
         </view>
       </view>
