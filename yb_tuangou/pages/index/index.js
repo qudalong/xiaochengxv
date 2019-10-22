@@ -49,6 +49,7 @@ Page({
             isAdmin:0
         });
     }
+    this.loadAllData();
     this.updUser(user.id);
     this.loadNotice();
     this.selScaleLevel();
@@ -72,14 +73,34 @@ Page({
     });
 
   },
-  getAdInfo: function() {
-    var n = this;
-    o.get("Arliki/get_apply", {}, function(e) {
-      0 == e.code && e.info.ad_pic && n.setData({
-        adUrl: e.info.ad_pic,
-        adShow: !0
-      });
+  loadAllData(){
+    let isAdmin = this.data.isAdmin;
+    if(isAdmin == 1){
+      this.selDsh();
+
+    }
+
+  },
+  //管理员-带审核
+  selDsh(){
+    var _this = this;
+    o.post("wx/user/shcnt.html",{},function(e){
+        if(e.code == 1){
+          let users_num = e.users ? e.users:0;
+          let day_num = e.days ? e.days:0;
+          let level_num = e.levels ? e.levels:0;
+          let all = users_num+day_num+level_num;
+          let info = _this.data.info;
+          info.today_order.total = all;
+          info.today_order.stay_take = users_num;
+          info.today_order.stay_cancel = day_num;
+          info.today_order.already_cancel = level_num;
+          _this.setData({
+              info:info
+          });
+        }
     });
+
   },
 
 
