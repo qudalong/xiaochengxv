@@ -193,12 +193,14 @@
     <view bindtap="hideRule" class="close">x</view>
   </view>
   <view class="fixTitle">
-    <view>名次</view>
-    <view>奖金占比(%)</view>
+    <view>等级名称</view>
+    <view>金额</view>
+    <view>提成系数(%)</view>
   </view>
   <view class="content">
     <view wx:for="{{list}}" wx:key="unique" class="item">
       <view>第{{index+1}}名</view>
+      <view>{{100-index}}</view>
       <view>{{20-index}}</view>
     </view>
   </view>

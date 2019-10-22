@@ -1,3 +1,12 @@
+<!-- 查询 -->
+<view class="serch">
+  <picker class="serchBox relative" mode="date" value="{{date}}" bindchange="bindDateChange">
+    <image class="down" src="/yb_tuangou/static/images/jiantou@2x.png"></image>
+    <view wx:if='{{!date}}' class="picker">请选择查询时间</view>
+    <view wx:if='{{date}}' class="picker">{{date}}</view>
+  </picker>
+  <view bindtap="bindSearch" class="but serchBtn hover">查询</view>
+</view>
 <block wx:if="{{rankList.length}}">
   <view class="ranking-wrap">
     <view wx:for='{{rankList}}' wx:key='unquie' class="item">

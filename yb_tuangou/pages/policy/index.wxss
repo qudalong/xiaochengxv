@@ -1,5 +1,7 @@
+
 .ranking-wrap {
   padding: 20rpx;
+  margin-top: 120rpx;
 }
 
 .ranking-wrap .item {
@@ -50,4 +52,40 @@
 .infos {
   flex: 1;
   line-height: 1.6;
+}
+.serch {
+  padding: 30rpx 0;
+  display: flex;
+  align-items: center;
+  padding-left: 13%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #f0f0f0;
+  z-index: 9999999;
+}
+.lis{
+  margin-top: 102rpx;
+}
+.serchBox {
+  display: inline-block;
+  background: #fff;
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 400rpx;
+  padding-left: 20rpx;
+  border-radius: 6rpx 0 0 6rpx;
+}
+
+.serchBtn {
+  display: inline-block;
+  border-radius: 0 6rpx 6rpx 0;
+  height: 70rpx;
+  line-height: 70rpx;
+  width: 40px;
+  text-align: center;
+  padding: 0 30rpx;
+  background: #ff6000;
+  color: #fff;
 }

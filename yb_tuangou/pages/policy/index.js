@@ -1,9 +1,18 @@
+var days = []
+for (let i = 1; i <= 12; i++) {
+  days.push(i)
+}
 import {
   request
 } from '../../utils/request.js'
 Page({
   data: {
-    rankList: []
+    rankList: [],
+    day: '',
+    days: days,
+    showPicker: false,
+    dayF: 1,
+    date:''
   },
   onLoad: function(e) {
     wx.showLoading({
@@ -11,6 +20,29 @@ Page({
     });
     this.getRanking();
   },
+
+  bindDateChange: function (e) {
+    this.setData({
+      date: e.detail.value
+    })
+  },
+
+  // 查询
+  bindSearch() {
+    var day = this.data.date;
+    if (!day) {
+      wx.showToast({
+        title: '请选择查询时间',
+        icon: 'none'
+      });
+      return
+    }
+    wx.showLoading({
+      title: '查询中...',
+    });
+    this.getRanking();
+  },
+
   // 获取排行列表
   getRanking() {
     request({
