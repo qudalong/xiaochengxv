@@ -5,7 +5,8 @@
     <view class="name">{{userinfo.name}}</view>
     <view bindtap="tapName" class="name_dongtai" data-hi="WeChat" data-name="1" id="tapTest">{{userinfo.detail_address}}</view>
 
-    <image bindtap="bindViewTap" class="userinfo-bianji" data-index="7" mode="cover" src="{{icon.bianji}}"></image>
+  <!-- 
+    <image bindtap="bindViewTap" class="userinfo-bianji" data-index="7" mode="cover" src="{{icon.bianji}}"></image>-->
     <view class="yongjin">
       <view class="yongjin_left">
         <view class="left_num">
