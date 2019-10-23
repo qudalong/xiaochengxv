@@ -119,7 +119,7 @@
     <view class="row">
       <view class="zongshuliang">
         <view class="zongshuliang_number1">
-          12
+          {{personal.all}}
         </view>
         <view class="zongshuliang_text1">
           总数
@@ -127,17 +127,17 @@
         <view class="zongshuliang_fengexian1"></view>
       </view>
       <view class="zongshuliang">
-        <view class="zongshuliang_number1">1</view>
+        <view class="zongshuliang_number1">{{personal.sh}}</view>
         <view class="zongshuliang_text1">待审核</view>
         <view class="zongshuliang_fengexian1"></view>
       </view>
       <view class="zongshuliang">
-        <view class="zongshuliang_number1">8</view>
+        <view class="zongshuliang_number1">{{personal.pass}}</view>
         <view class="zongshuliang_text1">通过</view>
         <view class="zongshuliang_fengexian1"></view>
       </view>
       <view class="zongshuliang">
-        <view class="zongshuliang_number1">0</view>
+        <view class="zongshuliang_number1">{{personal.nopass}}</view>
         <view class="zongshuliang_text1">驳回</view>
       </view>
     </view>
@@ -149,7 +149,7 @@
     <view class="row">
       <view class="zongshuliang">
         <view class="zongshuliang_number1">
-          10000
+          {{personal.today_nums}}
         </view>
         <view class="zongshuliang_text1">
           今日销售额
@@ -158,7 +158,7 @@
       </view>
       <view class="zongshuliang">
         <view class="zongshuliang_number1">
-          1
+          {{personal.today_order}}
         </view>
         <view class="zongshuliang_text1">
           今日排名
@@ -167,7 +167,7 @@
       </view>
       <view class="zongshuliang">
         <view class="zongshuliang_number1">
-          1200
+         {{personal.all_nums}}
         </view>
         <view class="zongshuliang_text1">
           总销售额
@@ -184,7 +184,7 @@
 
   </view>
   <view class="fengexian_bg1">
-    <image bindtap="bindViewTap" class="userinfo-tuceng" mode="cover" src="{{adUrl}}" wx:if="{{adShow}}"></image>
+    <image bindtap="bindViewTap" class="userinfo-tuceng" mode="cover" data-id="{{pro.id}}" src="{{pro.logo}}" wx:if="{{pro.logo}}"></image>
   </view>
 </view>
 <!-- 规则 -->

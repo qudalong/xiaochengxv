@@ -17,17 +17,13 @@ Page({
     interval: 20,
     //个人展示信息
     personal:{
-      scale:{
         all:0,
         sh:0,
         pass:0,
-        nopass:0
-      },
-      all:{
-        i_all_nums:0,
+        nopass:0,
+        all_nums:0,
         today_order:0,
         today_nums:0
-      }
     },
     info: {
       today_order: {
@@ -48,6 +44,71 @@ Page({
     },
     list: []
   },
+
+ //非管理员-总览
+  loadPersonall(){
+    let _this = this;
+    let uid = _this.data.uid;
+    o.post("wx/home/selall.html", {
+      uid: uid
+    }, function (e) {
+
+      let personal = _this.data.personal;
+      if (e.code == 1 ) {
+        let i_all_nums1 = e.all.i_num ? e.all.i_num:0;
+        let order = e.order ? e.order :0;
+        let today = e.today.i_num ? e.today.i_num:0;
+        console.log("----------------------");
+        console.log(personal);
+        personal.all_nums = i_all_nums1;
+        personal.today_order = order;
+        personal.today_nums = today;
+        _this.setData({
+          personal: personal
+        });
+      } else {
+        personal.all_nums = 0;
+        personal.today_order = 0;
+        personal.today_nums = 0;
+        _this.setData({
+          personal: personal
+        });
+      }
+    });
+  },
+  //非管理员-销售记录
+  loadPersonalScale(){
+    let _this = this;
+    let uid = _this.data.uid;
+
+    o.post("wx/home/selscales.html", {
+      uid:uid
+
+    }, function (e) {
+
+      let personal = _this.data.personal;
+      if (e.code == 1 && e.data) {
+        let sh = e.data.sh ? e.data.sh:0;
+        let pass = e.data.pass ? e.data.pass:0;
+        let nopass = e.data.nopass ? e.data.nopass:0;
+          personal.all = sh+pass+nopass;
+          personal.sh = sh;
+          personal.pass = pass;
+          personal.nopass = nopass;
+        _this.setData({
+          personal: personal
+        });
+      }else{
+        personal.all = 0;
+        personal.sh = 0;
+        personal.pass = 0;
+        personal.nopass = 0;
+        _this.setData({
+          personal: personal
+        });
+      }
+    });
+  },
   onLoad: function(e) {
     let user = getApp().getCache("userinfo");
     user || wx.redirectTo({
@@ -55,17 +116,20 @@ Page({
     });
     if(user.i_level == 0){
         this.setData({
-            isAdmin:1
+            isAdmin:1,
+            uid:user.id
         });
 
     }else{
         this.setData({
-            isAdmin:0
+            isAdmin:0,
+            uid:user.id
         });
     }
-    this.loadAllData();
+    this.loadHeaderPro();
     this.updUser(user.id);
     this.loadNotice();
+    this.loadAllData();
     this.selScaleLevel();
   },
   showRule() {
@@ -93,6 +157,9 @@ Page({
     if(isAdmin == 1){
       this.selDsh();
       this.selAdminAll();
+    }else{
+       this.loadPersonalScale();
+       this.loadPersonall();
     }
   },
   loadScaleDay(){
@@ -104,7 +171,7 @@ Page({
     o.post("wx/product/tj.html",{},function(e){
 
         if(e.code == 1 && e.data){
-            _this.setDat({
+            _this.setData({
                 pro:e.data
             });
         }
@@ -268,10 +335,17 @@ Page({
   onShareAppMessage: function() {},
   onPullDownRefresh: function() {
     //this.getinfo(),
+    this.loadAllData();
     wx.stopPullDownRefresh();
   },
 
+  bindViewTap(e){
+     let item_id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/product_desc/product_desc?item_id='+item_id,
+    })
 
+  },
   to_order: function() {
     o.jump("/yb_tuangou/pages/order/index", 3);
   },
