@@ -203,7 +203,7 @@ Page({
   //审核通过
   checkPass(e){
     let item_id = e.currentTarget.dataset.id;
-
+    let _this = this;
     if(!item_id){
       return;
     }
