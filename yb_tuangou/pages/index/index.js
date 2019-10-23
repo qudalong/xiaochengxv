@@ -32,7 +32,7 @@ Page({
         news: '暂无公告'
       }
     },
-    list: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+    list: []
   },
   onLoad: function(e) {
     let user = getApp().getCache("userinfo");

@@ -29,6 +29,16 @@ Page({
       url: "/yb_tuangou/pages/login/index"
     });
 
+    if(user.i_level == 0){
+      this.setData({
+        isAdmin:1
+      });
+    }else{
+      this.setData({
+        isAdmin: 0
+      });
+    }
+
     let userinfo = this.data.userinfo;
     if(user){
       
