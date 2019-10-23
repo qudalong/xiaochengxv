@@ -15,6 +15,20 @@ Page({
     size: 14,
     isAdmin:0,
     interval: 20,
+    //个人展示信息
+    personal:{
+      scale:{
+        all:0,
+        sh:0,
+        pass:0,
+        nopass:0
+      },
+      all:{
+        i_all_nums:0,
+        today_order:0,
+        today_nums:0
+      }
+    },
     info: {
       today_order: {
         total: 0,
@@ -80,6 +94,10 @@ Page({
       this.selDsh();
       this.selAdminAll();
     }
+  },
+  loadScaleDay(){
+
+
   },
   loadHeaderPro(){
     let _this = this;

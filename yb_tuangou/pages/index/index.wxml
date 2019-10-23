@@ -114,7 +114,7 @@
   <view class="fengexian_bg"></view>
   <view class="jinridingdan pb0" wx:if="{{isAdmin == 0}}">
     <view class="jinridingdan_wenzi">
-      销售日报
+      销售记录
     </view>
     <view class="row">
       <view class="zongshuliang">
@@ -128,7 +128,7 @@
       </view>
       <view class="zongshuliang">
         <view class="zongshuliang_number1">1</view>
-        <view class="zongshuliang_text1">今日</view>
+        <view class="zongshuliang_text1">待审核</view>
         <view class="zongshuliang_fengexian1"></view>
       </view>
       <view class="zongshuliang">

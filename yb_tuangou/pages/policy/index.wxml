@@ -14,7 +14,7 @@
         <image wx:if="{{index==0}}" class="hg" src="/yb_tuangou/static/images/rank_head_first_50@3x.png"></image>
         <image wx:if="{{index==1}}" class="hg" src="/yb_tuangou/static/images/rank_head_third_45@3x.png"></image>
         <image wx:if="{{index==2}}" class="hg" src="/yb_tuangou/static/images/rank_head_second_45@3x.png"></image>
-        {{index+1}}
+        {{item.sort}}
       </view>
       <image class="img" src="{{img}}"></image>
       <view class="infos">
