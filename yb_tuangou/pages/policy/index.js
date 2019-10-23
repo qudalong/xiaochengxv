@@ -1,7 +1,4 @@
-var days = []
-for (let i = 1; i <= 12; i++) {
-  days.push(i)
-}
+
 import {
   request
 } from '../../utils/request.js'
@@ -9,7 +6,6 @@ Page({
   data: {
     rankList: [],
     day: '',
-    days: days,
     showPicker: false,
     dayF: 1,
     date:''
