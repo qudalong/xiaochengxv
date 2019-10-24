@@ -1,6 +1,10 @@
 import {
   request
-} from '../../utils/request.js'
+} from '../../utils/request.js';
+var app = getApp();
+var a = app.requirejs("core");
+var site = require("../../../siteinfo.js");
+
 Page({
 
   /**
@@ -13,7 +17,8 @@ Page({
     productDesc: '',
     formData: {
       pics: [],
-      goods_images:[]
+      goods_images:[],
+      ups:[]
     },
     array: ['砖石', '珠宝', '手表', '首饰']
   },
@@ -22,9 +27,96 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    let user = getApp().getCache("userinfo");
+    user || wx.redirectTo({
+      url: "/yb_tuangou/pages/login/index"
+    });
+
+    if (user.i_level == 0) {
+      this.setData({
+        isAdmin: 1
+      });
+    } else {
+      this.setData({
+        isAdmin: 0
+      });
+    }
+    this.selcate();
+
+  },
+  //上传图片
+  uploadImg(){
+    let _this = this;
+    let pics = this.data.formData.pics;
+    let upimgs =[];
+    pics.map((v)=>{
+      wx.uploadFile({
+        url: site.siteroot +"admin/api.plugs/wxupload", 
+        filePath: v,
+        name: 'file',
+        header: {
+          "Content-Type": "multipart/form-data"
+        },
+        formData: {
+          'safe':0
+        },
+        success: function (res) {
+          var data = res.data;
+          if(data){
+            let result = JSON.parse(data);
+
+            if (result.uploaded){
+              upimgs.push(result.url);
+            }
+            //console.log(result);
+          }
+          
+          //do something
+        }
+      })
+    });
+
+    this.setData({
+      upimgs: upimgs
+    });
+  },
+
+  //查询分类
+  selcate(){
+    let _this = this;
+    a.post("wx/product/sel.html",{
+
+    },function(e){
+      if(e.code == 1){
+
+          let data = e.data;
+          if(data){
+             let array = [];
+             let ids = [];
+            data.map((v)=>{
+              array.push(v.title);
+              ids.push(v.id);
+              
+
+            });
+            _this.setData({
+              array: array,
+              ids:ids,
+              index:[0]
+            });
+          }
+      }
+
+    });
+
 
   },
 
+  getProCateId(){
+    let ids = this.data.ids;
+    let index = this.data.index;
+    return ids[index];
+  },
   // 添加
   addproduct() {
     if (!this.data.productName.trim()) {
@@ -64,6 +156,31 @@ Page({
       });
       return
     }
+    let proname = this.data.productName;
+    let productNumber = this.data.productNumber;
+    let productPrice = this.data.productPrice;
+    let catid = getProCateId();
+    let content = this.data.productDesc;
+    let imgs = this.data.upimgs.join("|");
+
+    wx.showLoading({
+      title: '上传数据中...',
+      mask:true
+    });
+    this.uploadImg();
+    a.post("wx/product/addpro.html",{
+      cate_id: getProCateId(),
+      title: proname,
+      content: content,
+      image: imgs,
+      v_hh: productNumber,
+      i_je: productPrice
+    },function(e){
+
+
+    });
+
+    return;
     //发送接口
     request({
       url: 'xxxx',

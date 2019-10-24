@@ -5,7 +5,7 @@ module.exports = {
     version: "1.0.8",
  // siteroot: "https://jy.hayuxin.com/app/index.php",
  // siteroot: "https://csa.ch-vip.cn/app/index.php",
- siteroot: "http://192.168.2.199:99/",
-  // siteroot: "http://localhost:99/",
+ //siteroot: "http://192.168.2.199:99/",
+   siteroot: "http://localhost:99/",
     native_tabbar: !0
 };
