@@ -3,7 +3,8 @@ import {
 } from '../../utils/util.js'
 import {
   request
-} from '../../utils/request.js'
+} from '../../utils/request.js';
+var siteinfo = require("../../../siteinfo.js");
 const multi = floatOpration.multi;
 const add = floatOpration.add;
 Page({
@@ -20,15 +21,20 @@ Page({
     showDetails: false
   },
   onLoad: function(options) {
+    let user = getApp().getCache("userinfo");
+    user || wx.redirectTo({
+      url: "/yb_tuangou/pages/login/index"
+    });
     this.getScrollInitData();
   },
 
   getScrollInitData() {
     request({
-      url: 'https://mp.ucloudant.com/app/index.php?i=56&t=0&v=9.2&from=wxapp&c=entry&a=wxapp&do=Dishes&m=zh_dianc&sign=819fcd817f0aeb118075924d12978351&id=5&dishes_type=2',
+      url: siteinfo.siteroot +'wx/product/selpro1',
     }).then(res => {
+      console.log(res);
       this.setData({
-        list: res.data
+        list: res.data.data
       })
     }).then(() => {
       let query = wx.createSelectorQuery();
@@ -36,6 +42,7 @@ Page({
       let s = 0;
       query.selectAll('.pesticide').boundingClientRect((react) => {
         react.forEach((res) => {
+          console.log(res);
           s += res.height;
           heightArr.push(s)
         });
@@ -82,8 +89,9 @@ Page({
     }
   },
   showDetails: function (e) {
+    let id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/yb_tuangou/pages/product_desc/product_desc',
+      url: '/yb_tuangou/pages/product_desc/product_desc?item_id=' + id,
     })
   },
 
@@ -93,7 +101,9 @@ Page({
   onHide: function() {
 
   },
-  onShow: function() {},
+  onShow: function() {
+    this.getScrollInitData();
+  },
   onUnload: function() {
 
   },

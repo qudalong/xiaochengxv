@@ -162,6 +162,7 @@ Page({
     let catid = getProCateId();
     let content = this.data.productDesc;
     let imgs = this.data.upimgs.join("|");
+    let _this = this;
 
     wx.showLoading({
       title: '上传数据中...',
@@ -176,25 +177,17 @@ Page({
       v_hh: productNumber,
       i_je: productPrice
     },function(e){
-
-
-    });
-
-    return;
-    //发送接口
-    request({
-      url: 'xxxx',
-      method: 'POST',
-      data: {
-        productName: this.data.productName, //名称
-        productNumber: this.data.productNumber, //货号
-        productPrice: this.data.productPrice, //价格
-        productDesc: this.data.productDesc, //详情
-        formData: this.data.formData, //图片
-        productClssifty: this.data.array[this.data.index] //分类
+      wx.hideLoading();
+      if(e.code == 1){
+          a.success("添加成功!");
+          _this.setData({
+            productName:'',
+            productNumber:'',
+            productPrice:'',
+            productDesc:'',
+            pics:[]
+          });
       }
-    }).then(res => {
-
     });
   },
   handleChoosePic: function() {
