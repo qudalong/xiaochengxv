@@ -1,4 +1,5 @@
 // yb_tuangou/pages/product_desc/product_desc.js
+var WxParse = require('../../utils/wxParse/wxParse.js');
 var app = getApp();
 var a = app.requirejs("core");
 
@@ -8,7 +9,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imgs: ['https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571221567475&di=bc9da921fb1bf76978efa1d8659acd58&imgtype=0&src=http%3A%2F%2Fimg3.qjy168.com%2Fprovide%2F2015%2F01%2F26%2F5659968_20150126092733.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571221567474&di=cc261e4313732c19de6a795d05d9133a&imgtype=0&src=http%3A%2F%2Fimg1.juimg.com%2F140928%2F330630-14092PJ32495.jpg', 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1571027970663&di=4bfda92fcd053ac0223f246590cd387c&imgtype=0&src=http%3A%2F%2Fpic45.nipic.com%2F20140715%2F10657291_172631119640_2.jpg'],
+    imgs: [],
     indicatorDots: true,
     vertical: false,
     autoplay: false,
@@ -121,7 +122,8 @@ Page({
                 let images = image.split("|");
                 _this.setData({
                   imgs:images,
-                  detail:detail
+                  detail:detail,
+                  content: WxParse.wxParse('content', 'html', detail.content, _this, 0)
                 });
 
             }
