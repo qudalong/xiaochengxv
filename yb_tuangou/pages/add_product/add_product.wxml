@@ -3,7 +3,7 @@
     <view class="lable">商品详情:</view>
   </view>
   <view class="form_li desc bor0" style="padding-bottom:20px">
-    <textarea bindinput="bindDesc" class=" textarea" placeholder="请输入商品详情" auto-height="true"></textarea>
+    <textarea bindinput="bindDesc" class=" textarea" placeholder="请输入商品详情" auto-height="true" value="{{productDesc}}"></textarea>
   </view>
   <view class="goodMgrAdd__pic">
     <view class="goodMgrAdd__pic--pb20">
@@ -22,15 +22,15 @@
 
   <view class="form_li" style="margin-top:10px">
     <view class="lable">商品名称:</view>
-    <input bindinput="bindName" class="inp" type="text" placeholder="请输入商品名称"></input>
+    <input bindinput="bindName" class="inp" type="text" value="{{productName}}" placeholder="请输入商品名称"></input>
   </view>
   <view class="form_li">
     <view class="lable">商品货号:</view>
-    <input bindinput="bindNumber" class="inp" type="text" placeholder="请输入商品货号"></input>
+    <input bindinput="bindNumber" class="inp" type="text" value="{{productNumber}}" placeholder="请输入商品货号"></input>
   </view>
   <view class="form_li">
     <view class="lable">商品价格:</view>
-    <input bindinput="bindPrice" class="inp" type="text" placeholder="请输入商品价格"></input>
+    <input bindinput="bindPrice" class="inp" type="text" value="{{productPrice}}" placeholder="请输入商品价格"></input>
   </view>
   <view class="form_li relative">
     <image class="down" src="/yb_tuangou/static/images/jiantou@2x.png"></image>

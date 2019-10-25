@@ -23,6 +23,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    if(options.item_id){
+      this.setData({
+        item_id:options.item_id
+      });
+      this.loadDetail();
+    }
+
 
   },
   // 切換下載
@@ -52,10 +59,12 @@ Page({
 
     })
   },
-  downloadImg(e) {　　　　　　　　　　　　　　　
+  downloadImg(e) {　　　
+    let _this = this;　　　　　　　　　　　　
     wx.downloadFile({
       url: this.data.src,
-      success: (res) => {　　　　　　　　　　　　
+      success: (res) => {
+        console.log(res);　　　　　　　　　　　　
         wx.saveImageToPhotosAlbum({　　　　　　　　　
           filePath: res.tempFilePath,
           success(res) {
@@ -64,9 +73,11 @@ Page({
               icon: 'success',
               duration: 2000
             });
-            updateinc();
+            _this.updateinc();
           },
           fail: function(err) {
+            console.log('err');
+            console.log(err);
             if (err.errMsg === "saveImageToPhotosAlbum:fail auth deny") {
               wx.openSetting({
                 success(settingdata) {
@@ -106,7 +117,7 @@ Page({
         if(data.code ==1 && data.data){
             let detail = data.data;
             if(detail && detail.image){
-
+                let image = detail.image;
                 let images = image.split("|");
                 _this.setData({
                   imgs:images,

@@ -55,7 +55,9 @@ module.exports = {
                 } else a.alert(t.errMsg);
             },
             fail: function(t) {
+                wx.hideLoading();
                 a.alert(t.errMsg);
+                
             }
         });
     },

@@ -24,21 +24,24 @@
     </view>
   </view>
   <view class="section">
-    <view bindtap="bindViewTap" class="section_suju" data-index="100">
+    <view bindtap="bindViewTap" class="section_suju" data-index="100" wx:if="{{isAdmin == 1}}">
       <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="/yb_tuangou/static/images/member_img/baobiao@2x.png"></image>
       <text class="suju_text">发布通知</text>
       <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
     </view>
-    <view bindtap="bindViewTap" class="section_suju" data-index="1">
-      <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="/yb_tuangou/static/images/member_img/baobiao@2x.png"></image>
+    <view bindtap="bindViewTap" class="section_suju" data-index="1" wx:if="{{isAdmin == 1}}">
+      <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.shuju}}"></image>
       <text class="suju_text">月报表</text>
       <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
     </view>
+    <!-- 
     <view bindtap="bindViewTap" class="section_suju" data-index="2">
       <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.shuju}}"></image>
       <text class="suju_text">销售趋势</text>
       <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
     </view>
+    -->
+
     <view bindtap="bindViewTap" class="section_suju" data-index="9">
       <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.yongjin}}"></image>
       <text class="suju_text">修改密码</text>
@@ -80,7 +83,7 @@
         </view>-->
     <view bindtap="bindViewTap" class="section_suju" data-index="6">
       <image bindtap="bindViewTap" class="userinfo-shuju" mode="cover" src="{{icon.yinsi}}"></image>
-      <text class="suju_text">排行</text>
+      <text class="suju_text">日排行</text>
       <image bindtap="bindViewTap" class="userinfo-right" mode="cover" src="{{icon.icon_right}}"></image>
     </view>
 

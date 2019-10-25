@@ -12,12 +12,12 @@
     <!-- 右边 -->
     <scroll-view scroll-y="true" bindscroll="onScroll" scroll-into-view="{{toView}}" scroll-with-animation="true" style="height:100%">
       <view wx:if='{{list.length}}' wx:for='{{list}}' wx:for-item="oneItem" wx:for-index="typeOneIndex" wx:key='unquie' id="a{{oneItem.id}}" class='pesticide type-wrapper'>
-        <!-- <view class='type-name'>{{oneItem.type_name}}</view> -->
-        <view wx:for='{{oneItem.goods}}' wx:for-item="good" wx:for-index="goodIndex" wx:key='unquie' class='item' bindtap="showDetails" >
-           <image src='https://mp.ucloudant.com/attachment/{{good.img}}' class='imag'></image>
+         <view class='type-name'>--{{oneItem.type_name}}--</view>
+        <view wx:for='{{oneItem.goods}}' data-id="{{good.id}}" wx:for-item="good" wx:for-index="goodIndex" wx:key='unquie' class='item' bindtap="showDetails" >
+           <image src='{{good.logo}}' class='imag'></image>
           <view class='a-right'>
             <view class="row3">{{good.name}}</view>
-            <view>下载次数：100</view>
+            <view>下载次数：{{good.i_downs?good.i_downs:0}}</view>
           </view>
         </view>
       </view>

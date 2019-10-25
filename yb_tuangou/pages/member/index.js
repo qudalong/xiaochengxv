@@ -29,6 +29,16 @@ Page({
       url: "/yb_tuangou/pages/login/index"
     });
 
+    if(user.i_level == 0){
+      this.setData({
+        isAdmin:1
+      });
+    }else{
+      this.setData({
+        isAdmin: 0
+      });
+    }
+
     let userinfo = this.data.userinfo;
     if(user){
       
@@ -67,7 +77,7 @@ Page({
       title: "提示",
       content: "退出当前账号",
       success: function(n) {
-        n.confirm ? (console.log("用户点击确定"), e.jump("/yb_tuangou/pages/login/index", 3)) : console.log("用户点击取消");
+        n.confirm ? (console.log("用户点击确定"), getApp().removeCache("userinfo"), t.jump("/yb_tuangou/pages/login/index", 3)) : console.log("用户点击取消");
       }
     });
   },

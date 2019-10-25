@@ -1,19 +1,64 @@
 import {
   request
-} from '../../utils/request.js'
+} from '../../utils/request.js';
+var e = getApp(),
+  a = e.requirejs("core");
 Page({
   data: {
     rankList: [],
     day: '',
+    img:'',
     showPicker: false,
+    running:false,
     dayF: 1,
     date: ''
   },
   onLoad: function(e) {
-    wx.showLoading({
-      title: '查询中...',
+    let user = getApp().getCache("userinfo");
+    user || wx.redirectTo({
+      url: "/yb_tuangou/pages/login/index"
     });
-    this.getRanking();
+    //this.getRanking();
+  },
+  onPullDownRefresh(){
+    this.setData({
+      rankList:[],
+      running:false
+    });
+    this.loadData();
+
+
+  },
+  loadData(){
+    let date = this.data.date;
+    if(!date){
+        return;
+    }
+    this.setData({
+      rankList :[],
+      running:false
+    });
+    if(this.data.running){
+      return;
+    }
+    this.setData({
+      running:true
+    });
+    let _this = this;
+    a.post("wx/monthrep/dayorder.html",{
+      dtm_repdate :date
+    },function(data){
+
+        if(data.code == 1 && data.data){
+          _this.setData({
+             rankList:data.data,
+             img:data.img
+          });
+
+        }
+
+    });
+
   },
 
   bindDateChange: function(e) {
@@ -32,10 +77,7 @@ Page({
       });
       return
     }
-    wx.showLoading({
-      title: '查询中...',
-    });
-    this.getRanking();
+    this.loadData();
   },
 
   // 获取排行列表
