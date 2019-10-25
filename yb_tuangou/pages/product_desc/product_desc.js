@@ -61,7 +61,10 @@ Page({
     })
   },
   downloadImg(e) {　　　
-    let _this = this;　　　　　　　　　　　　
+    let _this = this;
+    wx.showLoading({
+      title: '正在下载图片',
+    });　　
     wx.downloadFile({
       url: this.data.src,
       success: (res) => {
@@ -69,6 +72,7 @@ Page({
         wx.saveImageToPhotosAlbum({　　　　　　　　　
           filePath: res.tempFilePath,
           success(res) {
+            wx.hideLoading();
             wx.showToast({
               title: '下载成功',
               icon: 'success',
@@ -79,6 +83,7 @@ Page({
           fail: function(err) {
             console.log('err');
             console.log(err);
+            wx.hideLoading();
             if (err.errMsg === "saveImageToPhotosAlbum:fail auth deny") {
               wx.openSetting({
                 success(settingdata) {

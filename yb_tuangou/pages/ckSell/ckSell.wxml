@@ -35,7 +35,7 @@
       <view class="but but1"  catchtap="checkPass" data-id="{{item.id}}">审核通过</view>
       <view class="but"  catchtap="bh" data-id="{{item.id}}">驳回</view>
     </view>
-     <view class="btn-grounp" wx:if="{{item.status == 1 && uid == item.i_uid}}">
+     <view class="btn-grounp" wx:if="{{item.status == 1 && uid == item.i_uid && item.is_update == 0}}">
       <view class="but but1 but_bg_red" catchtap="mdy"   data-id="{{item.id}}">修改</view>
    
     </view>
@@ -103,7 +103,7 @@
       <view class="but but1"  catchtap="checkPass" data-id="{{item.id}}">审核通过</view>
       <view class="but"  catchtap="bh" data-id="{{item.id}}">驳回</view>
     </view>
-     <view class="btn-grounp" wx:if="{{item.status == 1 && isAdmin == 1}}">
+     <view class="btn-grounp" wx:if="{{item.status == 1 && isAdmin == 1 && item.is_update == 0}}">
       <view class="but but1">修改</view>
    
     </view>
@@ -137,7 +137,7 @@
       <view class="but but1"  catchtap="checkPass" data-id="{{item.id}}">审核通过</view>
       <view class="but"  catchtap="bh" data-id="{{item.id}}">驳回</view>
     </view>
-     <view class="btn-grounp" wx:if="{{item.status == 1 && uid == item.i_uid}}">
+     <view class="btn-grounp" wx:if="{{item.status == 1 && uid == item.i_uid && item.is_update == 0}}">
       <view class="but but1 but_bg_red">修改</view>
    
     </view>
