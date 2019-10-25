@@ -1,4 +1,3 @@
-
 import {
   request
 } from '../../utils/request.js'
@@ -8,7 +7,7 @@ Page({
     day: '',
     showPicker: false,
     dayF: 1,
-    date:''
+    date: ''
   },
   onLoad: function(e) {
     wx.showLoading({
@@ -17,7 +16,7 @@ Page({
     this.getRanking();
   },
 
-  bindDateChange: function (e) {
+  bindDateChange: function(e) {
     this.setData({
       date: e.detail.value
     })
