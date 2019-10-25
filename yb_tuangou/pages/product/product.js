@@ -30,7 +30,7 @@ Page({
 
   getScrollInitData() {
     request({
-      url: siteinfo.siteroot +'wx/product/selpro1',
+      url: siteinfo.siteroot +'wx/product/selpro1.html',
     }).then(res => {
       console.log(res);
       this.setData({
