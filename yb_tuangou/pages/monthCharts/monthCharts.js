@@ -84,6 +84,7 @@ Page({
             value: e.v,
             months:e.data,
             month: e.currentMonth,
+            monthF:e.currentMonth
          });
          _this.selDatas();
        } 
