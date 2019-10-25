@@ -49,8 +49,12 @@ Page({
      let  param = {};
       param.month = month;
       param.page = page;
+      wx.showLoading({
+        title: '加载中..',
+      });
       a.post('wx/monthrep/sellist.html', param, function (data) {
         console.log(data);
+        wx.hideLoading();
         _this.setData({
           running: false
         });

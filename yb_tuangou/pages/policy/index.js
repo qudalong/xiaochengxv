@@ -46,9 +46,13 @@ Page({
       running:true
     });
     let _this = this;
+    wx.showLoading({
+      title: '加载中',
+    });
     a.post("wx/monthrep/dayorder.html",{
       dtm_repdate :date
     },function(data){
+      wx.hideLoading();
 
         if(data.code == 1 && data.data){
           _this.setData({

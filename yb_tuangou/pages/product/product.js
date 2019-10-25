@@ -29,6 +29,9 @@ Page({
   },
 
   getScrollInitData() {
+    wx.showLoading({
+      title: '加载中...'
+    });
     request({
       url: siteinfo.siteroot +'wx/product/selpro1.html',
     }).then(res => {
@@ -37,6 +40,7 @@ Page({
         list: res.data.data
       })
     }).then(() => {
+      wx.hideLoading();
       let query = wx.createSelectorQuery();
       let heightArr = [];
       let s = 0;

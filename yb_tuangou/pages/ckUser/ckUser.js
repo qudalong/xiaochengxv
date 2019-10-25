@@ -132,7 +132,11 @@ Page({
       }
       param.status = status;
       param.page = page;
+      wx.showLoading({
+        title: '加载中...'
+      });
       a.post('wx/user/sel.html', param, function (data) {
+        wx.hideLoading();
         console.log(data);
         _this.setData({
           running: false
