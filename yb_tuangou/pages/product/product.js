@@ -46,7 +46,6 @@ Page({
       let s = 0;
       query.selectAll('.pesticide').boundingClientRect((react) => {
         react.forEach((res) => {
-          console.log(res);
           s += res.height;
           heightArr.push(s)
         });

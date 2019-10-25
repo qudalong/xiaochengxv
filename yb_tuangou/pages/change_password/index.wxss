@@ -15,13 +15,14 @@ page {
     background: #fff;
     margin-top: 50rpx;
     position: absolute;
-    border: 1rpx solid #dddddd;
+    border: 1rpx solid #f0f0f0;
+    border-radius: 10rpx;
 }
 
 .yanzhengma {
     width: 702rpx;
     height: 100rpx;
-    border-bottom: 1rpx solid #eeeeee;
+    border-bottom: 1rpx solid #f0f0f0;
 }
 
 .input_text {
@@ -72,8 +73,10 @@ page {
 }
 
 .num_tixian {
-    border-radius: 44rpx;
-    background: #ef4423;
+    border-radius: 10rpx;
+    background: #ff6000;
     color: #fff;
     font-size: 32rpx;
+    padding:25rpx 0;
+    text-align: center;
 }

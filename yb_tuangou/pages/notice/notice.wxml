@@ -1,4 +1,4 @@
 <view class="row">
-  <textarea bindinput="bindMark" class="textarea" maxlength="-1" placeholder="请输入通知内容" auto-height="true" auto-focus="true" value="{{notice}}"></textarea>
+  <textarea bindinput="bindMark" class="textarea tarea" maxlength="-1" placeholder="请输入通知内容" auto-height="true" auto-focus="true" value="{{notice}}"></textarea>
   <view bindtap="save" class="btnApply hover"> 发布</view>
 </view>

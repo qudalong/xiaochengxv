@@ -90,8 +90,8 @@
 }
 
 .form_btn {
-    height: 2.8rem;
-    line-height: 2.8rem;
+    height: 2.4rem;
+    line-height: 2.4rem;
     text-align: center;
     background: #fe775a;
     border-radius: 0.2rem;

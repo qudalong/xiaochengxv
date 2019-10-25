@@ -12,7 +12,7 @@
                     <input class="input_mima" name="pwd2" placeholder="请输入新密码(6-20位英文或数字)" type="password"></input>
                 </view>
                 <view class="num">
-                    <button class="num_tixian" formType="submit" style="font-size:32rpx; ">确定修改</button>
+                    <view class="num_tixian hover" formType="submit" style="font-size:32rpx; ">确定修改</view>
                 </view>
             </view>
         </view>

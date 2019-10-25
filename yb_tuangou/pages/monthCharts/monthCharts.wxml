@@ -3,7 +3,7 @@
   <view bindtap="showPicker" wx:if='{{!month}}' class="serchBox gary relative">请选择查询时间
     <image class="down" src="/yb_tuangou/static/images/jiantou@2x.png"></image>
   </view>
-  <view bindtap="showPicker" wx:if='{{month}}' class="serchBox">{{month}}</view>
+  <view bindtap="showPicker" wx:if='{{month}}' class="serchBox relative">{{month}}<image class="down" src="/yb_tuangou/static/images/jiantou@2x.png"></image></view>
   <view bindtap="bindSearch" class="but serchBtn">查询</view>
   <!--
   <view class="export">导出</view>-->

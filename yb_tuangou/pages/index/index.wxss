@@ -13,7 +13,7 @@ page {
   border-radius: 30rpx 0 0 30rpx;
   padding: 10rpx 0;
   text-align: center;
-  width: 210rpx;
+  width: 220rpx;
 }
 
 .rule .img {

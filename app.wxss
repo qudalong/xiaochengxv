@@ -1,7 +1,9 @@
 page {
   font-size: 28rpx;
 }
-
+.tarea{
+  width: auto !important;
+}
 .dialog {
   width: 100%;
   height: 100%;

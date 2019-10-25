@@ -4,14 +4,16 @@
   background: #f0f0f0;
   min-height: 300rpx;
   box-sizing: border-box;
+  border: 1px solid #f0f0f0;
   margin:20rpx;
   border-radius: 10rpx;
+  /* width: auto; */
 }
 
 .btnApply{
-  padding: 14rpx 26rpx;
+  padding: 20rpx 40rpx;
   border-radius: 6rpx;
-  background: #00B26A;
+  background: #ff6000;
   color: #fff;
   display: inline-block;
   margin-left: 50%;
