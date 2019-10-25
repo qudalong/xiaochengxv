@@ -1,3 +1,4 @@
+<import src="../../utils/wxParse/wxParse.wxml"/>
 <view class='cover-detail'>
   <swiper bindchange='changeItem' indicator-dots="{{indicatorDots}}" current='{{ind}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="#2C9F67">
     <block wx:for="{{imgs}}" wx:key="*this">
@@ -10,7 +11,7 @@
     <view class="title">{{detail.title}}</view>
     <view class="type">价格：￥{{detail.i_je}} 货号：{{detail.v_hh}}</view>
     <view class="desc">
-      {{detail.content}}
+     <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
     </view>
   </view>
 </view>

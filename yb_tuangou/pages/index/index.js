@@ -149,6 +149,7 @@ Page({
     this.setData({
       adUrl: url
     });
+    this.loadNotice();
 
   },
   //加载所有数据
@@ -335,6 +336,7 @@ Page({
   onShareAppMessage: function() {},
   onPullDownRefresh: function() {
     //this.getinfo(),
+    this.loadNotice();
     this.loadAllData();
     wx.stopPullDownRefresh();
   },

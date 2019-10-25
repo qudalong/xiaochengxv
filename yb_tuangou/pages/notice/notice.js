@@ -48,10 +48,14 @@ Page({
     }
 
     var user = o.getCache("userinfo");
+    wx.showLoading({
+      title: '正在更新通知...',
+    });
     s.get("wx/user/updnotice.html", {
       id: user.id,
       content:notice
     }, function (o) {
+      wx.hideLoading();
       if (o.code == 1) {
         s.success(o.msg);
       }else{

@@ -159,7 +159,7 @@ Page({
     let proname = this.data.productName;
     let productNumber = this.data.productNumber;
     let productPrice = this.data.productPrice;
-    let catid = getProCateId();
+    let catid = this.getProCateId();
     let content = this.data.productDesc;
     let imgs = this.data.upimgs.join("|");
     let _this = this;
