@@ -126,7 +126,7 @@
   </block>
 
 <!-- 弹窗 -->
-<view wx:if="{{showDia}}" class="dialog" >
+<view wx:if="{{showDia}}" class="dialog" catchtouchmove="true">
   <view class="center-con">
     <textarea class="textarea" bindinput="inputReason" auto-focus="true" maxlength="-1" value="{{reason}}" placeholder="请输入驳回原因"></textarea>
     <view class="btn-grounp">
