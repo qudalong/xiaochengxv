@@ -261,6 +261,8 @@ Page({
       return false;
     }
 
+    return true;
+
   },
   //计算折扣:
   caculeDisCount(){

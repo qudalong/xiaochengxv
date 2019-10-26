@@ -34,24 +34,38 @@ Page({
 
     if (user.i_level == 0) {
       this.setData({
-        isAdmin: 1
+        isAdmin: 1,
+        uid:user.id
       });
     } else {
       this.setData({
-        isAdmin: 0
+        isAdmin: 0,
+        uid:user.id
       });
     }
     this.selcate();
 
   },
+  validationPrice(v) {
+    let a = /^(\d+|\d+\.\d{1,2})$/;
+    if (!a.test(v)) {
+      wx.showToast({
+        title: '请输入正确的金额（保留两位小数）',
+        icon: 'none'
+      });
+      return false;
+    }
+    return true;
+  },
   //上传图片
   uploadImg(){
     let _this = this;
     let pics = this.data.formData.pics;
+    let size = pics.length;
     let upimgs =[];
-    pics.map((v)=>{
+    pics.map((v,index)=>{
       wx.uploadFile({
-        url: site.siteroot +"admin/api.plugs/wxupload", 
+        url: site.siteroot +"admin/api.plugs/wxupload.html", 
         filePath: v,
         name: 'file',
         header: {
@@ -61,12 +75,22 @@ Page({
           'safe':0
         },
         success: function (res) {
+          console.log("res");
+          console.log(res);
           var data = res.data;
           if(data){
             let result = JSON.parse(data);
-
+            console.log("result");
+            console.log(result);
             if (result.uploaded){
               upimgs.push(result.url);
+              if(size -1 == index){
+                _this.setData({
+                  upimgs: upimgs
+                });
+                _this.submitPro();
+
+              }
             }
             //console.log(result);
           }
@@ -76,9 +100,8 @@ Page({
       })
     });
 
-    this.setData({
-      upimgs: upimgs
-    });
+    console.log(upimgs);
+   
   },
 
   //查询分类
@@ -156,39 +179,58 @@ Page({
       });
       return
     }
+
+    wx.showLoading({
+      title: '上传数据中...',
+      mask: true
+    });
+    let price = this.data.productPrice;
+    if (!this.validationPrice(price)){
+      return;
+    }
+    this.uploadImg();
+  
+  },
+  submitPro(){
+
     let proname = this.data.productName;
     let productNumber = this.data.productNumber;
     let productPrice = this.data.productPrice;
     let catid = this.getProCateId();
+    let uid = this.data.uid;
     let content = this.data.productDesc;
     let imgs = this.data.upimgs.join("|");
     let _this = this;
 
-    wx.showLoading({
-      title: '上传数据中...',
-      mask:true
-    });
-    this.uploadImg();
-    a.post("wx/product/addpro.html",{
-      cate_id: getProCateId(),
+
+    a.post("wx/product/addpro.html", {
+      cate_id: catid,
       title: proname,
       content: content,
       image: imgs,
+      uid: uid,
       v_hh: productNumber,
       i_je: productPrice
-    },function(e){
+    }, function (e) {
       wx.hideLoading();
-      if(e.code == 1){
-          a.success("添加成功!");
-          _this.setData({
-            productName:'',
-            productNumber:'',
-            productPrice:'',
-            productDesc:'',
-            pics:[]
-          });
+      if (e.code == 1) {
+        a.success("添加成功!");
+        _this.setData({
+          productName: '',
+          productNumber: '',
+          productPrice: '',
+          productDesc: '',
+          formData: {
+            pics: [],
+            goods_images: [],
+            ups: []
+          }
+         
+        });
       }
     });
+
+
   },
   handleChoosePic: function() {
     wx.chooseImage({
