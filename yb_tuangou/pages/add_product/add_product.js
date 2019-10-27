@@ -57,50 +57,65 @@ Page({
     }
     return true;
   },
+
+  upload(pics, success, fail, i, length, upimgs){
+    let _this = this;
+    wx.uploadFile({
+      url: site.siteroot + "admin/api.plugs/wxupload.html",
+      filePath: pics[i],
+      name: 'file',
+      async: false,
+      header: {
+        "Content-Type": "multipart/form-data"
+      },
+      formData: {
+        'safe': 0
+      },
+      success: function (res) {
+        console.log("res");
+        console.log(res);
+        var data = res.data;
+        if (data) {
+          let result = JSON.parse(data);
+          console.log("result");
+          console.log(result);
+          if (result.uploaded) {
+            upimgs.push(result.url);
+            
+          }
+          //console.log(result);
+        }
+        //do something
+      },
+      fail:function(res){
+
+      },
+      complete:function(){
+        i++;
+        if(i == length){
+            _this.setData({
+              upimgs: upimgs
+            });
+            console.log("upimgs");
+            console.log(upimgs);
+            _this.submitPro();
+        }else{
+          _this.upload(pics, success, fail, i, length, upimgs);
+        }
+
+      }
+    });
+
+  },
   //上传图片
   uploadImg(){
     let _this = this;
     let pics = this.data.formData.pics;
     let size = pics.length;
     let upimgs =[];
-    pics.map((v,index)=>{
-      wx.uploadFile({
-        url: site.siteroot +"admin/api.plugs/wxupload.html", 
-        filePath: v,
-        name: 'file',
-        header: {
-          "Content-Type": "multipart/form-data"
-        },
-        formData: {
-          'safe':0
-        },
-        success: function (res) {
-          console.log("res");
-          console.log(res);
-          var data = res.data;
-          if(data){
-            let result = JSON.parse(data);
-            console.log("result");
-            console.log(result);
-            if (result.uploaded){
-              upimgs.push(result.url);
-              if(size -1 == index){
-                _this.setData({
-                  upimgs: upimgs
-                });
-                _this.submitPro();
-
-              }
-            }
-            //console.log(result);
-          }
-          
-          //do something
-        }
-      })
-    });
-
+    _this.upload(pics,0,0,0,pics.length,upimgs);
     console.log(upimgs);
+   
    
   },
 

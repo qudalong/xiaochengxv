@@ -294,7 +294,8 @@ Page({
   // 标价
   bindPrice(e) {
     let bj = e.detail.value;
-    if (this.validationPrice(bj)){
+    console.log(this.validationPrice(bj));
+    if (!this.validationPrice(bj)){
       return;
     }
     this.setData({
@@ -305,7 +306,7 @@ Page({
   // 成交价
   bindResultPrice(e) {
     let result = e.detail.value;
-    if (this.validationPrice(result)) {
+    if (!this.validationPrice(result)) {
       return;
     }
     this.setData({
@@ -324,7 +325,7 @@ Page({
   // 销售占比
   bindSell(e) {
     let sell = e.detail.value;
-    if (this.validationPrice(sell)) {
+    if (!this.validationPrice(sell)) {
       return;
     }
     sell = sell/100;

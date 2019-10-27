@@ -142,10 +142,11 @@ Page({
           running: false
         });
         if (data.code == 1) {
-          if (data.data.data.length > 0) {
+          if (data.data.data && data.data.data.length > 0) {
             _this.setData({
               list: _this.data.list.concat(data.data.data),
-              page: page + 1
+              page: page + 1,
+              userImg:data.img
             });
 
           }
