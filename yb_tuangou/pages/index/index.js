@@ -91,7 +91,8 @@ Page({
         let sh = e.data.sh ? e.data.sh:0;
         let pass = e.data.pass ? e.data.pass:0;
         let nopass = e.data.nopass ? e.data.nopass:0;
-          personal.all = sh+pass+nopass;
+          
+        personal.all = parseInt(sh)+ parseInt(pass)+ parseInt(nopass);
           personal.sh = sh;
           personal.pass = pass;
           personal.nopass = nopass;

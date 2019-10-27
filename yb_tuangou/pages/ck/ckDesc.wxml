@@ -2,7 +2,7 @@
 <view class="block">
   <view class="title">
     <view>用户信息</view>
-    <view class="btn-grounp" wx:if="{{status == 0}}">
+    <view class="btn-grounp" wx:if="{{status == 0 && isAdmin == 1}}">
       <view class="but but1" bindtap="checkPass" data-id="{{id}}">审核通过</view>
       <view bindtap="reject" class="but">驳回</view>
     </view>

@@ -22,6 +22,16 @@ Page({
       url: "/yb_tuangou/pages/login/index"
     });
 
+    if(u.i_level == 0){
+      this.setData({
+        isAdmin:1
+      });
+    }else{
+      this.setData({
+         isAdmin:0
+      });
+    }
+
     this.setData({
       item_id: options.itemid,
       uid:u.id

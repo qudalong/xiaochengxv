@@ -32,11 +32,13 @@ Page({
     if (u.i_level == 0){
         this.setData({
           isAdmin:0,
+          list:[],
           uid :u.id
         });
     }else{
         this.setData({
           isAdmin:1,
+          list:[],
           uid: u.id
         });
     }
@@ -46,7 +48,7 @@ Page({
       });
     }
     //console.log(this.data.isAdmin);
-    this.loadData();
+    //this.loadData();
 
   },
   //修改窗口
