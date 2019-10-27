@@ -339,6 +339,7 @@ Page({
     //this.getinfo(),
     this.loadNotice();
     this.loadAllData();
+    this.loadHeaderPro();
     wx.stopPullDownRefresh();
   },
 
