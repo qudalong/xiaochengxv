@@ -3,7 +3,7 @@
   <swiper bindchange='changeItem' indicator-dots="{{indicatorDots}}" current='{{ind}}' autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-color="#fff" indicator-active-color="#2C9F67">
     <block wx:for="{{imgs}}" wx:key="*this">
       <swiper-item item-id>
-        <image bindtap='previewImage' data-src="{{item}}" class='imgUrl' mode="widthFix" src="{{item}}"></image>
+        <image bindtap='previewImage' data-src="{{item}}" class='imgUrl' src="{{item}}"></image>
       </swiper-item>
     </block>
   </swiper>
