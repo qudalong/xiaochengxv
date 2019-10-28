@@ -113,7 +113,7 @@ Page({
 
         });
        }
-      this.loadUsers();
+    //  this.loadUsers();
     //console.log(this
   },
   //加载用户列表
