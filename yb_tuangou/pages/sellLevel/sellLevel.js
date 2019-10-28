@@ -111,19 +111,21 @@ Page({
         icon: 'none'
       });
       return
-    } else if (!tel.trim()) {
-      wx.showToast({
-        title: '请输入手机号',
-        icon: 'none'
-      });
-      return
-    } else if (!/^[1][3,4,5,7,8][0-9]{9}$/.test(tel)) {
-      wx.showToast({
-        title: '请输入正确的手机号',
-        icon: 'none'
-      });
-      return
-    } else if (!birthday.trim()) {
+    } 
+    // else if (!tel.trim()) {
+    //   wx.showToast({
+    //     title: '请输入手机号',
+    //     icon: 'none'
+    //   });
+    //   return
+    // } else if (!/^[1][3,4,5,7,8][0-9]{9}$/.test(tel)) {
+    //   wx.showToast({
+    //     title: '请输入正确的手机号',
+    //     icon: 'none'
+    //   });
+    //   return
+    // } 
+    else if (!birthday.trim()) {
       wx.showToast({
         title: '请选择购买人生日',
         icon: 'none'

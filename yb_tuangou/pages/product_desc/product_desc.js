@@ -17,7 +17,8 @@ Page({
     duration: 500,
     tapStatus: false,
     src: '',
-    ind: 0
+    ind: 0,
+    detail:''
   },
 
   /**
@@ -32,6 +33,18 @@ Page({
     }
 
 
+  },
+  // 复制
+  textPaste() {
+    wx.setClipboardData({
+      data: this.data.detail.content,
+      success: (res) => {
+        wx.getClipboardData({
+          success: (res) => {
+          }
+        })
+      }
+    })
   },
   // 切換下載
   changeItem(e) {
