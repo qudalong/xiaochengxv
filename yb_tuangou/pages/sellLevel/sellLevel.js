@@ -174,6 +174,14 @@ Page({
       // });
       // return
     }
+
+    sell = sell / 100;
+    if (sell > 1) {
+      wx.showToast({
+        title: '销售占比不能大于1'
+      });
+    }
+
     let u = getApp().getCache("userinfo");
     let uid = u.id;
     let v_real_name = u.v_real_name;
@@ -298,6 +306,10 @@ Page({
     let bj = e.detail.value;
     console.log(this.validationPrice(bj));
     if (!this.validationPrice(bj)){
+      this.setData({
+        price:null,
+        discount:null
+      });
       return;
     }
     this.setData({
@@ -309,6 +321,12 @@ Page({
   bindResultPrice(e) {
     let result = e.detail.value;
     if (!this.validationPrice(result)) {
+      this.setData({
+        resultPrice:null,
+        yeji:null,
+        ticheng:null,
+        discount:null
+      });
       return;
     }
     this.setData({
@@ -316,7 +334,7 @@ Page({
     });
     this.caculeDisCount();
     this.caculeYj();
-    this.caculeTiCheng();
+    //this.caculeTiCheng();
   },
   // 折扣
   bindDiscount(e) {
@@ -328,6 +346,11 @@ Page({
   bindSell(e) {
     let sell = e.detail.value;
     if (!this.validationPrice(sell)) {
+      this.setData({
+        sell:null,
+        yeji:null,
+        ticheng:null
+      });
       return;
     }
     sell = sell/100;
@@ -335,6 +358,11 @@ Page({
         wx.showToast({
           title: '销售占比不能大于1',
         });
+      this.setData({
+        
+        yeji: null,
+        ticheng: null
+      });
         return;
     }
     this.setData({
@@ -357,7 +385,8 @@ Page({
      let yj = result * sell;
      this.setData({
        yeji: yj.toFixed(2)
-     })
+     });
+    this.caculeTiCheng(this.data.yeji);
 
   },
   // 当笔业级
@@ -366,10 +395,10 @@ Page({
     //   yeji: e.detail.value
     // });
   },
-  caculeTiCheng(){
-    let result = this.data.resultPrice;
+  caculeTiCheng(yeji){
+    let result = yeji;
     if(!result){
-      reutrn;
+      return;
     }
     let u = getApp().getCache("userinfo");
     let i_rebate = parseFloat(u.i_rebate);
