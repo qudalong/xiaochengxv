@@ -15,7 +15,12 @@ page {
   text-align: center;
   width: 220rpx;
 }
-
+.fex1{
+  flex: 1;
+}
+.w30{
+  width: 30%;
+}
 .rule .img {
   width: 46rpx;
   height: 40rpx;
@@ -496,7 +501,6 @@ page {
 }
 
 .zongshuliang {
-  flex: 1;
   text-align: center;
   position: relative;
   padding: 20rpx 0;
