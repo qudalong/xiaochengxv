@@ -34,7 +34,7 @@
       待审核
     </view>
     <view class="row">
-      <view bindtap="shenhe" class="zongshuliang">
+      <view bindtap="shenhe" class="zongshuliang fex1">
         <view class="zongshuliang_number1">
           {{info.today_order.total}}
         </view>
@@ -43,12 +43,12 @@
         </view>
         <view class="zongshuliang_fengexian1"></view>
       </view>
-      <view bindtap="bindCkUser" class="zongshuliang">
+      <view bindtap="bindCkUser" class="zongshuliang fex1">
         <view class="zongshuliang_number1">{{info.today_order.stay_take}}</view>
         <view class="zongshuliang_text1">用户</view>
         <view class="zongshuliang_fengexian1"></view>
       </view>
-      <view bindtap="bindCkSell" class="zongshuliang">
+      <view bindtap="bindCkSell" class="zongshuliang fex1">
         <view class="zongshuliang_number1">
           {{info.today_order.stay_cancel}}
         </view>
@@ -57,7 +57,7 @@
         </view>
         <view class="zongshuliang_fengexian1"></view>
       </view>
-      <view bindtap="bindCkLevel" class="zongshuliang">
+      <view bindtap="bindCkLevel" class="zongshuliang fex1">
         <view class="zongshuliang_number1">
           {{info.today_order.already_cancel}}
         </view>
