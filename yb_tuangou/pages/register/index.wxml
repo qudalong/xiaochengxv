@@ -43,6 +43,11 @@
       </view>
       <input name="password" bindinput="bindYqm" placeholder="请输入邀请码" type="text"></input>
     </view>
+    <view class="form_btn_box">
+      <button class="form_btn" bindtap="register">
+        <text>注册</text>
+      </button>
+    </view>
     <!-- 协议 -->
     <view class="xiyi">
       <checkbox-group bindchange='ckeckboxChange'>
@@ -55,11 +60,6 @@
           </view>
         </label>
       </checkbox-group>
-    </view>
-    <view class="form_btn_box">
-      <button class="form_btn" bindtap="register">
-        <text>注册</text>
-      </button>
     </view>
   </view>
 </form>
