@@ -20,7 +20,7 @@
                 <text>确定登录</text>
             </button>
         </view>
-         <view bindtap="toReginter" class="row">
+         <view bindtap="toReginter" class="row"  wx:if="{{isreg}}">
          注册新用户
           <!-- <navigator url="../register/index"></navigator> -->
         </view>

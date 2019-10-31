@@ -3,14 +3,32 @@ var o = getApp(),
 
 Page({
   data: {
-    icon: o.requirejs("icons")
+    icon: o.requirejs("icons"),
+    isreg:false
   },
   toReginter() {
     wx.navigateTo({
       url: '../register/index'
     })
   },
-  onLoad: function(o) {},
+  onLoad: function(o) {
+    let _this = this;
+    n.get("wx/user/isreg.html",{
+
+
+    },function(e){
+        if(e.code == 1){
+          _this.setData({
+            isreg:true
+          });
+        }else{
+          _this.setData({
+            isreg: false
+          });
+        }
+    });
+
+  },
   formSubmit: function(o) {
     console.log(o);
     var e = o.detail.value;
