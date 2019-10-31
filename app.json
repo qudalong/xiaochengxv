@@ -1,5 +1,6 @@
 {
   "pages": [
+    "yb_tuangou/pages/register/index",
     "yb_tuangou/pages/index/index",
     "yb_tuangou/pages/policy/index",
     "yb_tuangou/pages/ckSell/ckSell",
@@ -15,7 +16,6 @@
     "yb_tuangou/pages/product/product",
     "yb_tuangou/pages/ckLevel/ckLevel",
     "yb_tuangou/pages/shenheList/shenheList",
-    "yb_tuangou/pages/register/index",
     "yb_tuangou/pages/login/index",
     "yb_tuangou/pages/add_classify/add_classify",
     "yb_tuangou/pages/tixianguanli/index",

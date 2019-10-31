@@ -14,14 +14,17 @@ Page({
         value: 'B级'
       },
     ],
+    showXieyi: true,
     yqmStatus: false,
     tel: '',
     pwd: '',
     repwd: '',
     yqm: '',
-    level:'1',
-    v_real_name:''
+    level: '1',
+    v_real_name: ''
   },
+
+  // 注册
   register() {
     const {
       tel,
@@ -33,7 +36,7 @@ Page({
       level
     } = this.data;
 
-    if(!v_real_name.trim()){
+    if (!v_real_name.trim()) {
       wx.showToast({
         title: '请输入姓名',
         icon: 'none'
@@ -88,32 +91,52 @@ Page({
     }
 
     //提交
-    n.post("wx/user/reg.html",{
+    n.post("wx/user/reg.html", {
       password: pwd,
-      phone:tel,
-      username:tel,
+      phone: tel,
+      username: tel,
       v_real_name: v_real_name,
-      repassword:repwd,
-      i_level:level,
-      v_yq_code:yqm
+      repassword: repwd,
+      i_level: level,
+      v_yq_code: yqm
 
-    },function(data){
+    }, function(data) {
 
-        if(data.code == 0){
-          n.error(
-            data.info
-          );
-          return ;
-        }else{
-          n.success("注册成功!");
-          setTimeout(function () {
-            n.jump("/yb_tuangou/pages/login/index", 3);
-          }, 1e3);
-        }
-       // console.log(data);
+      if (data.code == 0) {
+        n.error(
+          data.info
+        );
+        return;
+      } else {
+        n.success("注册成功!");
+        setTimeout(function() {
+          n.jump("/yb_tuangou/pages/login/index", 3);
+        }, 1e3);
+      }
+      // console.log(data);
 
     });
-    
+
+  },
+
+  hideXieyi() {
+    this.setData({
+      showXieyi: false
+    })
+  },
+
+  //协议
+  ckeckboxChange(e) {
+    var val = e.detail.value;
+    if (val.length) {
+      this.setData({
+        showXieyi: true
+      })
+    } else {
+      this.setData({
+        showXieyi: false
+      })
+    }
   },
 
   radioChange: function(e) {
@@ -121,16 +144,16 @@ Page({
     if (level == 'b') {
       this.setData({
         yqmStatus: true,
-        level:2
+        level: 2
       })
     } else {
       this.setData({
         yqmStatus: false,
-        level:1
+        level: 1
       })
     }
   },
-  bindRealName(e){
+  bindRealName(e) {
     this.setData({
       v_real_name: e.detail.value
 

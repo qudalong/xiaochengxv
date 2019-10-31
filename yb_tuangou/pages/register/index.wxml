@@ -9,7 +9,7 @@
       </view>
       <input name="phone" bindinput="bindTel" placeholder="请输入手机号" type="number"></input>
     </view>
-     <view class="form_li">
+    <view class="form_li">
       <view class="form_li_icon">
         <image src="{{icon.name_icon}}"></image>
       </view>
@@ -28,7 +28,7 @@
       <input name="password" bindinput="bindRepwd" placeholder="请再次确认密码" type="password"></input>
     </view>
     <view class="form_li">
-     <view class="form_li_icon">
+      <view class="form_li_icon">
         <image src="../../static/images/shouye@2x.png"></image>
       </view>
       <radio-group class="radio-group" bindchange="radioChange">
@@ -43,6 +43,19 @@
       </view>
       <input name="password" bindinput="bindYqm" placeholder="请输入邀请码" type="text"></input>
     </view>
+    <!-- 协议 -->
+    <view class="xiyi">
+      <checkbox-group bindchange='ckeckboxChange'>
+        <label class="radio xieyi">
+          <checkbox value="ck" color="#fe775a" checked="checked" />
+          <view style="line-height:1.6">
+            我已阅读并同意
+            <text>使用条款</text>以及
+            <text>非活跃账户处理规范</text>非活跃账户处理规范
+          </view>
+        </label>
+      </checkbox-group>
+    </view>
     <view class="form_btn_box">
       <button class="form_btn" bindtap="register">
         <text>注册</text>
@@ -51,3 +64,16 @@
   </view>
 </form>
 <view class="bottom_li"></view>
+<!-- 弹窗 -->
+<view wx:if="{{showXieyi}}" class="dialog" catchtouchmove="true"> </view>
+<view wx:if="{{showXieyi}}" class="rule-wrap">
+  <view class="title">协议
+    <view bindtap="hideXieyi" class="close">x</view>
+  </view>
+  <view class="content">
+    <view class="wb">1.小程序使用说明</view>
+    <view>然而真正能够成为所有大区中的最强大区，到现如今都充满了争议！有人认为是“秋日森林”，因为此前某次服务器联赛的前四名营地，均是来自该大区！但是也有玩家称“希望谷地”是第一个出现14庄的大区，所以才是最强区~现如今呢，网易在“无畏征途”玩法中开启了一个“莱文急先锋”的永久称号，并且可获得高达6种的奖励，不仅有称号、熟练度还有新币等等~但是需要所有服务器中第一个开启莱文市的服务器才能获得的，该区的所有幸存者将会获得唯一的永久称号及奖励~这也算是“变相”的证明了第一大区的实力，究竟花落谁家呢？天哥也将会持续关注，届时为各位小伙伴们带来最新的相关报道哦~</view>
+    <view class="wb">2.只说产权说明</view>
+    <view>然而真正能够成为所有大区中的最强大，到现如今都充满了争议！有人认为是“秋日森林”，因为此前某次服务器联赛的前四名营地，均是来自该大区！但是也有玩家称“希望谷地”是第一个出现14庄的大区，所以才是最强区~现如今呢，网易在“无畏征途”玩法中开启了一个“莱文急先锋”的永久称号，并且可获得高达6种的奖励，不仅有称号、熟练度还有新币等等~但是需要所有服务器中第一个开启莱文市的服务器才能获得的，该区的所有幸存者将会获得唯一的永久称号及奖励~这也算是“变相”的证明了第一大区的实力，究竟花落谁家呢？天哥也将会持续关注，届时为各位小伙伴们带来最新的相关报道哦~</view>
+  </view>
+</view>
