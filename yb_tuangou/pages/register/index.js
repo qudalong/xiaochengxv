@@ -127,6 +127,7 @@ Page({
 
   //协议
   ckeckboxChange(e) {
+    console.log('协议')
     var val = e.detail.value;
     if (val.length) {
       this.setData({

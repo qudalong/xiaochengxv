@@ -48,22 +48,22 @@
         <text>注册</text>
       </button>
     </view>
-    <!-- 协议 -->
-    <view class="xiyi">
-      <checkbox-group bindchange='ckeckboxChange'>
-        <label class="radio xieyi">
-          <checkbox value="ck" color="#fe775a" checked="checked" />
-          <view style="line-height:1.6">
-            我已阅读并同意
-            <text>使用条款</text>以及
-            <text>非活跃账户处理规范</text>非活跃账户处理规范
-          </view>
-        </label>
-      </checkbox-group>
-    </view>
   </view>
 </form>
 <view class="bottom_li"></view>
+<!-- 协议 -->
+<view class="xiyi">
+  <checkbox-group bindchange='ckeckboxChange'>
+    <label class="radio xieyi">
+      <checkbox value="ck" color="#fe775a" checked="checked" />
+      <view style="line-height:1.6">
+        我已阅读并同意
+        <text>使用条款</text>以及
+        <text>非活跃账户处理规范</text>非活跃账户处理规范
+      </view>
+    </label>
+  </checkbox-group>
+</view>
 <!-- 弹窗 -->
 <view wx:if="{{showXieyi}}" class="dialog" catchtouchmove="true"> </view>
 <view wx:if="{{showXieyi}}" class="rule-wrap">
