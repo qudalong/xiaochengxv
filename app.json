@@ -1,7 +1,7 @@
 {
   "pages": [
-    "yb_tuangou/pages/register/index",
     "yb_tuangou/pages/index/index",
+    "yb_tuangou/pages/register/index",
     "yb_tuangou/pages/policy/index",
     "yb_tuangou/pages/ckSell/ckSell",
     "yb_tuangou/pages/ck/ckDesc",

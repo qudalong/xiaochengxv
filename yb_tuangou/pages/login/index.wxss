@@ -131,6 +131,7 @@
   text-align: right;
   color: #666;
   font-size: 28rpx;
+  padding: 30rpx 0;
 }
 .row:active{
   color: #fe775a;
