@@ -302,7 +302,7 @@ page {
 .zongshuliang_fengexian1 {
   width: 2rpx;
   height: 60rpx;
-  background: #eee;
+  background: #dedede;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -498,9 +498,16 @@ page {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  width: 100%;
 }
 
 .zongshuliang {
+  text-align: center;
+  position: relative;
+  padding: 20rpx 0;
+  flex: 1;
+}
+.zongshuliang1 {
   text-align: center;
   position: relative;
   padding: 20rpx 0;
