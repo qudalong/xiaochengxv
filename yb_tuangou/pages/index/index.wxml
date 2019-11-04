@@ -5,7 +5,7 @@
       <text class="wenzi">审核</text>
     </view>
     <view bindtap="toproduct" class="tupian">
-      <image  class="userinfo-shouhuo" data-i="2" mode="cover" src="{{icon.shouhuo}}"></image>
+      <image class="userinfo-shouhuo" data-i="2" mode="cover" src="{{icon.shouhuo}}"></image>
       <text class="wenzi_shouhuo">产品下载</text>
     </view>
     <view bindtap="shangbao" class="tupian">
@@ -16,7 +16,7 @@
       <image class="userinfo-tuihuo" data-i="4" mode="cover" src="{{icon.dingdan}}" style="margin-left:120rpx"></image>
       <text class="wenzi_dingdan" style="margin-left:100rpx">销售等级</text>
     </view>
-     <view bindtap="sendNotice" class="tupian" wx:if="{{isAdmin ==1}}">
+    <view bindtap="sendNotice" class="tupian" wx:if="{{isAdmin ==1}}">
       <image class="userinfo-tuihuo" data-i="4" mode="cover" src="{{icon.dingdan}}" style="margin-left:120rpx"></image>
       <text class="wenzi_dingdan" style="margin-left:100rpx">发送通知</text>
     </view>
@@ -156,7 +156,7 @@
         </view>
         <view class="zongshuliang_fengexian1"></view>
       </view>
-      <view class="zongshuliang">
+      <view class="zongshuliang1" style="width:21%">
         <view class="zongshuliang_number1">
           {{personal.today_order}}
         </view>
@@ -167,15 +167,40 @@
       </view>
       <view class="zongshuliang">
         <view class="zongshuliang_number1">
-         {{personal.all_nums}}
+          {{personal.all_nums}}
         </view>
         <view class="zongshuliang_text1">
           总销售额
         </view>
-        <!--<view class="zongshuliang_fengexian3"></view>-->
       </view>
     </view>
   </view>
+  <!-- 提成 -->
+  <view class="jinridingdan">
+    <view class="jinridingdan_wenzi">
+      提成
+    </view>
+    <view class="row">
+      <view class="zongshuliang">
+        <view class="zongshuliang_number1">
+          {{personal.today_nums}}
+        </view>
+        <view class="zongshuliang_text1">
+          今日提成
+        </view>
+        <view class="zongshuliang_fengexian1"></view>
+      </view>
+      <view class="zongshuliang">
+        <view class="zongshuliang_number1">
+          {{personal.today_order}}
+        </view>
+        <view class="zongshuliang_text1">
+          月总提成
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 产品推荐 -->
   <view class="fengexian_bg"></view>
   <view class="jinridingdan1">
     <view class="jinridingdan_wenzi">
