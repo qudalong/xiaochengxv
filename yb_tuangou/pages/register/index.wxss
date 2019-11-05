@@ -13,7 +13,7 @@ width: 90%;
   font-weight: bold;
 }
 .xiyi{
-  padding: 20rpx;
+  padding:0 20rpx 20rpx 20rpx;
 }
 .logo_box {
   padding: 2rem 0 1rem;
