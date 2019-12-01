@@ -19,11 +19,11 @@ Page({
     },function(e){
         if(e.code == 1){
           _this.setData({
-            isreg:true
+           isreg:true
           });
         }else{
           _this.setData({
-            isreg: false
+           isreg: false
           });
         }
     });

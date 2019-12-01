@@ -125,13 +125,14 @@ Page({
     //   });
     //   return
     // } 
-    else if (!birthday.trim()) {
-      wx.showToast({
-        title: '请选择购买人生日',
-        icon: 'none'
-      });
-      return
-    } else if (!price.trim()) {
+    // else if (!birthday.trim()) {
+    //   wx.showToast({
+    //     title: '请选择购买人生日',
+    //     icon: 'none'
+    //   });
+    //   return
+    // }
+     else if (!price.trim()) {
       wx.showToast({
         title: '请输入标价',
         icon: 'none'
@@ -181,6 +182,8 @@ Page({
         title: '销售占比不能大于1'
       });
     }
+
+    
 
     let u = getApp().getCache("userinfo");
     let uid = u.id;

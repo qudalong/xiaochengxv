@@ -49,7 +49,7 @@
       </button>
     </view>
     <!-- 协议 -->
-    <view class="xiyi">
+    <view class="xiyi"  wx:if="{{showXieyi}}">
       <checkbox-group bindchange='ckeckboxChange'>
         <label class="radio xieyi">
           <checkbox value="ck" color="#fe775a" checked="checked" />

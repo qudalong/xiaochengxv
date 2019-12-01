@@ -10,7 +10,7 @@
   <!-- <view class="form_li">
     <view class="lable">购买人手机号:</view>
     <input bindinput="bindTel" class="inp" type="number" value="{{tel}}" placeholder="请输入购买人手机号"></input>
-  </view> -->
+  </view> 
   <view class="form_li relative">
     <view class="lable">购买人生日:</view>
     <image class="down" src="/yb_tuangou/static/images/jiantou@2x.png"></image>
@@ -18,7 +18,7 @@
       <view wx:if='{{!birthday}}' class="picker gary">请选择购买人生日</view>
       <view wx:if='{{birthday}}' class="picker">{{birthday}}</view>
     </picker>
-  </view>
+  </view>-->
   <view class="form_li relative">
     <view class="lable">购买日期:</view>
     <image class="down" src="/yb_tuangou/static/images/jiantou@2x.png"></image>

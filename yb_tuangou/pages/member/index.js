@@ -7,8 +7,57 @@ Page({
     version: n.version,
     status: 0,
     userinfo:{},
-
+    dy_nums:0,
     is_copyright: !1
+  },
+  bindDy:function(){
+      let _this = this;
+      wx.requestSubscribeMessage({
+        tmplIds: ['rm63zNg4zHn-j5hafFSnCv4O1uIPiKw7LLcSbAFo9Bo', 'l6H_TCMzVXTG7O5NMIFSq4qUFrSOgz6PO8DpOXUafHk', 'evIMbd8U-55BnK9ZBeHw5geUfs3ZrGFBRzYmLaUroWo'],
+        success(res) {
+
+          t.post("/wx/user/dynum.html", {
+            uid: _this.data.uid
+          }, function (data) {
+              if(data.code ==  1){
+                _this.setData({
+                  dy_nums: data.dy_num ? data.dy_num : 0 
+                });
+              }
+
+          });
+
+          wx.showToast({
+            title: '订阅成功',
+          });
+         
+        },
+        fail:function(res){
+            console.log(res);
+        }
+      });
+  },
+  bindWx:function(){
+    let user = getApp().getCache("userinfo");
+    let sessionId = wx.getStorageSync("sessionid");
+   
+    t.post("/wx/user/bindwx.html",{
+      uid : user.id,
+      sessionid:sessionId
+    },function(data){
+
+      if(data.code ==1){
+        wx.showToast({
+          title: '绑定成功!',
+        });
+       
+      }else{
+        wx.showToast({
+          title:data.msg,
+          icon: 'none'
+        });
+      }
+    });
   },
   bindViewTap: function(n) {
     var e = t.pdata(n).index;
@@ -31,13 +80,17 @@ Page({
 
     if(user.i_level == 0){
       this.setData({
-        isAdmin:1
+        isAdmin:1,
+        uid:user.id
       });
     }else{
       this.setData({
-        isAdmin: 0
+        isAdmin: 0,
+        uid:user.id
       });
     }
+
+
 
     let userinfo = this.data.userinfo;
     if(user){
@@ -88,7 +141,23 @@ Page({
       status: e.name
     });
   },
-  onShow: function() {},
+  onShow: function() {
+
+    let _this = this;
+    let uid1 = _this.data.uid;
+    t.post("/wx/user/seldynums.html", {
+      uid: uid1
+    }, function (data) {
+      if (data.code == 1) {
+        _this.setData({
+          dy_nums: data.dy_num ? data.dy_num : 0
+        });
+      }
+
+    });
+
+
+  },
   onHide: function() {},
   onUnload: function() {},
   onPullDownRefresh: function() {

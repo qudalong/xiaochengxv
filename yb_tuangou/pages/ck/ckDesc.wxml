@@ -44,6 +44,7 @@
       <view class="label">购买人:</view>
       <view class="cont">{{v_buy_name}}</view>
     </view>
+    <!-- 
     <view class="row">
       <view class="label">手机号:</view>
       <view class="cont">{{v_buy_phone}}</view>
@@ -51,7 +52,7 @@
     <view class="row">
       <view class="label">生日:</view>
       <view class="cont">{{v_buy_bir}}</view>
-    </view>
+    </view>-->
     <view class="row">
       <view class="label">标价:</view>
       <view class="cont">￥{{i_show_je}}</view>

@@ -12,6 +12,10 @@ function n(i, n, a) {
 var a = "/yb_tuangou/static/images/index_img/", g = "/yb_tuangou/static/images/member_img/", u = "/yb_tuangou/static/images/jingying_img/", t = "/yb_tuangou/static/images/change_password_img/";
 
 module.exports = (n(i = {
+    tz:"/yb_tuangou/static/images/tz.png",
+    dy:"/yb_tuangou/static/images/dy.png",
+    logout:"/yb_tuangou/static/images/logout.png",
+    wx_icon: "/yb_tuangou/static/images/bindwx.png",
     mob_icon: "/yb_tuangou/static/images/mob_icon.png",
     pass_word_icon: "/yb_tuangou/static/images/pass_word_icon.png",
     name_icon: "/yb_tuangou/static/images/wode@2x.png",
