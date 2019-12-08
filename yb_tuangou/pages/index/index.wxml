@@ -73,7 +73,7 @@
       总览
     </view>
     <view class="row">
-      <view class="zongshuliang fex1">
+      <view  bindtap="toUser" class="zongshuliang fex1">
         <view class="zongshuliang_number1">
           {{info.log_order.total}}
         </view>

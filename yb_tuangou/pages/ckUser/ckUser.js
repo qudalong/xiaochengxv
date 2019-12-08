@@ -205,6 +205,30 @@ Page({
     });
     this.loadUsers();
   },
+  //禁用
+  delUser(e){
+    let _this = this;
+    let uid1 = e.currentTarget.dataset.id;
+    let uid2 = this.data.uid;
+    a.post('wx/user/deluser.html', {
+      uid1: uid1,
+      uid2: uid2     
+    }, function (e) {
+      if (e.code == 1) {
+        a.success(e.msg);
+        _this.setData({
+          reason: '',
+          showDia: false,
+          page: 1,
+          running: false,
+          list: []
+        });
+        _this.loadUsers();
+      } else {
+        wx.showToast(e.msg);
+      }
+    });
+  },
   //审核通过
   checkPass(e){
     let item_id = e.currentTarget.dataset.id;

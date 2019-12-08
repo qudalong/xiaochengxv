@@ -21,9 +21,10 @@
       <view class="left">
         <image class="img" src="{{userImg}}"></image>
         <view class="info">
-          <view class="name">电话:{{item.phone}}</view>
+          <view class="name">电话:{{item.phone}} | 销售总额：{{item.i_all_je}}</view>
           <view>用户级别:{{item.v_level_name}} | 销售级别:{{item.v_scale_level_name}} | 提成系数:{{item.i_rebate}}%</view>
           <view wx:if="{{item.i_level == 1}}">邀请码:{{item.v_yq_code}}</view>
+          <view wx:if="{{item.i_level == 2}}">A级:{{item.v_real_namea}}</view>
           <view wx:if="{{item.status == 2}}">驳回原因:{{item.v_reason}}</view>
 
         </view>
@@ -31,7 +32,10 @@
     </view>
     <view class="btn-grounp" wx:if="{{item.status == 0}}">
       <view catchtap="checkPass"  data-id="{{item.id}}" class="but but1">审核通过</view>
-      <view catchtap="hbdia" data-id="{{item.id}}" class="but">驳回</view>
+      <view catchtap="hbdia" data-id="{{item.id}}" class="but">驳回</view>     
+    </view>
+    <view class="btn-grounp" wx:if="{{item.status == 1}}">
+      <view catchtap="delUser" data-id="{{item.id}}" class="but">禁用</view>     
     </view>
   </view>
 </view>
@@ -52,9 +56,10 @@
       <view class="left">
         <image class="img" src="{{userImg}}"></image>
         <view class="info">
-          <view class="name">电话:{{item.phone}}</view>
+          <view class="name">电话:{{item.phone}} | 销售总额：{{item.i_all_je}}</view>
           <view>用户级别:{{item.v_level_name}} | 销售级别:{{item.v_scale_level_name}} | 提成系数:{{item.i_rebate}}%</view>
           <view wx:if="{{item.i_level == 1}}">邀请码:{{item.v_yq_code}}</view>
+          <view wx:if="{{item.i_level == 2}}">A级:{{item.v_real_namea}}</view>
           <view wx:if="{{item.status == 2}}">驳回原因:{{item.v_reason}}</view>
 
         </view>
@@ -83,9 +88,10 @@
       <view class="left">
         <image class="img" src="{{userImg}}"></image>
         <view class="info">
-          <view class="name">电话:{{item.phone}}</view>
+          <view class="name">电话:{{item.phone}} | 销售总额：{{item.i_all_je}}</view>
           <view>用户级别:{{item.v_level_name}} | 销售级别:{{item.v_scale_level_name}} | 提成系数:{{item.i_rebate}}%</view>
           <view wx:if="{{item.i_level == 1}}">邀请码:{{item.v_yq_code}}</view>
+          <view wx:if="{{item.i_level == 2}}">A级:{{item.v_real_namea}}</view>
           <view wx:if="{{item.status == 2}}">驳回原因:{{item.v_reason}}</view>
 
         </view>
@@ -114,9 +120,10 @@
       <view class="left">
         <image class="img" src="{{userImg}}"></image>
         <view class="info">
-          <view class="name">电话:{{item.phone}}</view>
+          <view class="name">电话:{{item.phone}} | 销售总额：{{item.i_all_je}}</view>
           <view>用户级别:{{item.v_level_name}} | 销售级别:{{item.v_scale_level_name}} | 提成系数:{{item.i_rebate}}%</view>
           <view wx:if="{{item.i_level == 1}}">邀请码:{{item.v_yq_code}}</view>
+          <view wx:if="{{item.i_level == 2}}">A级:{{item.v_real_namea}}</view>
           <view wx:if="{{item.status == 2}}">驳回原因:{{item.v_reason}}</view>
 
         </view>

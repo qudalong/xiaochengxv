@@ -1,7 +1,7 @@
 module.exports = {
     name: "",
-    uniacid: "5",
-    acid: "5",
+    uniacid: "7",
+    acid: "7",
     version: "1.0.8",
  // siteroot: "https://jy.hayuxin.com/app/index.php",
  // siteroot: "https://csa.ch-vip.cn/app/index.php",

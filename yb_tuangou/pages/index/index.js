@@ -308,6 +308,12 @@ Page({
       fail: function(e) {}
     });
   },
+  toUser(){
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/ckUser/ckUser',
+    });
+
+  },
   toproduct(){
     console.log("-------------------")
     //o.jump( '/yb_tuangou/pages/product/product');
