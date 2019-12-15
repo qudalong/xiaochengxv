@@ -29,3 +29,5 @@
   </swiper>
   <view bindtap="downloadImg" data-url="{{src}}" class="downloadImg">下载图片</view>
 </block>
+<!-- 删除按钮 -->
+<view class="del-btn del-btn-desc hover">删除</view>

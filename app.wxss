@@ -3689,3 +3689,17 @@ seckillList .secWidgetTop {
 }
 
 /* 产品 */
+.del-btn{
+  position: absolute;
+  right: 40rpx;
+  top: 10%;
+  z-index: 9999;
+  height: 100rpx;
+  width: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 50%;
+  background: red;
+  color: #fff;
+  font-size: 26rpx;
+}

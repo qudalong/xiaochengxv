@@ -30,3 +30,5 @@
   <navigator url="/yb_tuangou/pages/add_classify/add_classify" class="btns">添加分类</navigator>
   <navigator url="/yb_tuangou/pages/add_product/add_product" class="btns">添加产品</navigator>
 </view>
+<!-- 删除按钮 -->
+<view class="del-btn hover">删除</view>
