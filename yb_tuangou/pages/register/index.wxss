@@ -1,20 +1,25 @@
 @import '../index/index';
-page{
+page {
   background: #fff;
 }
-.rule-wrap{
-width: 90%;
+
+.rule-wrap {
+  width: 90%;
 }
-.rule-wrap .content{
+
+.rule-wrap .content {
   height: 500rpx;
   text-align: justify;
 }
-.wb{
+
+.wb {
   font-weight: bold;
 }
-.xiyi{
-  padding:0 20rpx 20rpx 20rpx;
+
+.xiyi {
+  padding: 0 20rpx 20rpx 20rpx;
 }
+
 .logo_box {
   padding: 2rem 0 1rem;
   text-align: center;
@@ -31,10 +36,11 @@ width: 90%;
   padding: 0 1rem;
 }
 
-.xieyi  {
+.xieyi {
   display: flex;
   align-content: center;
 }
+
 .xieyi text {
   color: #fe775a;
 }

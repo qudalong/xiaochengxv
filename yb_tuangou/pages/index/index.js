@@ -2,7 +2,6 @@ var e = getApp(),
   o = e.requirejs("core");
 
 Page({
-
   data: {
     showDia: false,
     icon: e.requirejs("icons"),

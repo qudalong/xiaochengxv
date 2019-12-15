@@ -1,11 +1,12 @@
 {
   "pages": [
     "yb_tuangou/pages/index/index",
+    "yb_tuangou/pages/product/product",
+    "yb_tuangou/pages/monthCharts/monthCharts",
     "yb_tuangou/pages/register/index",
     "yb_tuangou/pages/policy/index",
     "yb_tuangou/pages/ckSell/ckSell",
     "yb_tuangou/pages/ck/ckDesc",
-    "yb_tuangou/pages/monthCharts/monthCharts",
     "yb_tuangou/pages/product_desc/product_desc",
     "yb_tuangou/pages/notice/notice",
     "yb_tuangou/pages/yqm/yqm",
@@ -13,7 +14,6 @@
     "yb_tuangou/pages/member/index",
     "yb_tuangou/pages/sellLevel/sellLevel",
     "yb_tuangou/pages/add_product/add_product",
-    "yb_tuangou/pages/product/product",
     "yb_tuangou/pages/ckLevel/ckLevel",
     "yb_tuangou/pages/shenheList/shenheList",
     "yb_tuangou/pages/login/index",
