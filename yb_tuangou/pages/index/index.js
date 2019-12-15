@@ -22,7 +22,9 @@ Page({
         nopass:0,
         all_nums:0,
         today_order:0,
-        today_nums:0
+        today_nums:0,
+        todaytc:0,
+        monthtc:0
     },
     info: {
       today_order: {
@@ -57,11 +59,15 @@ Page({
         let i_all_nums1 = e.all.i_num ? e.all.i_num:0;
         let order = e.order ? e.order :0;
         let today = e.today.i_num ? e.today.i_num:0;
+        let todaytc = e.todaytc ? e.todaytc:0;
+        let monthtc = e.monthtc ? e.monthtc:0;
         console.log("----------------------");
         console.log(personal);
         personal.all_nums = i_all_nums1;
         personal.today_order = order;
         personal.today_nums = today;
+        personal.todaytc = todaytc;
+        personal.monthtc = monthtc;
         _this.setData({
           personal: personal
         });
@@ -300,6 +306,12 @@ Page({
       },
       fail: function(e) {}
     });
+  },
+  toUser(){
+    wx.navigateTo({
+      url: '/yb_tuangou/pages/ckUser/ckUser',
+    });
+
   },
   toproduct(){
     console.log("-------------------")

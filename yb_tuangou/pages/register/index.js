@@ -14,7 +14,7 @@ Page({
         value: 'B级'
       },
     ],
-    showXieyi: true,
+    showXieyi: false,
     yqmStatus: false,
     tel: '',
     pwd: '',

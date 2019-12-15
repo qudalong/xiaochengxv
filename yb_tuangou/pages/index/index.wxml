@@ -73,7 +73,7 @@
       总览
     </view>
     <view class="row">
-      <view class="zongshuliang fex1">
+      <view  bindtap="toUser" class="zongshuliang fex1">
         <view class="zongshuliang_number1">
           {{info.log_order.total}}
         </view>
@@ -105,7 +105,7 @@
           {{info.log_order.already_cancel}}
         </view>
         <view class="zongshuliang_text1">
-          昨日销售额
+          今日销售额
         </view>
         <!--<view class="zongshuliang_fengexian3"></view>-->
       </view>
@@ -176,14 +176,14 @@
     </view>
   </view>
   <!-- 提成 -->
-  <view class="jinridingdan">
+  <view class="jinridingdan" wx:if="{{isAdmin == 0}}">
     <view class="jinridingdan_wenzi">
       提成
     </view>
     <view class="row">
       <view class="zongshuliang">
         <view class="zongshuliang_number1">
-          {{personal.today_nums}}
+          {{personal.todaytc}}
         </view>
         <view class="zongshuliang_text1">
           今日提成
@@ -192,7 +192,7 @@
       </view>
       <view class="zongshuliang">
         <view class="zongshuliang_number1">
-          {{personal.today_order}}
+          {{personal.monthtc}}
         </view>
         <view class="zongshuliang_text1">
           月总提成

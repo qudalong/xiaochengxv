@@ -124,6 +124,7 @@ Page({
   },
   //审核通过
   checkPass(e) {
+    let _this = this;
     let item_id = e.currentTarget.dataset.id;
 
     if (!item_id) {
@@ -188,7 +189,9 @@ Page({
           if (data.data.data && data.data.data.length > 0) {
             _this.setData({
               list: _this.data.list.concat(data.data.data),
-              page: page + 1
+              page: page + 1,
+              img:data.img
+
             });
 
           }
