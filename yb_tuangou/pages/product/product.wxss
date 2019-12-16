@@ -14,11 +14,11 @@
 .del{
   position: absolute;
   left: 14rpx;
-  top: 10rpx;
+  top: 5rpx;
 }
 .icon-del{
-  width: 40rpx;
-  height: 40rpx;
+  width: 30rpx;
+  height: 30rpx;
 }
 .item {
   display: flex;

@@ -21,10 +21,58 @@ Page({
     detail:''
   },
 
+  delpro:function(op){
+    let user = getApp().getCache("userinfo");
+    let uid1 = user.id;
+    let id = op.currentTarget.dataset.id;
+    if(!id){
+      return ;
+    }
+
+    a.post("wx/product/delpro.html", {
+      cid:id,
+      uid:uid1
+    }, function (data) {
+      if(data.code == 1){
+        wx.showToast({
+          title: '删除成功'
+        });
+        wx.switchTab({
+          url: '/yb_tuangou/pages/product/product'
+        });
+
+      }
+
+    })
+
+     
+
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+
+    let user = getApp().getCache("userinfo");
+
+    user || wx.redirectTo({
+      url: "/yb_tuangou/pages/login/index"
+    });
+
+    if (user.i_level == 0) {
+      this.setData({
+        isAdmin: 1
+      });
+
+    } else {
+      this.setData({
+        isAdmin: 0
+
+      });
+
+    }
+
     if(options.item_id){
       this.setData({
         item_id:options.item_id

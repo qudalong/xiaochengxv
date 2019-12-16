@@ -8,6 +8,7 @@ Page({
     adUrl: '',
     adShow: true,
     text: "",
+    lj_all:0,
     marqueePace: 1,
     marqueeDistance: 0,
     marquee_margin: 30,
@@ -156,6 +157,7 @@ Page({
       adUrl: url
     });
     this.loadNotice();
+    this.loadLj();
 
   },
   //加载所有数据
@@ -164,9 +166,11 @@ Page({
     if(isAdmin == 1){
       this.selDsh();
       this.selAdminAll();
+      this.loadLj();
     }else{
        this.loadPersonalScale();
        this.loadPersonall();
+       this.loadLj();
     }
   },
   loadScaleDay(){
@@ -229,6 +233,21 @@ Page({
 
   },
 
+  loadLj:function(){
+   // console.log('123123131231231');
+    let _this = this;
+    o.get("wx/home/ljall.html", {
+      id: 1
+    }, function (o1) {
+      if (o1.code == 1) {
+
+        _this.setData({
+          lj_all: o1.all?o1.all:0
+        });
+
+      }
+    });
+  },
 
   //加载通知
   loadNotice: function() {

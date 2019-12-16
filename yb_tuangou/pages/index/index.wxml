@@ -200,6 +200,24 @@
       </view>
     </view>
   </view>
+
+    <!--系统总销售额 -->
+  <view class="jinridingdan">
+    <view class="jinridingdan_wenzi">
+      系统累计总销售额
+    </view>
+    <view class="row">
+      <view class="zongshuliang">
+        <view class="zongshuliang_number1">
+          {{lj_all}}
+        </view>
+        <view class="zongshuliang_text1">
+          系统累计总销售额
+        </view>
+      </view>
+      
+    </view>
+  </view>
   <!-- 产品推荐 -->
   <view class="fengexian_bg"></view>
   <view class="jinridingdan1">

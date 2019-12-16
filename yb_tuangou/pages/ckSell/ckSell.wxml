@@ -143,6 +143,10 @@
     </view>
   </view>
 </view>
+
+ <block wx:if="{{!list.length}}">
+    <view class="empty">暂无记录</view>
+  </block>
 <!-- 悬浮按钮 -->
 <view bindtap="toShangBao" class="add-btn">+</view>
 

@@ -22,12 +22,64 @@ Page({
   },
   onLoad: function(options) {
     let user = getApp().getCache("userinfo");
+
     user || wx.redirectTo({
       url: "/yb_tuangou/pages/login/index"
     });
+
+    if(user.i_level == 0){
+      this.setData({
+        isAdmin:1
+      });
+
+    }else{
+      this.setData({
+        isAdmin:0
+
+      });
+
+    }
+    
     this.getScrollInitData();
   },
+  //删除分类
+  delCate:function(options){
+      let _this = this;
+      let user = getApp().getCache("userinfo");
+      let id = options.currentTarget.dataset.id;
+      let uid1 = user.id;
+      if(!id){
+         wx.showToast({
+           title: '请选择分类',
+         });
+         return ;
+      }
+      wx.showModal({
+        title: '删除分类',
+        content: '确定要删除此分类及分类下产品吗？',
+        success:function(res){
+          if(res.confirm){
+            request({
+              url: siteinfo.siteroot + 'wx/product/delcate.html',
+              data:{
+                cid:id,
+                uid:uid1
+              }              
+            }).then(res => {
+              console.log(res);
+              if(res.data.code == 1){
+                 wx.showToast({
+                   title: '删除成功!'
+                 });
+                 _this.getScrollInitData();
+              }
 
+            });
+          }
+        }
+      });
+
+  },
   getScrollInitData() {
     wx.showLoading({
       title: '加载中...'

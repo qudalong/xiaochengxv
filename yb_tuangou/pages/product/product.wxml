@@ -3,10 +3,10 @@
     <!-- 左边 -->
     <scroll-view class="scroll-view_H" scroll-y="true" style="height:100%">
       <view class="classifty" wx:if='{{list.length}}' wx:for='{{list}}' wx:key='unquie' class="nav-item {{index === navActive ? 'active' : ''}}" data-id="a{{item.id}}" data-index="{{index}}" catchtap="chooseType">
-        <view class='type-food'>{{item.type_name}}1</view>
+        <view class='type-food'>{{item.type_name}}</view>
         <v-bubble num='{{item.typeItemCount}}'></v-bubble>
-        <view class="del">
-        <image src='/yb_tuangou/static/images/del.jpg' class='icon-del'></image>
+        <view bindtap="delCate"  data-id="{{item.id}}"  class="del" wx:if="{{isAdmin == 1}}">
+        <image src='/yb_tuangou/static/images/del.png' class='icon-del'></image>
         </view>
       </view>
     </scroll-view>
